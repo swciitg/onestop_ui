@@ -131,6 +131,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.16.0"
+  onestop_ui:
+    dependency: "direct main"
+    description:
+      path: "packages/onestop_ui"
+      relative: true
+    source: path
+    version: "0.0.1"
   path:
     dependency: transitive
     description:
