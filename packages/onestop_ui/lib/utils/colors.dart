@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class OColors {
+class OColor {
   static const primary = OBaseColors.green600;
+
+  static const hyperlinkUnderline = OBaseColors.blue500;
 }
 
 class OBaseColors {
