@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:onestop_ui/utils/colors.dart';
 import 'package:onestop_ui/utils/styles.dart';
 import 'package:onestop_ui/components/text.dart';
+import 'package:onestop_ui/utils/theme.dart';
 
-void main() {
+void main() async {
+  await GetStorage.init();
+  await OTheme.init();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    OTheme.setTheme(Brightness.light);
     return MaterialApp(
       title: 'OneStop UI Demo',
-      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: OColor.primary)),
+      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: OColor.green600)),
       home: Scaffold(
-        backgroundColor: OColor.primary,
+        backgroundColor: OColor.red400,
         body: SafeArea(
           child: Center(
             child: Column(
