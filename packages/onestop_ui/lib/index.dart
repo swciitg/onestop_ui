@@ -2,4 +2,10 @@
 
 export 'utils/colors.dart';
 export 'utils/styles.dart';
+export 'utils/theme.dart';
+
+export 'constants/spacing.dart';
+export 'constants/icon_stroke.dart';
+export 'constants/corner_radius.dart';
+
 export 'components/text.dart';
