@@ -18,6 +18,7 @@ class OBaseColors {
   static const green800 = Color(0xFF00331A);
 
   // Blue colors (Accent)
+  static const blue50 = Color(0xFFE5F1FF);
   static const blue100 = Color(0xFFEDDFFF);
   static const blue200 = Color(0xFF8AAFFF);
   static const blue300 = Color(0xFF4C7AFF);
