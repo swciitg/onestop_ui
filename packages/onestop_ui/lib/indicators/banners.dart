@@ -23,13 +23,14 @@ class banner extends StatelessWidget {
   Color? color_bg;
 
   Widget build(BuildContext context) {
-    if (type == 'Warning' || type == 'Negative' || type == 'Accent')
+    String type_ = type.toLowerCase();
+    if (type_ == 'warning' || type_ == 'negative' || type_ == 'accent')
       lead = Icons.warning_amber_rounded;
-    if (type == 'Positive') lead = Icons.done_rounded;
-    if (type == 'Negative') color_bg = OColor.red200;
-    if (type == 'Warning') color_bg = OColor.yellow100;
-    if (type == 'Positive') color_bg = OColor.green100;
-    if (type == 'Accent') color_bg = OColor.blue100;
+    if (type_ == 'positive') lead = Icons.done_rounded;
+    if (type_ == 'negative') color_bg = OColor.red200;
+    if (type_ == 'warning') color_bg = OColor.yellow100;
+    if (type_ == 'positive') color_bg = OColor.green100;
+    if (type_ == 'accent') color_bg = OColor.blue100;
 
     return Padding(
       padding: const EdgeInsets.all(16.0),

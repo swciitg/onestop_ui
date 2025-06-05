@@ -48,10 +48,16 @@ class MyApp extends StatelessWidget {
                 ),
                 my_Badge(type: 'Warning'),
                 Tag(
-                  type: 'Neutral',
+                  type: '',
                   lead: Icons.abc_outlined,
                   label: "LABEL",
                   trail: Icons.arrow_back,
+                ),
+                Tag(
+                  type: 'NEutral',
+                  lead: Icons.abc_outlined,
+                  label: 'popopo',
+                  trail: Icons.abc_outlined,
                 ),
                 banner(
                   type: "Accent",
@@ -80,11 +86,11 @@ class MyApp extends StatelessWidget {
                       'https://motionbgs.com/media/2001/miles-morales-in-multiverse.jpg',
                 ),
                 Profile(
-                  Size: 'Medium',
+                  Size: 'Small',
                   url:
                       'https://motionbgs.com/media/2001/miles-morales-in-multiverse.jpg',
-                  Name: 'name',
-                  info: '',
+                  Name: 'Name',
+                  info: 'Add. info',
                 ),
               ],
             ),

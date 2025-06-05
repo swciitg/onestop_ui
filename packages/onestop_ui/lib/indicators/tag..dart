@@ -22,11 +22,12 @@ class Tag extends StatelessWidget {
   Color? color_bg;
 
   Widget build(BuildContext context) {
-    if (type == "Accent Color") {
+    String type_ = type.toLowerCase();
+    if (type_ == "accent color") {
       color_bg = OColor.blue50;
       color_fg = OColor.blue500;
     }
-    if (type == "Neutral") {
+    if (type_ == "neutral") {
       color_bg = OColor.gray100;
       color_fg = OColor.gray600;
     }

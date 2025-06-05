@@ -9,8 +9,9 @@ class my_Badge extends StatelessWidget {
   @override
   Color? color;
   Widget build(BuildContext context) {
-    if (type == 'Normal Hint') color = OColor.blue500;
-    if (type == 'Warning') color = OColor.yellow500;
+    String type_ = type.toLowerCase();
+    if (type_ == 'normal hint') color = OColor.blue500;
+    if (type_ == 'warning') color = OColor.yellow500;
     return Container(
       height: 12,
       width: 12,

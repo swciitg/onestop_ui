@@ -11,11 +11,12 @@ class Status_Indicator extends StatelessWidget {
   @override
   Color? color_bg, color_fg;
   Widget build(BuildContext context) {
-    if (type == 'Warning') color_bg = OColor.yellow100;
+    String type_ = type.toLowerCase();
+    if (type_ == 'warning') color_bg = OColor.yellow100;
     color_fg = OColor.yellow800;
-    if (type == 'Positive') color_bg = OColor.green100;
+    if (type_ == 'positive') color_bg = OColor.green100;
     color_fg = OColor.green700;
-    if (type == 'Negative') color_bg = OColor.red100;
+    if (type_ == 'negative') color_bg = OColor.red100;
     color_fg = OColor.red600;
 
     return Container(
