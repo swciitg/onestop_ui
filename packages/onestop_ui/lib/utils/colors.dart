@@ -17,6 +17,10 @@ class _OColor {
   Color get green800 => lightTheme ? Color(0xFF003314) : Color(0xFF003314);
 
   // Blue colors (Accent)
+  Color get blue50 =>
+      lightTheme
+          ? Color(0xFFE5F1FF)
+          : Colors.red; //I NEED HELP!, im not sure of the color
   Color get blue100 => lightTheme ? Color(0xFFEDDFFF) : Color(0xFF012151);
   Color get blue200 => lightTheme ? Color(0xFF8AAFFF) : Color(0xFF80B2FF);
   Color get blue300 => lightTheme ? Color(0xFF4D9AFE) : Color(0xFF66A3FF);

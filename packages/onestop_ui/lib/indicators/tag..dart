@@ -23,26 +23,37 @@ class Tag extends StatelessWidget {
 
   Widget build(BuildContext context) {
     if (type == "Accent Color") {
-      color_bg = OBaseColors.blue50;
-      color_fg = const Color.fromARGB(255, 17, 97, 225);
+      color_bg = OColor.blue50;
+      color_fg = OColor.blue500;
     }
     if (type == "Neutral") {
-      color_bg = OBaseColors.gray100;
-      color_fg = OBaseColors.gray600;
+      color_bg = OColor.gray100;
+      color_fg = OColor.gray600;
     }
     return Container(
       height: 24,
-      width: 94,
+      margin: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
       decoration: BoxDecoration(
         color: color_bg,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(width: 8),
           Icon(lead, size: 16, color: color_fg),
-          Center(child: Text(label, style: OTextStyle.lableXSmall)),
+          SizedBox(width: 4),
+          SizedBox(
+            child: Center(
+              child: Text(
+                label,
+                style: OTextStyle.lableXSmall.copyWith(color: color_fg),
+              ),
+            ),
+          ),
+          SizedBox(width: 4),
           Icon(trail, size: 16, color: color_fg),
+          SizedBox(width: 8),
         ],
       ),
     );
