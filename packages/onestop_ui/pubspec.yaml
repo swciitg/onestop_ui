@@ -11,6 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   get_storage: ^2.1.1
+  animated_custom_dropdown: 3.1.1
+  flutter_tabler_icons: ^1.43.0
 
 dev_dependencies:
   flutter_test:
