@@ -9,7 +9,7 @@ class OTextField extends StatefulWidget {
   final bool obscureText;
   final void Function(String)? onChanged;
   final void Function(String)? onSubmitted;
-  final Widget suffix;
+  final Widget? suffixIcon;
   final bool enabled;
   final int maxLength;
   final bool isParagraph;
@@ -23,7 +23,7 @@ class OTextField extends StatefulWidget {
     this.obscureText = false,
     this.onChanged,
     this.onSubmitted,
-    required this.suffix,
+    this.suffixIcon,
     this.enabled = true,
     this.maxLength = 200,
     this.isParagraph = false,
@@ -72,12 +72,23 @@ class _OTextFieldState extends State<OTextField> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               // Label
-              Text(widget.label, style: OTextStyle.labelMedium),
+              OText(
+                text: widget.label,
+                style:
+                    widget.enabled
+                        ? OTextStyle.labelMedium.copyWith(color: OColor.gray800)
+                        : OTextStyle.labelMedium.copyWith(
+                          color: OColor.gray200,
+                        ),
+              ),
 
               // External Character Counter
-              Text(
-                '$_currentLength/${widget.maxLength}',
-                style: OTextStyle.bodySmall,
+              OText(
+                text: "$_currentLength/${widget.maxLength}",
+                style:
+                    widget.enabled
+                        ? OTextStyle.bodySmall.copyWith(color: OColor.gray600)
+                        : OTextStyle.bodySmall.copyWith(color: OColor.gray200),
               ),
             ],
           ),
@@ -96,49 +107,76 @@ class _OTextFieldState extends State<OTextField> {
               ),
               color: Colors.transparent,
             ),
-            child:Stack(
-              children: [TextField(
-                controller: widget.controller,
-                focusNode: _focusNode,
-                keyboardType:
+            child: TextField(
+              controller: widget.controller,
+              focusNode: _focusNode,
+              keyboardType:
+                  widget.isParagraph
+                      ? TextInputType.multiline
+                      : TextInputType.text,
+              obscureText: widget.obscureText,
+              enabled: widget.enabled,
+              maxLength: widget.maxLength + 1,
+              maxLines: widget.isParagraph ? 3 : 1,
+              onChanged: (value) {
+                _updateLength(value);
+                if (widget.onChanged != null) {
+                  widget.onChanged!(value);
+                }
+              },
+              onSubmitted: widget.onSubmitted,
+              decoration: InputDecoration(
+                hintText:
+                    widget.content.isEmpty
+                        ? 'Type here ${widget.label.toLowerCase()}...'
+                        : widget.content,
+                hintStyle:
+                    widget.enabled
+                        ? OTextStyle.bodySmall.copyWith(
+                          color: OColor.gray600,
+                        )
+                        : OTextStyle.bodySmall.copyWith(
+                          color: OColor.gray200,
+                        ),
+                border: InputBorder.none,
+                suffixIcon:
                     widget.isParagraph
-                        ? TextInputType.multiline
-                        : TextInputType.text,
-                obscureText: widget.obscureText,
-                enabled: widget.enabled,
-                maxLength: widget.maxLength + 1,
-                maxLines: widget.isParagraph ? 3 : 1,
-                onChanged: (value) {
-                  _updateLength(value);
-                  if (widget.onChanged != null) {
-                    widget.onChanged!(value);
-                  }
-                },
-                onSubmitted: widget.onSubmitted,
-                decoration: InputDecoration(
-                  hintText:
-                      widget.content.isEmpty
-                          ? 'Type here ${widget.label.toLowerCase()}...'
-                          : widget.content,
-                  hintStyle: OTextStyle.bodySmall,
-                  border: InputBorder.none,
-                  counterText: '',
-                  contentPadding: EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 14,
-                  ),
+                        ? Align(
+                          alignment:Alignment(0, -2),
+                          widthFactor: 1,
+                          heightFactor: 1,
+                          child:
+                              _isFocused
+                                  ? Padding(
+                                    padding: const EdgeInsets.only(
+                                      right: 0.0,
+                                      top: 0.0,
+                                    ),
+                                    child: widget.suffixIcon,
+                                  )
+                                  : null,
+                        )
+                        : _isFocused
+                        ? widget.suffixIcon
+                        : null,
+                suffixIconColor:
+                    (_currentLength <= widget.maxLength)
+                        ? OColor.green600
+                        : OColor.red500,
+                counterText: '',
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 14,
                 ),
               ),
-            Positioned(
-              right: 0,
-              top: 0,
-              child: widget.suffix,
-              ),]
             ),
           ),
-          Text(
-            widget.hint.isEmpty ? 'e.g. John Doe' : widget.hint,
-            style: OTextStyle.bodySmall,
+          OText(
+            text: widget.hint.isEmpty ? 'e.g. John Doe' : widget.hint,
+            style:
+                widget.enabled
+                    ? OTextStyle.bodySmall.copyWith(color: OColor.gray600)
+                    : OTextStyle.bodySmall.copyWith(color: OColor.gray200),
           ),
         ],
       ),

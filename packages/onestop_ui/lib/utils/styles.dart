@@ -63,7 +63,6 @@ class OTextStyle {
     fontFamily: fontFamily,
     fontSize: 16,
     fontWeight: FontWeight.w500,
-    color: OColor.gray800,
   );
 
   static const labelSmall = TextStyle(
@@ -94,7 +93,6 @@ class OTextStyle {
     fontFamily: fontFamily,
     fontSize: 14,
     fontWeight: FontWeight.w400,
-    color: OColor.gray600,
   );
 
   static const bodyXSmall = TextStyle(
