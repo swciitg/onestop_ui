@@ -23,7 +23,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'OneStop UI Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: OColor.green600)),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: OColor.green600),
+      ),
       home: Scaffold(
         body: SafeArea(
           child: Center(
@@ -31,13 +33,56 @@ class MyApp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                /*OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
+                OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
                 OText(text: 'Hello, World!', style: OTextStyle.bodyLarge),
                 OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
                 OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
-                OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),*/
-               OTextField(label: 'Label', controller: texteditingcontroller,enabled:true,hint: "Hint",content: "Context",
-               suffix: Icon(Icons.abc_sharp),maxLength:200,isParagraph: true,)
+                OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),
+
+                // below are the demo text fields
+                // 2 of them are enabled and 2 of them are disabled for single lines and paragraph each
+                // text field changes color from green600 to red500 on exceeding maximum char length
+
+                /*OTextField(
+                  label: 'Label',
+                  controller: texteditingcontroller,
+                  enabled: false,
+                  hint: "Hint",
+                  content: "Context",
+                  suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
+                  maxLength: 200,   //adjust the input length according to your requirement
+                  isParagraph: false, // toggle b/w the singleline and paragraph mode
+                ),
+                OTextField(
+                  label: 'Label',
+                  controller: texteditingcontroller,
+                  enabled: true,
+                  hint: "Hint",
+                  content: "Context",
+                  suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
+                  maxLength: 200,  //adjust the input length according to your requirement
+                  isParagraph: false, // toggle b/w the singleline and paragraph mode
+                ),
+                OTextField(
+                  label: 'Label',
+                  controller: texteditingcontroller,
+                  enabled: false,
+                  hint: "Hint",
+                  content: "Context",
+                  suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
+                  maxLength: 200,  //adjust the input length according to your requirement
+                  isParagraph: true, // toggle b/w the singleline and paragraph mode
+                ),
+                OTextField(
+                  label: 'Label',
+                  controller: texteditingcontroller,
+                  enabled: true,
+                  hint: "Hint",
+                  content: "Context",
+                  suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
+                  maxLength: 200, //adjust the input length according to your requirement
+                  isParagraph: true, // toggle b/w the singleline and paragraph mode
+                ),*/
               ],
             ),
           ),
