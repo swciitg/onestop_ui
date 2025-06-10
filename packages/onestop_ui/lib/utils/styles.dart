@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'colors.dart';
-
 class OTextStyle {
   static const String fontFamily = 'Giest';
 
@@ -59,7 +57,7 @@ class OTextStyle {
     fontWeight: FontWeight.w500,
   );
 
-  static var labelMedium = TextStyle(
+  static const labelMedium = TextStyle(
     fontFamily: fontFamily,
     fontSize: 16,
     fontWeight: FontWeight.w500,
@@ -89,7 +87,7 @@ class OTextStyle {
     fontWeight: FontWeight.w400,
   );
 
-  static var bodySmall = TextStyle(
+  static const bodySmall = TextStyle(
     fontFamily: fontFamily,
     fontSize: 14,
     fontWeight: FontWeight.w400,
