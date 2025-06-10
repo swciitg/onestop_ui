@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:onestop_ui/Widgets/otextfield.dart';
 import 'package:onestop_ui/utils/colors.dart';
 import 'package:onestop_ui/utils/styles.dart';
 import 'package:onestop_ui/components/text.dart';
@@ -14,14 +15,18 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  get texteditingcontroller => TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     OTheme.setTheme(Brightness.light);
     return MaterialApp(
       title: 'OneStop UI Demo',
-      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: OColor.green600)),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: OColor.green600),
+      ),
       home: Scaffold(
-        backgroundColor: OColor.red400,
         body: SafeArea(
           child: Center(
             child: Column(
@@ -33,6 +38,51 @@ class MyApp extends StatelessWidget {
                 OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
                 OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
                 OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),
+
+                // below are the demo text fields
+                // 2 of them are enabled and 2 of them are disabled for single lines and paragraph each
+                // text field changes color from green600 to red500 on exceeding maximum char length
+
+                /*OTextField(
+                  label: 'Label',
+                  controller: texteditingcontroller,
+                  enabled: false,
+                  hint: "Hint",
+                  content: "Context",
+                  suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
+                  maxLength: 200,   //adjust the input length according to your requirement
+                  isParagraph: false, // toggle b/w the singleline and paragraph mode
+                ),
+                OTextField(
+                  label: 'Label',
+                  controller: texteditingcontroller,
+                  enabled: true,
+                  hint: "Hint",
+                  content: "Context",
+                  suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
+                  maxLength: 200,  //adjust the input length according to your requirement
+                  isParagraph: false, // toggle b/w the singleline and paragraph mode
+                ),
+                OTextField(
+                  label: 'Label',
+                  controller: texteditingcontroller,
+                  enabled: false,
+                  hint: "Hint",
+                  content: "Context",
+                  suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
+                  maxLength: 200,  //adjust the input length according to your requirement
+                  isParagraph: true, // toggle b/w the singleline and paragraph mode
+                ),
+                OTextField(
+                  label: 'Label',
+                  controller: texteditingcontroller,
+                  enabled: true,
+                  hint: "Hint",
+                  content: "Context",
+                  suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
+                  maxLength: 200, //adjust the input length according to your requirement
+                  isParagraph: true, // toggle b/w the singleline and paragraph mode
+                ),*/
               ],
             ),
           ),
