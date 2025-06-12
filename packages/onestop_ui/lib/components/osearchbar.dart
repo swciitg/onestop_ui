@@ -48,19 +48,22 @@ class _OSearchBarState extends State<OSearchBar> {
     } else {
       FocusScope.of(context).requestFocus(_focusNode);
     }
-  }
+  } // this function handle the working of icon button on searchbar
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
-      onTapDown: (_) => setState(() => _isPressed = true),
+      onTapDown:
+          (_) => setState(
+            () => _isPressed = true,
+          ), //engage behaviour when search bar is tapped
       onTapUp: (_) {
         setState(() => _isPressed = false);
         if (!_focusNode.hasFocus) {
           FocusScope.of(context).requestFocus(_focusNode);
         }
-      },
+      }, //disengage behaviour when search bar is released from tap
       onTapCancel: () => setState(() => _isPressed = false),
       child: AnimatedContainer(
         duration: _animationDuration,
@@ -69,8 +72,14 @@ class _OSearchBarState extends State<OSearchBar> {
         decoration: BoxDecoration(
           border: Border.all(color: OColor.gray200, width: 1),
           borderRadius: BorderRadius.all(Radius.circular(OCornerRadius.l)),
-          color: widget.enabled? _isPressed ? OColor.gray200 : Colors.transparent : Colors.transparent,
-        ),
+          color:
+              widget.enabled
+                  ? _isPressed
+                      ? OColor.gray200
+                      : Colors.transparent
+                  : Colors.transparent,
+        ), // this still renders the animation but the color is transparent in case of disabled button
+        // this can be improved in future
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
