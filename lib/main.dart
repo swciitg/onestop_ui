@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:onestop_ui/Widgets/otextfield.dart';
+import 'package:onestop_ui/components/osearchbar.dart';
+import 'package:onestop_ui/components/otextfield.dart';
 import 'package:onestop_ui/utils/colors.dart';
 import 'package:onestop_ui/utils/styles.dart';
 import 'package:onestop_ui/components/text.dart';
@@ -33,11 +34,28 @@ class MyApp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
+                /*OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
                 OText(text: 'Hello, World!', style: OTextStyle.bodyLarge),
                 OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
                 OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
-                OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),
+                OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),*/
+                OSearchBar(
+                  content: "Enabled 1",
+                  controller: texteditingcontroller,
+                  enabled: true,
+                ),
+                const SizedBox(height:20),
+                OSearchBar(
+                  content: "Disabled Search bar",
+                  controller: texteditingcontroller,
+                  enabled: false,
+                ),
+                const SizedBox(height:20),
+                OSearchBar(
+                  controller: texteditingcontroller,
+                  enabled: true,
+                  content: "TMKC",
+                ),
 
                 // below are the demo text fields
                 // 2 of them are enabled and 2 of them are disabled for single lines and paragraph each
