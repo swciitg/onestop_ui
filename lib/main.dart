@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:onestop_ui/Widgets/otextfield.dart';
 import 'package:onestop_ui/utils/colors.dart';
 import 'package:onestop_ui/utils/styles.dart';
 import 'package:onestop_ui/components/text.dart';
 import 'package:onestop_ui/utils/theme.dart';
+//import 'package:onestop_ui/components/osearchbar.dart';
+//import 'package:onestop_ui/components/otextfield.dart';
 
 void main() async {
   await GetStorage.init();
@@ -38,6 +39,27 @@ class MyApp extends StatelessWidget {
                 OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
                 OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
                 OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),
+
+                // below are the demo search bars
+                // use ctrl + spacebar to go through all attributes of this widget
+                // uncomment the dependencies at top of the file to use these
+                /*OSearchBar(
+                  content: "Enabled 1",
+                  controller: texteditingcontroller,
+                  enabled: true,
+                ),
+                const SizedBox(height:20),
+                OSearchBar(
+                  content: "Disabled Search bar",
+                  controller: texteditingcontroller,
+                  enabled: false,
+                ),
+                const SizedBox(height:20),
+                OSearchBar(
+                  controller: texteditingcontroller,
+                  enabled: true,
+                  content: "Enabled 2",
+                ),*/
 
                 // below are the demo text fields
                 // 2 of them are enabled and 2 of them are disabled for single lines and paragraph each
