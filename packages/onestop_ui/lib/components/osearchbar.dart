@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onestop_ui/index.dart';
+import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 
 class OSearchBar extends StatefulWidget {
   final String content;
@@ -68,7 +69,7 @@ class _OSearchBarState extends State<OSearchBar> {
         decoration: BoxDecoration(
           border: Border.all(color: OColor.gray200, width: 1),
           borderRadius: BorderRadius.all(Radius.circular(OCornerRadius.l)),
-          color: _isPressed ? OColor.gray200 : Colors.transparent,
+          color: widget.enabled? _isPressed ? OColor.gray200 : Colors.transparent : Colors.transparent,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -105,7 +106,7 @@ class _OSearchBarState extends State<OSearchBar> {
             IconButton(
               onPressed: widget.enabled ? _handleClearOrFocus : null,
               icon: Icon(
-                _isFocused ? Icons.close : Icons.search,
+                _isFocused ? TablerIcons.x : TablerIcons.search,
                 size: 24,
                 color:
                     widget.enabled
