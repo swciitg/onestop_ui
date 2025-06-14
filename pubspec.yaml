@@ -37,6 +37,7 @@ dependencies:
   onestop_ui:
     path: packages/onestop_ui
   get_storage: ^2.1.1
+  flutter_tabler_icons: ^1.43.0
 
 dev_dependencies:
   flutter_test:
