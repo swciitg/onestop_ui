@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:onestop_ui/components/cardcomponents/header.dart';
 import 'package:onestop_ui/components/cardcomponents/label.dart';
 import 'package:onestop_ui/utils/colors.dart';
 import 'package:onestop_ui/utils/styles.dart';
@@ -41,7 +42,9 @@ class MyApp extends StatelessWidget {
                 OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
                 OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
                 OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),*/
-                OLabelGroups(label1: "Label 1", label2: "label 2", isSmall: false,)
+                OCardHeader(icon: TablerIcons.arrow_rotary_first_left,heading: "Card Header", subheading: "Sub-Heading",)
+
+                //OLabelGroups(label1: "Label 1", label2: "label 2", isSmall: false,)
                 //OCardLabels(label: "Sub label text", icon: TablerIcons.arrow_rotary_first_left,  isSmall: true,),
 
                 // below are the demo search bars
