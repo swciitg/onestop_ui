@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:onestop_ui/components/cardcomponents/label.dart';
 import 'package:onestop_ui/utils/colors.dart';
 import 'package:onestop_ui/utils/styles.dart';
 import 'package:onestop_ui/components/text.dart';
 import 'package:onestop_ui/utils/theme.dart';
+import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 //import 'package:onestop_ui/components/osearchbar.dart';
 //import 'package:onestop_ui/components/otextfield.dart';
 
@@ -34,11 +36,12 @@ class MyApp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
+                /*OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
                 OText(text: 'Hello, World!', style: OTextStyle.bodyLarge),
                 OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
                 OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
-                OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),
+                OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),*/
+                OCardLabels(label: "Sub label text", icon: TablerIcons.arrow_rotary_first_left,  isSmall: true,),
 
                 // below are the demo search bars
                 // use ctrl + spacebar to go through all attributes of this widget

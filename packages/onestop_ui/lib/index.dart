@@ -11,3 +11,5 @@ export 'constants/corner_radius.dart';
 export 'components/text.dart';
 export 'components/osearchbar.dart';
 export 'components/otextfield.dart';
+
+export 'components/cardcomponents/label.dart';
