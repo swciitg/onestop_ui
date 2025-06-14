@@ -41,7 +41,8 @@ class MyApp extends StatelessWidget {
                 OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
                 OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
                 OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),*/
-                OCardLabels(label: "Sub label text", icon: TablerIcons.arrow_rotary_first_left,  isSmall: true,),
+                OLabelGroups(label1: "Label 1", label2: "label 2", isSmall: false,)
+                //OCardLabels(label: "Sub label text", icon: TablerIcons.arrow_rotary_first_left,  isSmall: true,),
 
                 // below are the demo search bars
                 // use ctrl + spacebar to go through all attributes of this widget
