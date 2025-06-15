@@ -13,7 +13,7 @@ class OCardList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(OSpacing.s),
+      padding: EdgeInsets.all(OSpacing.xs),
       decoration: BoxDecoration(color: Colors.transparent),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -23,6 +23,7 @@ class OCardList extends StatelessWidget {
             text: list,
             style: OTextStyle.bodySmall.copyWith(color: OColor.gray800),
           ),
+          const SizedBox(width: OSpacing.m),
           OText(
             text: sublist?.toUpperCase(),
             style: OTextStyle.bodyXSmall.copyWith(color: OColor.gray600),
@@ -57,7 +58,7 @@ class OListGroups extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(OSpacing.s),
+      padding: EdgeInsets.all(OSpacing.xs),
       decoration: BoxDecoration(color: Colors.transparent),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -71,6 +72,7 @@ class OListGroups extends StatelessWidget {
                 text: list1,
                 style: OTextStyle.bodySmall.copyWith(color: OColor.gray800),
               ),
+              const SizedBox(width: OSpacing.m),
               OText(
                 text: sublist1?.toUpperCase(),
                 style: OTextStyle.bodyXSmall.copyWith(color: OColor.gray600),
@@ -85,6 +87,7 @@ class OListGroups extends StatelessWidget {
                 text: list2,
                 style: OTextStyle.bodySmall.copyWith(color: OColor.gray800),
               ),
+              const SizedBox(width: OSpacing.m),
               OText(
                 text: sublist2?.toUpperCase(),
                 style: OTextStyle.bodyXSmall.copyWith(color: OColor.gray600),
@@ -99,6 +102,7 @@ class OListGroups extends StatelessWidget {
                 text: list3,
                 style: OTextStyle.bodySmall.copyWith(color: OColor.gray800),
               ),
+              const SizedBox(width: OSpacing.m),
               OText(
                 text: sublist3?.toUpperCase(),
                 style: OTextStyle.bodyXSmall.copyWith(color: OColor.gray600),
@@ -106,13 +110,14 @@ class OListGroups extends StatelessWidget {
             ],
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               OText(
                 text: list4,
                 style: OTextStyle.bodySmall.copyWith(color: OColor.gray800),
               ),
+              const SizedBox(width: OSpacing.m),
               OText(
                 text: sublist4?.toUpperCase(),
                 style: OTextStyle.bodyXSmall.copyWith(color: OColor.gray600),
