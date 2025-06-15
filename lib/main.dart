@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:onestop_ui/components/cardcomponents/header.dart';
-import 'package:onestop_ui/components/cardcomponents/label.dart';
-import 'package:onestop_ui/utils/colors.dart';
-import 'package:onestop_ui/utils/styles.dart';
-import 'package:onestop_ui/components/text.dart';
-import 'package:onestop_ui/utils/theme.dart';
-import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
-//import 'package:onestop_ui/components/osearchbar.dart';
-//import 'package:onestop_ui/components/otextfield.dart';
+import 'package:onestop_ui/index.dart';
 
 void main() async {
   await GetStorage.init();
@@ -19,7 +11,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  get texteditingcontroller => TextEditingController();
+  //get texteditingcontroller => TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +34,14 @@ class MyApp extends StatelessWidget {
                 OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
                 OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
                 OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),*/
-                OCardHeader(icon: TablerIcons.arrow_rotary_first_left,heading: "Card Header", subheading: "Sub-Heading",)
 
-                //OLabelGroups(label1: "Label 1", label2: "label 2", isSmall: false,)
-                //OCardLabels(label: "Sub label text", icon: TablerIcons.arrow_rotary_first_left,  isSmall: true,),
+                OCardList(list: "List",sublist: "Sub-list",),
+                OListGroups(list1: "List 1",list2: "List 2",list3: "List 3",list4: "List 4", sublist1: "Sub-list 1",sublist2: "Sub-list 2",sublist3: "Sub-list 3",sublist4: "Sub-list 4",)
+                //OCardBlock(header: "BLOCK HEADER", body1: "Block Body 1",body2: "Block Body 2",body3: "Block Body 3",body4: "Block Body 4",),
+                //OCardHeader(icon: TablerIcons.arrow_rotary_first_left,heading: "Card Header", subheading: "Sub-Heading",),
+                //OLabelGroups(label1: "Label 1", label2: "label 2",isSmall: false,),
+                //SizedBox(height: 20,),
+                //OCardLabels(label: "label text", icon: TablerIcons.arrow_rotary_first_left,  isSmall: false,),
 
                 // below are the demo search bars
                 // use ctrl + spacebar to go through all attributes of this widget

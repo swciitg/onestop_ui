@@ -6,16 +6,19 @@ class OCardHeader extends StatelessWidget {
   final IconData? icon;
   final String heading;
   final String? subheading;
+  final Function()? onArrowPressed;
   const OCardHeader({
     super.key,
     this.icon,
     required this.heading,
     this.subheading,
+    this.onArrowPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: OSpacing.s),
       color: Colors.transparent,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -61,7 +64,7 @@ class OCardHeader extends StatelessWidget {
               size: 16,
               color: OColor.gray600,
             ),
-            onPressed: () {},
+            onPressed: onArrowPressed,
           ),
         ],
       ),

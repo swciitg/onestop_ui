@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
-
-import '../../utils/colors.dart';
-import '../../utils/styles.dart';
-import '../text.dart';
+import 'package:onestop_ui/index.dart';
 
 class OCardLabels extends StatelessWidget {
   final IconData icon;
@@ -19,12 +16,14 @@ class OCardLabels extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: OSpacing.s),
       decoration: BoxDecoration(color: Colors.transparent),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Icon(icon, size: 16, color: OColor.gray600),
+          SizedBox(width: OSpacing.s,),
           OText(
             text: label,
             style:
@@ -54,9 +53,10 @@ class OLabelGroups extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: OSpacing.s),
       decoration: BoxDecoration(color: Colors.transparent),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           OText(
@@ -66,7 +66,9 @@ class OLabelGroups extends StatelessWidget {
                     ? OTextStyle.labelXSmall.copyWith(color: OColor.gray600)
                     : OTextStyle.labelSmall.copyWith(color: OColor.gray600),
           ),
+          SizedBox(width: OSpacing.xs,),
           Icon(TablerIcons.point_filled, size: 4, color: OColor.gray600),
+          SizedBox(width: OSpacing.xs,),
           OText(
             text: label2,
             style:
@@ -75,7 +77,11 @@ class OLabelGroups extends StatelessWidget {
                     : OTextStyle.labelSmall.copyWith(color: OColor.gray600),
           ),
           if (label3 != null)
+            SizedBox(width: OSpacing.xs,),
+          if (label3 != null)
             Icon(TablerIcons.point_filled, size: 4, color: OColor.gray600),
+          if (label3 != null)
+            SizedBox(width: OSpacing.xs,),
           OText(
             text: label3,
             style:

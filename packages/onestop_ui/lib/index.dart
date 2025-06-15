@@ -13,3 +13,6 @@ export 'components/osearchbar.dart';
 export 'components/otextfield.dart';
 
 export 'components/cardcomponents/label.dart';
+export 'components/cardcomponents/header.dart';
+export 'components/cardcomponents/card_List.dart';
+export 'components/cardcomponents/cardblock.dart';
