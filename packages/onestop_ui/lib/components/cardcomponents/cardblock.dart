@@ -28,7 +28,7 @@ class OCardBlock extends StatelessWidget {
           blockItems.isEmpty
               ? OText(
                 text: "No items",
-                style: OTextStyle.bodySmall.copyWith(color: OColor.gray600),
+                style: OTextStyle.bodySmall.copyWith(color: OColor.gray700),
               )
               : ListView.builder(
                 shrinkWrap: true,
