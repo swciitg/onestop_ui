@@ -30,34 +30,68 @@ class MyApp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
+                /*OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
                 OText(text: 'Hello, World!', style: OTextStyle.bodyLarge),
                 OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
                 OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
-                OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),
+                OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),*/
 
                 // below  is the demo code snippet for the card components
-                /*OCardHeader(icon: TablerIcons.arrow_rotary_first_left,heading: "Card Header", subheading: "Sub-Heading",),
+                OCardHeader(
+                  icon: TablerIcons.arrow_rotary_first_left,
+                  heading: "Card Header",
+                  subheading: "Sub-Heading",
+                ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    OCardLabels(label: "label text", icon: TablerIcons.arrow_rotary_first_left,  isSmall: false,),
-                    OLabelGroups(label1: "Label 1", label2: "label 2", label3: "label3" ,isSmall: false,),
+                    Expanded(
+                      child: OCardLabels(
+                        label: "label text",
+                        icon: TablerIcons.arrow_rotary_first_left,
+                        isSmall: false,
+                      ),
+                    ),
+                    Expanded(
+                      child: OLabelGroups(
+                        labelItems: ["Label 1", "label 2", "label3"],
+                        isSmall: false,
+                      ),
+                    ),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    OCardBlock(header: "BLOCK HEADER", body1: "Block Body 1",body2: "Block Body 2",body3: "Block Body 3",body4: "Block Body 4",),
-                    Column(
-                      children: [
-                        OCardList(list: "List",sublist: "Sub-list",),
-                        OListGroups(list1: "List 1",list2: "List 2",list3: "List 3",list4: "List 4", sublist1: "Sub-list 1",sublist2: "Sub-list 2",sublist3: "Sub-list 3",sublist4: "Sub-list 4",)
-                      ],
-                    )
-
+                    Expanded(
+                      child: OCardBlock(
+                        header: "BLOCK HEADER",
+                        blockItems: [
+                          'Block Body 1',
+                          'Block Body 2',
+                          'Block Body 3',
+                          'Block Body 4',
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          OCardList(list: "List", sublist: "Sub-list"),
+                          OListGroups(
+                            list: ['list 1', 'list 2', 'list 3', 'list 4'],
+                            sublist: [
+                              'sub-list 1',
+                              'sub-list 2',
+                              'sub-list 3',
+                              'sub-list 4',
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
-                )*/
+                ),
 
                 //// below are the demo search bars
                 // use ctrl + spacebar to go through all attributes of this widget
