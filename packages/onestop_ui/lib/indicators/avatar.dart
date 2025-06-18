@@ -1,23 +1,33 @@
 import 'package:flutter/material.dart';
 
-class Avatar extends StatelessWidget {
-  String url;
-  String Size;
-  Avatar({required this.Size, required this.url, super.key});
+enum AvatarSize { small, medium, large }
+
+class OAvatar extends StatelessWidget {
+  final String url;
+  final AvatarSize size;
+
+  const OAvatar({required this.size, required this.url, super.key});
+
+  double getSizeValue() {
+    switch (size) {
+      case AvatarSize.small:
+        return 24;
+      case AvatarSize.medium:
+        return 36;
+      case AvatarSize.large:
+        return 48;
+    }
+  }
 
   @override
-  double? size;
   Widget build(BuildContext context) {
-    String Size_ = Size.toLowerCase();
+    final double avatarSize = getSizeValue();
 
-    if (Size_ == 'small') size = 24;
-    if (Size_ == 'medium') size = 36;
-    if (Size_ == 'large') size = 48;
     return Container(
-      height: size,
-      //width: 60,
+      height: avatarSize,
+      width: avatarSize,
       child: CircleAvatar(
-        radius: (size! / 2),
+        radius: avatarSize / 2,
         backgroundImage: NetworkImage(url),
       ),
     );
