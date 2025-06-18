@@ -31,8 +31,6 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_tabler_icons: ^1.43.0
-  # onestop_ui:
-  #   path: packages/onestop_ui/lib/onestop_ui.dart
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

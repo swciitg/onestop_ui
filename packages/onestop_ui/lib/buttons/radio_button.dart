@@ -7,11 +7,11 @@ class RadioButton extends StatelessWidget {
   final bool isEnabled;
 
   const RadioButton({
-    Key? key,
+    super.key,
     required this.value,
     required this.onChanged,
     this.isEnabled = true,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

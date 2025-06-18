@@ -38,16 +38,10 @@ class Profile extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                Name,
-                style: OTextStyle.labelSmall.copyWith(color: OColor.gray800),
-              ),
+              Text(Name, style: OTextStyle.labelSmall.copyWith(color: OColor.gray800)),
 
               if (info != null && info!.isNotEmpty && Size != 'Small')
-                Text(
-                  info!,
-                  style: OTextStyle.bodyXSmall.copyWith(color: OColor.gray600),
-                ),
+                Text(info!, style: OTextStyle.bodyXSmall.copyWith(color: OColor.gray600)),
             ],
           ),
           SizedBox(width: 8),

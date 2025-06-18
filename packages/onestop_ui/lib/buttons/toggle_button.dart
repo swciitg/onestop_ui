@@ -11,7 +11,7 @@ class ToggleButton extends StatelessWidget {
   // final TextStyle? subLabelStyle;
 
   const ToggleButton({
-    Key? key,
+    super.key,
     required this.value,
     required this.onChanged,
     this.isEnabled = true,
@@ -31,7 +31,7 @@ class ToggleButton extends StatelessWidget {
     //               fontWeight: FontWeight.w400,
     //               height: 1.50,
     //             ),
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
