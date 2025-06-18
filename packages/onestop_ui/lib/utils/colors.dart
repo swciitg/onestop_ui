@@ -4,11 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:onestop_ui/utils/theme.dart';
 
 class _OColor {
-
   bool get lightTheme => OTheme.currentTheme == Brightness.light;
 
   // Green colors
-  Color get green100 => lightTheme ? Color(0xFFDCEFE4) : Color(0xFF1B2921) ;
+  Color get green100 => lightTheme ? Color(0xFFDCEFE4) : Color(0xFF1B2921);
   Color get green200 => lightTheme ? Color(0xFF7AEBA7) : Color(0xFF7AEBA7);
   Color get green300 => lightTheme ? Color(0xFF52D09B) : Color(0xFF52E08B);
   Color get green400 => lightTheme ? Color(0xFF2FD06F) : Color(0xFF27D06F);
@@ -18,6 +17,10 @@ class _OColor {
   Color get green800 => lightTheme ? Color(0xFF003314) : Color(0xFF003314);
 
   // Blue colors (Accent)
+  Color get blue50 =>
+      lightTheme
+          ? Color(0xFFE5F1FF)
+          : Colors.red; //I NEED HELP!, im not sure of the color
   Color get blue100 => lightTheme ? Color(0xFFEDDFFF) : Color(0xFF012151);
   Color get blue200 => lightTheme ? Color(0xFF8AAFFF) : Color(0xFF80B2FF);
   Color get blue300 => lightTheme ? Color(0xFF4D9AFE) : Color(0xFF66A3FF);

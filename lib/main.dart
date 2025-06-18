@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     OTheme.setTheme(Brightness.light);
     return MaterialApp(
-      title: 'OneStop UI Demo',
       debugShowCheckedModeBanner: false,
+      title: 'OneStop UI Demo',
       theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: OColor.green600)),
       home: MyHomePage(title: "OneStop UI Demo"),
     );
@@ -43,10 +43,46 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.white, title: Text(widget.title)),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            OText(text: 'Hello, World!', style: OTextStyle.bodyLarge),
+            OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
+            OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
+            my_Badge(type: 'Warning'),
+            Tag(type: '', lead: Icons.abc_outlined, label: "LABEL", trail: Icons.arrow_back),
+            Tag(
+              type: 'NEutral',
+              lead: Icons.abc_outlined,
+              label: 'popopo',
+              trail: Icons.abc_outlined,
+            ),
+            banner(
+              type: "Accent",
+
+              icontype: 'Done',
+              my_button: IconButton(onPressed: () {}, icon: Icon(Icons.fullscreen_exit)),
+              headline: "Headline text",
+              paragraph: "Paragraph text",
+            ),
+            OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),
+
+            StepProgressIndicator(
+              numberOfSteps: 4,
+              currentStep: 3,
+              stepNames: ['ALERT BOX', 'B', 'c', 'dddd'],
+            ),
+            Avatar(
+              Size: 'Medium',
+              url: 'https://motionbgs.com/media/2001/miles-morales-in-multiverse.jpg',
+            ),
+            Profile(
+              Size: 'Small',
+              url: 'https://motionbgs.com/media/2001/miles-morales-in-multiverse.jpg',
+              Name: 'Name',
+              info: 'Add. info',
+            ),
             PrimaryButton(
               onPressed: () {},
               label: 'Hello',
