@@ -37,7 +37,6 @@ class OProfile extends StatelessWidget {
     final avatarSize = _getSize();
 
     return Container(
-      color: Colors.amber[50],
       padding: const EdgeInsets.symmetric(vertical: 3),
       child: Row(
         mainAxisSize: MainAxisSize.min,
