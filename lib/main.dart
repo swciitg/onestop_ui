@@ -35,9 +35,42 @@ class MyApp extends StatelessWidget {
                 OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
                 OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
                 OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),*/
-
+                Row(
+                  children: [
+                    Expanded(
+                      child: OHomeCard(
+                        onArrowPressed: (){},
+                        icon: TablerIcons.arrow_rotary_first_left,
+                        header: "Card Header",
+                        labelItems: ["Label 1", "label 2"],
+                        listItems: ['list 1', 'list 2', 'list 3', 'list 4'],
+                        subListItems: [
+                          'sub-list 1',
+                          'sub-list 2',
+                          'sub-list 3',
+                          'sub-list 4',
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: OHomeCard(
+                        onArrowPressed: (){},
+                        icon: TablerIcons.arrow_rotary_first_left,
+                        header: "Card Header",
+                        labelItems: ["Label 1", "label 2"],
+                        listItems: ['list 1', 'list 2', 'list 3', 'list 4'],
+                        subListItems: [
+                          'sub-list 1',
+                          'sub-list 2',
+                          'sub-list 3',
+                          'sub-list 4',
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
                 // below  is the demo code snippet for the card components
-                OCardHeader(
+                /*OCardHeader(
                   icon: TablerIcons.arrow_rotary_first_left,
                   heading: "Card Header",
                   subheading: "Sub-Heading",
@@ -64,14 +97,17 @@ class MyApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Expanded(
-                      child: OCardBlock(
-                        header: "BLOCK HEADER",
-                        blockItems: [
-                          'Block Body 1',
-                          'Block Body 2',
-                          'Block Body 3',
-                          'Block Body 4',
-                        ],
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: OCardBlock(
+                          header: "BLOCK HEADER",
+                          blockItems: [
+                            'Block Body 1',
+                            'Block Body 2',
+                            'Block Body 3',
+                            'Block Body 4',
+                          ],
+                        ),
                       ),
                     ),
                     Expanded(
@@ -91,7 +127,7 @@ class MyApp extends StatelessWidget {
                       ),
                     ),
                   ],
-                ),
+                ),*/
 
                 //// below are the demo search bars
                 // use ctrl + spacebar to go through all attributes of this widget
@@ -112,13 +148,13 @@ class MyApp extends StatelessWidget {
                   controller: texteditingcontroller,
                   enabled: true,
                   content: "Enabled 2",
-                ),*/
+                ),
 
                 // below are the demo text fields
                 // 2 of them are enabled and 2 of them are disabled for single lines and paragraph each
                 // text field changes color from green600 to red500 on exceeding maximum char length
 
-                /*OTextField(
+                OTextField(
                   label: 'Label',
                   controller: texteditingcontroller,
                   enabled: false,
