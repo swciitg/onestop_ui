@@ -8,9 +8,11 @@ export 'constants/spacing.dart';
 export 'constants/icon_stroke.dart';
 export 'constants/corner_radius.dart';
 
+//textfields
 export 'components/text.dart';
 export 'components/osearchbar.dart';
 export 'components/otextfield.dart';
+export 'widget_demo/textfields_demo.dart';
 
 export 'buttons/button_exports.dart';
 export 'indicators/avatar.dart';
