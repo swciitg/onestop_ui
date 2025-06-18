@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 import 'package:get_storage/get_storage.dart';
-// import 'package:onestop_ui/utils/colors.dart';
-// import 'package:onestop_ui/utils/styles.dart';
-// import 'package:onestop_ui/components/text.dart';
-// import 'package:onestop_ui/utils/theme.dart';
 import 'package:onestop_ui/index.dart';
-
 
 void main() async {
   await GetStorage.init();
@@ -22,30 +17,12 @@ class MyApp extends StatelessWidget {
     OTheme.setTheme(Brightness.light);
     return MaterialApp(
       title: 'OneStop UI Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: OColor.green600)),
-      home: MyHomePage(title: 'Buttons',)/* Scaffold(
-        backgroundColor: OColor.red400,
-        body: SafeArea(
-          child: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
-                OText(text: 'Hello, World!', style: OTextStyle.bodyLarge),
-                OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
-                OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
-                OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),
-              ],
-            ),
-          ),
-        ),
-      ), */
-
+      home: MyHomePage(title: "OneStop UI Demo"),
     );
   }
 }
-
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -60,13 +37,12 @@ class _MyHomePageState extends State<MyHomePage> {
   bool _radio = false;
   bool _toggle = false;
   bool _toggle2 = false;
+  final TextEditingController texteditingcontroller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor:Colors.white ,
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(backgroundColor: Colors.white, title: Text(widget.title)),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -118,7 +94,6 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisSize: MainAxisSize.min,
               // mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-              
                 SizedBox(width: 20),
                 RadioButton(
                   isEnabled: true,
@@ -150,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: 20),
             ToggleButton(
               value: selected,
               onChanged: (val) {
@@ -183,21 +158,19 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                CircularButton(
-                  icon: TablerIcons.arrow_rotary_first_left,
-                  onPressed: () {},
-                ),
-                SizedBox(width: 5,),
+                CircularButton(icon: TablerIcons.arrow_rotary_first_left, onPressed: () {}),
+                SizedBox(width: 5),
                 CircularButton(
                   icon: TablerIcons.arrow_rotary_first_left,
                   onPressed: () {},
                   enabled: false,
-                ),CircularButton(
+                ),
+                CircularButton(
                   size: CircularButtonSize.small,
                   icon: TablerIcons.arrow_rotary_first_left,
                   onPressed: () {},
                 ),
-                SizedBox(width: 5,),
+                SizedBox(width: 5),
                 CircularButton(
                   size: CircularButtonSize.small,
                   icon: TablerIcons.arrow_rotary_first_left,
@@ -206,8 +179,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-            
-            SizedBox(height: 20,),
+
+            SizedBox(height: 20),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -216,19 +189,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {},
                   bgColor: Colors.transparent,
                 ),
-                SizedBox(width: 5,),
+                SizedBox(width: 5),
                 CircularButton(
                   icon: TablerIcons.arrow_rotary_first_left,
                   onPressed: () {},
                   bgColor: Colors.transparent,
                   enabled: false,
-                ),CircularButton(
+                ),
+                CircularButton(
                   size: CircularButtonSize.small,
                   icon: TablerIcons.arrow_rotary_first_left,
                   onPressed: () {},
                   bgColor: Colors.transparent,
                 ),
-                SizedBox(width: 5,),
+                SizedBox(width: 5),
                 CircularButton(
                   size: CircularButtonSize.small,
                   icon: TablerIcons.arrow_rotary_first_left,
@@ -237,6 +211,69 @@ class _MyHomePageState extends State<MyHomePage> {
                   enabled: false,
                 ),
               ],
+            ),
+
+            OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
+            OText(text: 'Hello, World!', style: OTextStyle.bodyLarge),
+            OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
+            OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
+            OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),
+
+            // below are the demo search bars
+            // use ctrl + spacebar to go through all attributes of this widget
+            // uncomment the dependencies at top of the file to use these
+            OSearchBar(content: "Enabled 1", controller: texteditingcontroller, enabled: true),
+            const SizedBox(height: 20),
+            OSearchBar(
+              content: "Disabled Search bar",
+              controller: texteditingcontroller,
+              enabled: false,
+            ),
+            const SizedBox(height: 20),
+            OSearchBar(controller: texteditingcontroller, enabled: true, content: "Enabled 2"),
+
+            // below are the demo text fields
+            // 2 of them are enabled and 2 of them are disabled for single lines and paragraph each
+            // text field changes color from green600 to red500 on exceeding maximum char length
+            OTextField(
+              label: 'Label',
+              controller: texteditingcontroller,
+              enabled: false,
+              hint: "Hint",
+              content: "Context",
+              suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
+              maxLength: 200, //adjust the input length according to your requirement
+              isParagraph: false, // toggle b/w the singleline and paragraph mode
+            ),
+            OTextField(
+              label: 'Label',
+              controller: texteditingcontroller,
+              enabled: true,
+              hint: "Hint",
+              content: "Context",
+              suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
+              maxLength: 200, //adjust the input length according to your requirement
+              isParagraph: false, // toggle b/w the singleline and paragraph mode
+            ),
+            OTextField(
+              label: 'Label',
+              controller: texteditingcontroller,
+              enabled: false,
+              hint: "Hint",
+              content: "Context",
+              suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
+              maxLength: 200, //adjust the input length according to your requirement
+              isParagraph: true, // toggle b/w the singleline and paragraph mode
+            ),
+            OTextField(
+              label: 'Label',
+              controller: texteditingcontroller,
+              enabled: true,
+              hint: "Hint",
+              content: "Context",
+              suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
+              maxLength: 200, //adjust the input length according to your requirement
+              isParagraph: true, // toggle b/w the singleline and paragraph mode
             ),
           ],
         ),
