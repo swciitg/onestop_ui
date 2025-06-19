@@ -28,7 +28,7 @@ class Status_Indicator extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: OTextStyle.lableXSmall.copyWith(color: color_fg),
+        style: OTextStyle.labelXSmall.copyWith(color: color_fg),
       ),
     );
   }
