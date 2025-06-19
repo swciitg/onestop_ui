@@ -57,7 +57,7 @@ class OBanner extends StatelessWidget {
           children: [
             Row(
               children: [
-                Container(
+                SizedBox(
                   height: 32,
                   width: 32,
                   child: Center(

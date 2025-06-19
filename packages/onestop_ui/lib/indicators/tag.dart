@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:onestop_ui/index.dart';
-import 'package:onestop_ui/utils/colors.dart';
 
 enum TagType { accentColor, neutral }
 
