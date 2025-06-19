@@ -1,16 +1,14 @@
-# onestop_ui_screen
+# onestop_ui
 
-A new Flutter project.
+This library provides all the necessary UI components for the development of main Onestop Flutter application.
 
 ## Getting Started
+All the UI components are actively developed and being pushed to dev branch so kindly keep your forks updated with dev branch of this library
+currently following components are ready for being used and pushed to dev branch -
+- Theme - OColors, OText, OTextSyles, OCornerRadius, OSpacing, and other base constants
+- Indicators - Banners, Status, Avatar, Badges , Tags, Progress indicator
+- List Tiles
+- Textfields - OTextfields , OSearchbar
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Need Help?
+If experience any issue in this repo or require some other component please raise an issue we will try to address it as soon as possible
