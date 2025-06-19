@@ -67,31 +67,36 @@ class _OHomeCardState extends State<OHomeCard> {
               ],
             ),
           ),
-          MaterialButton(
-            onPressed: () {},
-            shape: RoundedRectangleBorder(
-              side: BorderSide(color: OColor.gray300, width: 1),
-              borderRadius: BorderRadius.all(
-                Radius.circular(OCornerRadius.l),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              MaterialButton(
+                onPressed: () {},
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: OColor.gray300, width: 1),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(OCornerRadius.l),
+                  ),
+                ),
+                child: OText(
+                  text: 'Label',
+                  style: OTextStyle.labelSmall.copyWith(color: OColor.green600),
+                ),
               ),
-            ),
-            child: OText(
-              text: 'Label',
-              style: OTextStyle.labelSmall.copyWith(color: OColor.green600),
-            ),
-          ),
-          MaterialButton(
-            onPressed: () {},
-            shape: RoundedRectangleBorder(
-              side: BorderSide(color: OColor.gray300, width: 1),
-              borderRadius: BorderRadius.all(
-                Radius.circular(OCornerRadius.l),
+              MaterialButton(
+                onPressed: () {},
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: OColor.gray300, width: 1),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(OCornerRadius.l),
+                  ),
+                ),
+                child: OText(
+                  text: 'Label 2',
+                  style: OTextStyle.labelSmall.copyWith(color: OColor.green600),
+                ),
               ),
-            ),
-            child: OText(
-              text: 'Label 2',
-              style: OTextStyle.labelSmall.copyWith(color: OColor.green600),
-            ),
+            ],
           ),
         ],
       ),
