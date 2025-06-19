@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:onestop_ui/index.dart';
 
@@ -11,8 +10,6 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  //get texteditingcontroller => TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,139 +23,22 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
           child: Center(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                /*OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
-                OText(text: 'Hello, World!', style: OTextStyle.bodyLarge),
-                OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
-                OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
-                OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),*/
-
-                // below  is the demo code snippet for the card components
-                OCardHeader(
-                  icon: TablerIcons.arrow_rotary_first_left,
-                  heading: "Card Header",
-                  subheading: "Sub-Heading",
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
+            child: SingleChildScrollView(
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Expanded(
-                      child: OCardLabels(
-                        label: "label text",
-                        icon: TablerIcons.arrow_rotary_first_left,
-                        isSmall: false,
-                      ),
-                    ),
-                    Expanded(
-                      child: OLabelGroups(
-                        labelItems: ["Label 1", "label 2", "label3"],
-                        isSmall: false,
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Expanded(
-                      child: OCardBlock(
-                        header: "BLOCK HEADER",
-                        blockItems: [
-                          'Block Body 1',
-                          'Block Body 2',
-                          'Block Body 3',
-                          'Block Body 4',
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        children: [
-                          OCardList(list: "List", sublist: "Sub-list"),
-                          OListGroups(
-                            list: ['list 1', 'list 2', 'list 3', 'list 4'],
-                            sublist: [
-                              'sub-list 1',
-                              'sub-list 2',
-                              'sub-list 3',
-                              'sub-list 4',
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-
-                //// below are the demo search bars
-                // use ctrl + spacebar to go through all attributes of this widget
-                // uncomment the dependencies at top of the file to use these
-                /*OSearchBar(
-                  content: "Enabled 1",
-                  controller: texteditingcontroller,
-                  enabled: true,
-                ),
-                const SizedBox(height:20),
-                OSearchBar(
-                  content: "Disabled Search bar",
-                  controller: texteditingcontroller,
-                  enabled: false,
-                ),
-                const SizedBox(height:20),
-                OSearchBar(
-                  controller: texteditingcontroller,
-                  enabled: true,
-                  content: "Enabled 2",
-                ),*/
-
-                // below are the demo text fields
-                // 2 of them are enabled and 2 of them are disabled for single lines and paragraph each
-                // text field changes color from green600 to red500 on exceeding maximum char length
-
-                /*OTextField(
-                  label: 'Label',
-                  controller: texteditingcontroller,
-                  enabled: false,
-                  hint: "Hint",
-                  content: "Context",
-                  suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
-                  maxLength: 200,   //adjust the input length according to your requirement
-                  isParagraph: false, // toggle b/w the singleline and paragraph mode
-                ),
-                OTextField(
-                  label: 'Label',
-                  controller: texteditingcontroller,
-                  enabled: true,
-                  hint: "Hint",
-                  content: "Context",
-                  suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
-                  maxLength: 200,  //adjust the input length according to your requirement
-                  isParagraph: false, // toggle b/w the singleline and paragraph mode
-                ),
-                OTextField(
-                  label: 'Label',
-                  controller: texteditingcontroller,
-                  enabled: false,
-                  hint: "Hint",
-                  content: "Context",
-                  suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
-                  maxLength: 200,  //adjust the input length according to your requirement
-                  isParagraph: true, // toggle b/w the singleline and paragraph mode
-                ),
-                OTextField(
-                  label: 'Label',
-                  controller: texteditingcontroller,
-                  enabled: true,
-                  hint: "Hint",
-                  content: "Context",
-                  suffixIcon: Icon(Icons.abc_sharp), // add any icon of your choice
-                  maxLength: 200, //adjust the input length according to your requirement
-                  isParagraph: true, // toggle b/w the singleline and paragraph mode
-                ),*/
-              ],
+                    OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
+                    OText(text: 'Hello, World!', style: OTextStyle.bodyLarge),
+                    OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
+                    OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
+                    OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),
+                    const SizedBox(height:20),
+                    CardsDemo(),
+                    const SizedBox(height:20),
+                    TextfieldsDemo(),
+                  ]
+              ),
             ),
           ),
         ),
