@@ -7,8 +7,7 @@ class ToggleButton extends StatelessWidget {
   final bool isEnabled;
   final String? labelText;
   final String? subLabelText;
-  // final TextStyle? labelStyle;
-  // final TextStyle? subLabelStyle;
+  final EdgeInsets? padding;
 
   const ToggleButton({
     super.key,
@@ -16,21 +15,7 @@ class ToggleButton extends StatelessWidget {
     required this.onChanged,
     this.isEnabled = true,
     this.labelText,
-    this.subLabelText, 
-    // this.labelStyle = const TextStyle(
-    //               color: OColor.gray800 ,
-    //               fontSize: 16,
-    //               fontFamily: 'Geist',
-    //               fontWeight: FontWeight.w500,
-    //               height: 1.50,
-    //             ), 
-    // this.subLabelStyle = const TextStyle(
-    //               color: OColor.gray600,
-    //               fontSize: 16,
-    //               fontFamily: 'Geist',
-    //               fontWeight: FontWeight.w400,
-    //               height: 1.50,
-    //             ),
+    this.subLabelText, this.padding, 
   });
 
   @override
@@ -54,7 +39,7 @@ class ToggleButton extends StatelessWidget {
             duration: const Duration(milliseconds: 200),
             width: 36,
             height: 20,
-            padding: const EdgeInsets.all(2),
+            padding:padding?? const EdgeInsets.all(2),
             decoration: BoxDecoration(
               color: bgColor,
               borderRadius: BorderRadius.circular(8),
@@ -93,31 +78,5 @@ class ToggleButton extends StatelessWidget {
         ),
       ],
     );
-    /* 
-    return GestureDetector(
-      onTap: isEnabled && onChanged != null ? () => onChanged!(!value) : null,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        width: 36,
-        height: 20,
-        padding: const EdgeInsets.all(2),
-        decoration: BoxDecoration(
-          color: bgColor,
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: AnimatedAlign(
-          duration: const Duration(milliseconds: 200),
-          alignment: value ? Alignment.centerRight : Alignment.centerLeft,
-          child: Container(
-            width: 16,
-            height: 16,
-            decoration: BoxDecoration(
-              color: thumbColor,
-              borderRadius: BorderRadius.circular(6),
-            ),
-          ),
-        ),
-      ),
-    ); */
   }
 }

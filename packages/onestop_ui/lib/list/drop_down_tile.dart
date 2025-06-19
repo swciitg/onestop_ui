@@ -15,7 +15,7 @@ class DropdownField extends StatelessWidget {
   final double overlayHeight;
   final List<String> items;
   final String? hintText;
-
+  final Widget Function(BuildContext context, String str, bool val, VoidCallback callback)? listItemBuilder;
 
   const DropdownField({
     super.key,
@@ -26,7 +26,7 @@ class DropdownField extends StatelessWidget {
     this.selectedValue,
     this.isEnabled = true,
     required this.items,
-    this.hintText,
+    this.hintText, this.listItemBuilder,
   });
 
   @override
@@ -74,23 +74,23 @@ class DropdownField extends StatelessWidget {
         
         
 
-        listItemBuilder: (context, item, isSelected, onItemSelect) {
-          return ListTile(
-            contentPadding: EdgeInsets.only(left: 24),
-            // leading: Icon(Icons.alarm),
-            title: Text(
-              item,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 15,
-                fontFamily: 'Geist',
-                fontWeight: FontWeight.w400,
-                height: 1.56,
-              ),
+        listItemBuilder: listItemBuilder ??
+            (context, item, isSelected, onItemSelect) {
+              return ListTile(
+          contentPadding: EdgeInsets.only(left: 24),
+          title: Text(
+            item,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 15,
+              fontFamily: 'Geist',
+              fontWeight: FontWeight.w400,
+              height: 1.56,
             ),
-            tileColor: isSelected ? OColor.gray200 : Colors.transparent,
-          );
-        },
+          ),
+          tileColor: isSelected ? OColor.gray200 : Colors.transparent,
+              );
+            },
 
         headerBuilder: (context, selectedItem, enabled) {
           return Text(
