@@ -14,6 +14,10 @@ class CardsDemo extends StatelessWidget {
             children: [
               Expanded(
                 child: OHomeCard(
+                  activateButton1: true,
+                  activateButton2: true,
+                  buttonAction1: (){},
+                  buttonAction2: (){},
                   onArrowPressed: (){},
                   icon: TablerIcons.arrow_rotary_first_left,
                   header: "Card Header",
@@ -29,7 +33,11 @@ class CardsDemo extends StatelessWidget {
               ),
               Expanded(
                 child: OHomeCard(
+                  activateButton2: true,
+                  activateButton1: true,
                   onArrowPressed: (){},
+                  buttonAction1: (){},
+                  buttonAction2: (){},
                   icon: TablerIcons.arrow_rotary_first_left,
                   header: "Card Header",
                   labelItems: ["Label 1", "label 2"],

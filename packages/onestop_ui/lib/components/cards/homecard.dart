@@ -10,6 +10,10 @@ class OHomeCard extends StatefulWidget {
   final List<String> listItems;
   final List<String> subListItems;
   final List<String> labelItems;
+  final bool activateButton1;
+  final bool activateButton2;
+  final Function()? buttonAction1;
+  final Function()? buttonAction2;
   const OHomeCard({
     super.key,
     required this.header,
@@ -18,6 +22,10 @@ class OHomeCard extends StatefulWidget {
     required this.subListItems,
     required this.labelItems,
     this.onArrowPressed,
+    this.buttonAction1,
+    this.buttonAction2,
+    this.activateButton1 = false,
+    this.activateButton2 = false,
   });
 
   @override
@@ -67,11 +75,14 @@ class _OHomeCardState extends State<OHomeCard> {
               ],
             ),
           ),
+          // these buttons has to be replaced by secondary buttons
+          if(widget.activateButton2 || widget.activateButton1 == true )
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              if(widget.activateButton1 == true )
               MaterialButton(
-                onPressed: () {},
+                onPressed: widget.buttonAction1,
                 shape: RoundedRectangleBorder(
                   side: BorderSide(color: OColor.gray300, width: 1),
                   borderRadius: BorderRadius.all(
@@ -79,12 +90,13 @@ class _OHomeCardState extends State<OHomeCard> {
                   ),
                 ),
                 child: OText(
-                  text: 'Label',
+                  text: 'Label 1',
                   style: OTextStyle.labelSmall.copyWith(color: OColor.green600),
                 ),
               ),
+              if(widget.activateButton2 == true )
               MaterialButton(
-                onPressed: () {},
+                onPressed: widget.buttonAction2,
                 shape: RoundedRectangleBorder(
                   side: BorderSide(color: OColor.gray300, width: 1),
                   borderRadius: BorderRadius.all(

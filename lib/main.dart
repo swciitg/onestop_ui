@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
                     OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),
                     const SizedBox(height:20),
                     CardsDemo(),
+                    const SizedBox(height:20),
                     TextfieldsDemo(),
                   ]
               ),
