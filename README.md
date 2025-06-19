@@ -9,6 +9,7 @@ currently following components are ready for being used and pushed to dev branch
 - Indicators - Banners, Status, Avatar, Badges , Tags, Progress indicator
 - List Tiles
 - Textfields - OTextfields , OSearchbar
+- Cards - OHomeCards (small)
 
 ## Need Help?
 If experience any issue in this repo or require some other component please raise an issue we will try to address it as soon as possible

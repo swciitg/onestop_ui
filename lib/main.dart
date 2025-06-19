@@ -25,16 +25,18 @@ class MyApp extends StatelessWidget {
           child: Center(
             child: SingleChildScrollView(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
-                  OText(text: 'Hello, World!', style: OTextStyle.bodyLarge),
-                  OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
-                  OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
-                  OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),
-                  const SizedBox(height:20),
-                  TextfieldsDemo(),
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
+                    OText(text: 'Hello, World!', style: OTextStyle.bodyLarge),
+                    OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
+                    OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
+                    OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),
+                    const SizedBox(height:20),
+                    CardsDemo(),
+                    const SizedBox(height:20),
+                    TextfieldsDemo(),
                   ]
               ),
             ),
