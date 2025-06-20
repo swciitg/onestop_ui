@@ -77,7 +77,9 @@ class _OTextFieldState extends State<OTextField> {
                   text: widget.label,
                   style:
                       widget.enabled
-                          ? OTextStyle.labelMedium.copyWith(color: OColor.gray800)
+                          ? OTextStyle.labelMedium.copyWith(
+                            color: OColor.gray800,
+                          )
                           : OTextStyle.labelMedium.copyWith(
                             color: OColor.gray200,
                           ),
@@ -89,7 +91,9 @@ class _OTextFieldState extends State<OTextField> {
                   style:
                       widget.enabled
                           ? OTextStyle.bodySmall.copyWith(color: OColor.gray600)
-                          : OTextStyle.bodySmall.copyWith(color: OColor.gray200),
+                          : OTextStyle.bodySmall.copyWith(
+                            color: OColor.gray200,
+                          ),
                 ),
               ],
             ),
@@ -106,7 +110,7 @@ class _OTextFieldState extends State<OTextField> {
                           : OColor.gray200,
                   width: _isFocused ? 2 : 1,
                 ),
-                color: Colors.transparent,
+                color: OColor.white,
               ),
               child: TextField(
                 controller: widget.controller,
@@ -133,9 +137,7 @@ class _OTextFieldState extends State<OTextField> {
                           : widget.content,
                   hintStyle:
                       widget.enabled
-                          ? OTextStyle.bodySmall.copyWith(
-                            color: OColor.gray600,
-                          )
+                          ? OTextStyle.bodySmall.copyWith(color: OColor.gray600)
                           : OTextStyle.bodySmall.copyWith(
                             color: OColor.gray200,
                           ),
@@ -143,7 +145,7 @@ class _OTextFieldState extends State<OTextField> {
                   suffixIcon:
                       widget.isParagraph
                           ? Align(
-                            alignment:Alignment(0, -2),
+                            alignment: Alignment(0, -2),
                             widthFactor: 1,
                             heightFactor: 1,
                             child:

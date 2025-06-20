@@ -27,7 +27,7 @@ class OMessMenuCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.transparent,
+        color: OColor.white,
         borderRadius: BorderRadius.all(Radius.circular(OCornerRadius.l)),
         border: Border.all(color: OColor.gray200, width: 1),
       ),

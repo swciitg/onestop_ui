@@ -5,7 +5,9 @@ import 'package:onestop_ui/utils/theme.dart';
 
 class _OColor {
   bool get lightTheme => OTheme.currentTheme == Brightness.light;
-
+  //BW color
+  Color get white => lightTheme ? Color(0xFFFFFFFF) : Color(0xFF1E202D);
+  Color get black => lightTheme ? Color(0xFF000000) : Color(0xFFFDFDFC);
   // Green colors
   Color get green100 => lightTheme ? Color(0xFFDCEFE4) : Color(0xFF1B2921);
   Color get green200 => lightTheme ? Color(0xFF7AEBA7) : Color(0xFF7AEBA7);

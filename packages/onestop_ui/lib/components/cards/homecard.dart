@@ -44,7 +44,7 @@ class _OHomeCardState extends State<OHomeCard> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: _isPressed ? OColor.gray200 : Colors.transparent,
+        color: _isPressed ? OColor.gray200 : OColor.white,
         borderRadius: BorderRadius.all(Radius.circular(OCornerRadius.l)),
         border: Border.all(color: OColor.gray200, width: 1),
       ),

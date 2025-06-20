@@ -76,8 +76,8 @@ class _OSearchBarState extends State<OSearchBar> {
                 widget.enabled
                     ? _isPressed
                         ? OColor.gray200
-                        : Colors.transparent
-                    : Colors.transparent,
+                        : OColor.white
+                    : OColor.white,
           ), // this still renders the animation but the color is transparent in case of disabled button
           // this can be improved in future
           child: Row(
