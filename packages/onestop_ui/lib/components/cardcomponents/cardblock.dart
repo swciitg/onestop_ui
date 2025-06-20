@@ -4,19 +4,23 @@ import 'package:onestop_ui/index.dart';
 class OCardBlock extends StatelessWidget {
   final String header;
   final List<String> blockItems;
-  const OCardBlock({super.key, required this.header, required this.blockItems});
+  final Color color;
+  const OCardBlock({
+    super.key,
+    required this.header,
+    required this.blockItems,
+    this.color = Colors.transparent,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(OSpacing.xs),
       child: Container(
-        padding: EdgeInsets.all(
-          OSpacing.xs,
-        ),
+        padding: EdgeInsets.all(OSpacing.xs),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(OCornerRadius.s)),
-          color: OColor.gray100,
+          color: color,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
