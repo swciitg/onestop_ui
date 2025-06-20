@@ -10,6 +10,18 @@ class CardsDemo extends StatelessWidget {
     return SizedBox(
       child: Column(
         children: [
+          FoodOutletCard(
+            heading: "Card Header",
+            imageProvider: Icon(TablerIcons.outlet),// imageProvider is a widget type field which can be used according to preferred mode of image loading like image.asset/image,network/cacheNetworkImage etc.
+            onArrowPressed: () {},
+            isEnabled: true,
+            subHeading: "Sub Heading",
+            tag: "TAG",
+            subLabelText1: "Sub Label Text 1",
+            subLabelText2: "Sub Label Text 2",
+            subLabelIcon1: TablerIcons.arrow_rotary_first_left,
+            subLabelIcon2: TablerIcons.arrow_rotary_first_left,
+          ),
           Padding(
             padding: const EdgeInsets.all(OSpacing.xs),
             child: OMessMenuCard(

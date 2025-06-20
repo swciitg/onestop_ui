@@ -9,7 +9,9 @@ currently following components are ready for being used and pushed to dev branch
 - Indicators - Banners, Status, Avatar, Badges , Tags, Progress indicator
 - List Tiles
 - Text fields - OTextField , OSearchBar
-- Cards - OHomeCard (small), OMessMenuCard
+- Buttons - PrimaryButton, SecondaryButton, TertiaryButton, CircularButton, RadioButton, IconButton, ToggleButton
+- Cards - OHomeCard (small), OMessMenuCard, FoodOutletCard
+
 
 ## Need Help?
-If experience any issue in this repo or require some other component please raise an issue we will try to address it as soon as possible
+If experience any issue in this repo or require some other component please raise an issue or contact us we will try to address it as soon as possible

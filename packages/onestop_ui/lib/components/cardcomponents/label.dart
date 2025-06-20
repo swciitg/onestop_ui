@@ -6,11 +6,13 @@ class OCardLabels extends StatelessWidget {
   final IconData icon;
   final String label;
   final bool isSmall;
+  final Color? color;
   const OCardLabels({
     super.key,
     required this.label,
     required this.icon,
     this.isSmall = false,
+    this.color,
   });
 
   @override
@@ -23,16 +25,17 @@ class OCardLabels extends StatelessWidget {
       decoration: BoxDecoration(color: Colors.transparent),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(icon, size: 16, color: OColor.gray600),
+          Icon(icon, size: 16, color: color),
           SizedBox(width: OSpacing.s),
           OText(
             text: label,
             style:
                 isSmall
-                    ? OTextStyle.labelXSmall.copyWith(color: OColor.gray600)
-                    : OTextStyle.labelSmall.copyWith(color: OColor.gray600),
+                    ? OTextStyle.labelXSmall.copyWith(color: color)
+                    : OTextStyle.labelSmall.copyWith(color: color),
           ),
         ],
       ),
