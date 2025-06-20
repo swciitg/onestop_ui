@@ -69,7 +69,7 @@ class OTextStyle {
     fontWeight: FontWeight.w500,
   );
 
-  static const lableXSmall = TextStyle(
+  static const labelXSmall = TextStyle(
     fontFamily: fontFamily,
     fontSize: 12,
     fontWeight: FontWeight.w500,

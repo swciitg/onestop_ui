@@ -51,6 +51,7 @@ class OStatus extends StatelessWidget {
           ),
           const SizedBox(width: 8),
         ],
+
       ),
     );
   }

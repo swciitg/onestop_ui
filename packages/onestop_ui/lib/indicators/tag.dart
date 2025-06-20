@@ -47,6 +47,7 @@ class OTag extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
+
           const SizedBox(width: 8),
           Icon(lead, size: 16, color: foregroundColor),
           const SizedBox(width: 4),
@@ -54,6 +55,7 @@ class OTag extends StatelessWidget {
             child: Text(
               label,
               style: OTextStyle.lableXSmall.copyWith(color: foregroundColor),
+
             ),
           ),
           const SizedBox(width: 4),
