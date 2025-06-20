@@ -60,125 +60,127 @@ class _OTextFieldState extends State<OTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: widget.isParagraph ? 170 : 112,
-      width: 358,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          // Label with optional counter
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              // Label
-              OText(
-                text: widget.label,
-                style:
-                    widget.enabled
-                        ? OTextStyle.labelMedium.copyWith(color: OColor.gray800)
-                        : OTextStyle.labelMedium.copyWith(
-                          color: OColor.gray200,
-                        ),
-              ),
+    return Padding(
+      padding: const EdgeInsets.all(OSpacing.xs),
+      child: SizedBox(
+        height: widget.isParagraph ? 170 : 112,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            // Label with optional counter
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // Label
+                OText(
+                  text: widget.label,
+                  style:
+                      widget.enabled
+                          ? OTextStyle.labelMedium.copyWith(color: OColor.gray800)
+                          : OTextStyle.labelMedium.copyWith(
+                            color: OColor.gray200,
+                          ),
+                ),
 
-              // External Character Counter
-              OText(
-                text: "$_currentLength/${widget.maxLength}",
-                style:
-                    widget.enabled
-                        ? OTextStyle.bodySmall.copyWith(color: OColor.gray600)
-                        : OTextStyle.bodySmall.copyWith(color: OColor.gray200),
-              ),
-            ],
-          ),
-          // Text Field Container
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(OCornerRadius.m),
-              border: Border.all(
-                color:
-                    _isFocused
-                        ? (_currentLength <= widget.maxLength)
-                            ? OColor.green600
-                            : OColor.red500
-                        : OColor.gray200,
-                width: _isFocused ? 2 : 1,
-              ),
-              color: Colors.transparent,
+                // External Character Counter
+                OText(
+                  text: "$_currentLength/${widget.maxLength}",
+                  style:
+                      widget.enabled
+                          ? OTextStyle.bodySmall.copyWith(color: OColor.gray600)
+                          : OTextStyle.bodySmall.copyWith(color: OColor.gray200),
+                ),
+              ],
             ),
-            child: TextField(
-              controller: widget.controller,
-              focusNode: _focusNode,
-              keyboardType:
-                  widget.isParagraph
-                      ? TextInputType.multiline
-                      : TextInputType.text,
-              obscureText: widget.obscureText,
-              enabled: widget.enabled,
-              maxLength: widget.maxLength + 1,
-              maxLines: widget.isParagraph ? 3 : 1,
-              onChanged: (value) {
-                _updateLength(value);
-                if (widget.onChanged != null) {
-                  widget.onChanged!(value);
-                }
-              },
-              onSubmitted: widget.onSubmitted,
-              decoration: InputDecoration(
-                hintText:
-                    widget.content.isEmpty
-                        ? 'Type here ${widget.label.toLowerCase()}...'
-                        : widget.content,
-                hintStyle:
-                    widget.enabled
-                        ? OTextStyle.bodySmall.copyWith(
-                          color: OColor.gray600,
-                        )
-                        : OTextStyle.bodySmall.copyWith(
-                          color: OColor.gray200,
-                        ),
-                border: InputBorder.none,
-                suffixIcon:
+            // Text Field Container
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(OCornerRadius.m),
+                border: Border.all(
+                  color:
+                      _isFocused
+                          ? (_currentLength <= widget.maxLength)
+                              ? OColor.green600
+                              : OColor.red500
+                          : OColor.gray200,
+                  width: _isFocused ? 2 : 1,
+                ),
+                color: Colors.transparent,
+              ),
+              child: TextField(
+                controller: widget.controller,
+                focusNode: _focusNode,
+                keyboardType:
                     widget.isParagraph
-                        ? Align(
-                          alignment:Alignment(0, -2),
-                          widthFactor: 1,
-                          heightFactor: 1,
-                          child:
-                              _isFocused
-                                  ? Padding(
-                                    padding: const EdgeInsets.only(
-                                      right: 0.0,
-                                      top: 0.0,
-                                    ),
-                                    child: widget.suffixIcon,
-                                  )
-                                  : null,
-                        )
-                        : _isFocused
-                        ? widget.suffixIcon
-                        : null,
-                suffixIconColor:
-                    (_currentLength <= widget.maxLength)
-                        ? OColor.green600
-                        : OColor.red500,
-                counterText: '',
-                contentPadding: EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 14,
+                        ? TextInputType.multiline
+                        : TextInputType.text,
+                obscureText: widget.obscureText,
+                enabled: widget.enabled,
+                maxLength: widget.maxLength + 1,
+                maxLines: widget.isParagraph ? 3 : 1,
+                onChanged: (value) {
+                  _updateLength(value);
+                  if (widget.onChanged != null) {
+                    widget.onChanged!(value);
+                  }
+                },
+                onSubmitted: widget.onSubmitted,
+                decoration: InputDecoration(
+                  hintText:
+                      widget.content.isEmpty
+                          ? 'Type here ${widget.label.toLowerCase()}...'
+                          : widget.content,
+                  hintStyle:
+                      widget.enabled
+                          ? OTextStyle.bodySmall.copyWith(
+                            color: OColor.gray600,
+                          )
+                          : OTextStyle.bodySmall.copyWith(
+                            color: OColor.gray200,
+                          ),
+                  border: InputBorder.none,
+                  suffixIcon:
+                      widget.isParagraph
+                          ? Align(
+                            alignment:Alignment(0, -2),
+                            widthFactor: 1,
+                            heightFactor: 1,
+                            child:
+                                _isFocused
+                                    ? Padding(
+                                      padding: const EdgeInsets.only(
+                                        right: 0.0,
+                                        top: 0.0,
+                                      ),
+                                      child: widget.suffixIcon,
+                                    )
+                                    : null,
+                          )
+                          : _isFocused
+                          ? widget.suffixIcon
+                          : null,
+                  suffixIconColor:
+                      (_currentLength <= widget.maxLength)
+                          ? OColor.green600
+                          : OColor.red500,
+                  counterText: '',
+                  contentPadding: EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 14,
+                  ),
                 ),
               ),
             ),
-          ),
-          OText(
-            text: widget.hint.isEmpty ? 'e.g. John Doe' : widget.hint,
-            style:
-                widget.enabled
-                    ? OTextStyle.bodySmall.copyWith(color: OColor.gray600)
-                    : OTextStyle.bodySmall.copyWith(color: OColor.gray200),
-          ),
-        ],
+            OText(
+              text: widget.hint.isEmpty ? 'e.g. John Doe' : widget.hint,
+              style:
+                  widget.enabled
+                      ? OTextStyle.bodySmall.copyWith(color: OColor.gray600)
+                      : OTextStyle.bodySmall.copyWith(color: OColor.gray200),
+            ),
+          ],
+        ),
       ),
     );
   }
