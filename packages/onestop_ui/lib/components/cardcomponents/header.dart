@@ -46,6 +46,7 @@ class OCardHeader extends StatelessWidget {
                   ),
                   child: Icon(icon, size: 16, color: OColor.green600),
                 ),
+              if (icon != null)
               const SizedBox(width: OSpacing.xs),
               OText(
                 text: heading,

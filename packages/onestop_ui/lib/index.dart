@@ -35,4 +35,4 @@ export 'indicators/progress.dart';
 export 'indicators/tag.dart';
 
 //list tiles
-export 'list/list_export.dart;
+export 'list/list_export.dart';

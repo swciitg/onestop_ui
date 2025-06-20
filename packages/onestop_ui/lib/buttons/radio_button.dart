@@ -5,12 +5,13 @@ class RadioButton extends StatelessWidget {
   final bool value;
   final ValueChanged<bool>? onChanged;
   final bool isEnabled;
+  final EdgeInsets? padding;
 
   const RadioButton({
     super.key,
     required this.value,
     required this.onChanged,
-    this.isEnabled = true,
+    this.isEnabled = true, this.padding,
   });
 
   @override
@@ -44,7 +45,7 @@ class RadioButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(2.0),
+          padding:padding?? const EdgeInsets.all(2.0),
           child: Container(
             height: 20,
             width: 20,

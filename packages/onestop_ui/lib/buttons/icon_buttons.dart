@@ -6,13 +6,14 @@ class IconBtn extends StatefulWidget {
   final IconData icon;
   final VoidCallback? onPressed;
   final bool enabled;
+  final EdgeInsets? padding;
 
   const IconBtn({
     super.key,
     required this.label,
     required this.icon,
     required this.onPressed,
-    this.enabled= true
+    this.enabled= true, this.padding
   });
 
   @override
@@ -59,7 +60,7 @@ class _IconBtnState extends State<IconBtn> {
           color: backgroundColor,
           borderRadius: BorderRadius.circular(4),
         ),
-        padding: EdgeInsets.all(8),
+        padding: widget.padding??EdgeInsets.all(8),
         child: Column(
           children: [
             Icon(widget.icon, size: 32, color:iconColor),

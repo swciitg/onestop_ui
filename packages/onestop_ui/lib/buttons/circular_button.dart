@@ -9,6 +9,7 @@ class CircularButton extends StatefulWidget {
   final bool enabled;
   final CircularButtonSize size;
   final Color? bgColor;
+  final EdgeInsets? padding;
 
   const CircularButton({
     super.key,
@@ -17,7 +18,7 @@ class CircularButton extends StatefulWidget {
     required this.onPressed,
     this.enabled= true, 
     this.size= CircularButtonSize.large,
-    this.bgColor// =  OColor.gray100,
+    this.bgColor, this.padding// =  OColor.gray100,
   });
 
   @override
@@ -64,7 +65,7 @@ class _CircularButtonState extends State<CircularButton> {
           color: backgroundColor,
           borderRadius: BorderRadius.circular(50),
         ),
-        padding: EdgeInsets.all(8),
+        padding: widget.padding??EdgeInsets.all(8),
         child: Icon(widget.icon, size: isSmall?24:32, color:iconColor),
       ),
     );

@@ -50,7 +50,7 @@ class _TagState extends State<Tag> {
             child: Center(
               child: Text(
                 widget.label,
-                style: OTextStyle.lableXSmall.copyWith(color: colorFg),
+                style: OTextStyle.labelXSmall.copyWith(color: colorFg),
               ),
             ),
           ),

@@ -17,7 +17,7 @@ class OCardLabels extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(
-        horizontal: OSpacing.s,
+        horizontal: OSpacing.xs,
         vertical: OSpacing.xxs,
       ),
       decoration: BoxDecoration(color: Colors.transparent),
