@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
+import 'package:onestop_ui/components/cards/cabSharing.dart';
 import 'package:onestop_ui/index.dart';
 
 class CardsDemo extends StatelessWidget {
@@ -10,11 +11,113 @@ class CardsDemo extends StatelessWidget {
     return SizedBox(
       child: Column(
         children: [
+          OCabSharingCard(
+            isUserAvailable: true, // this toggle b/w card mode with and without user Avatar
+            isEnabled: true, //toggles the enabled state of card
+            byTrain: false, // toggles b/w flight and train:- false means flight and true means train
+            origin: "IITG",
+            destination: "Home",
+            status: "Status", // status for card
+            statusIcon: TablerIcons.armchair,
+            date: "Date",
+            time: "Time",
+            subHeading: "Sub heading Text", // Body for card
+            imageURl: // url for user image via NetworkImage widget
+            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            userName: "John Doe",
+            onArrowPressed: () {}, // triggers the chevron button on top right corner
+            buttonIcon1: TablerIcons.user_plus,
+            buttonIcon2: TablerIcons.user_plus,
+            pressedButton1: () {},
+            pressedButton2: () {},
+            buttonLabel1: "Join 1",
+            buttonLabel2: "Join 2",
+          ),
+          OCabSharingCard(
+            isUserAvailable: false,
+            isEnabled: true,
+            byTrain: true,
+            origin: "IITG",
+            destination: "Home",
+            status: "Status",
+            statusIcon: TablerIcons.armchair,
+            date: "Date",
+            time: "Time",
+            subHeading: "Sub heading Text",
+            imageURl:
+            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            userName: "John Doe",
+            onArrowPressed: () {},
+            buttonIcon1: TablerIcons.user_plus,
+            buttonIcon2: TablerIcons.user_plus,
+            pressedButton1: () {},
+            pressedButton2: () {},
+            buttonLabel1: "Join 1",
+            buttonLabel2: "Join 2",
+          ),
+          OCabSharingCard(
+            isUserAvailable: true,
+            isEnabled: false,
+            byTrain: true,
+            origin: "IITG",
+            destination: "Home",
+            status: "Status",
+            statusIcon: TablerIcons.armchair,
+            date: "Date",
+            time: "Time",
+            subHeading: "Sub heading Text",
+            imageURl:
+            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            userName: "John Doe",
+            onArrowPressed: () {},
+            buttonIcon1: TablerIcons.user_plus,
+            buttonIcon2: TablerIcons.user_plus,
+            pressedButton1: () {},
+            pressedButton2: () {},
+            buttonLabel1: "Join 1",
+            buttonLabel2: "Join 2",
+          ),
+          OCabSharingCard(
+            isUserAvailable: false,
+            isEnabled: false,
+            byTrain: true,
+            origin: "IITG",
+            destination: "Home",
+            status: "Status",
+            statusIcon: TablerIcons.armchair,
+            date: "Date",
+            time: "Time",
+            subHeading: "Sub heading Text",
+            imageURl:
+            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            userName: "John Doe",
+            onArrowPressed: () {},
+            buttonIcon1: TablerIcons.user_plus,
+            buttonIcon2: TablerIcons.user_plus,
+            pressedButton1: () {},
+            pressedButton2: () {},
+            buttonLabel1: "Join 1",
+            buttonLabel2: "Join 2",
+          ),
           FoodOutletCard(
             heading: "Card Header",
-            imageProvider: Icon(TablerIcons.outlet),// imageProvider is a widget type field which can be used according to preferred mode of image loading like image.asset/image,network/cacheNetworkImage etc.
-            onArrowPressed: () {},
+            imageUrl: // Image of food outlet via NetworkImage widget
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            onArrowPressed: () {},// triggers the chevron button on top right corner
             isEnabled: true,
+            subHeading: "Sub Heading",
+            tag: "TAG", // tag for food outlet
+            subLabelText1: "Sub Label Text 1",
+            subLabelText2: "Sub Label Text 2",
+            subLabelIcon1: TablerIcons.arrow_rotary_first_left,
+            subLabelIcon2: TablerIcons.arrow_rotary_first_left,
+          ),
+          FoodOutletCard(
+            heading: "Card Header",
+            imageUrl:
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            onArrowPressed: () {},
+            isEnabled: false,
             subHeading: "Sub Heading",
             tag: "TAG",
             subLabelText1: "Sub Label Text 1",
@@ -26,7 +129,7 @@ class CardsDemo extends StatelessWidget {
             padding: const EdgeInsets.all(OSpacing.xs),
             child: OMessMenuCard(
               heading: 'Card Header',
-              subLabelText: ['Sub Label Text'],
+              subLabelText: ['Sub Label Text'],// this will be corrected soon
               blockHeading1: 'Block Header 1',
               blockHeading2: 'Block Header 2',
               blockHeading3: 'Block Header 3',
