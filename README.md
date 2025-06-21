@@ -10,7 +10,7 @@ currently following components are ready for being used and pushed to dev branch
 - List Tiles
 - Text fields - OTextField , OSearchBar
 - Buttons - PrimaryButton, SecondaryButton, TertiaryButton, CircularButton, RadioButton, IconButton, ToggleButton
-- Cards - OHomeCard (small), OMessMenuCard, FoodOutletCard
+- Cards - OHomeCard (small), OMessMenuCard, FoodOutletCard, OCaabSharingCard
 
 
 ## Need Help?
