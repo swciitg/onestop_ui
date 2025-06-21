@@ -44,7 +44,7 @@ class _OHomeCardState extends State<OHomeCard> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: _isPressed ? OColor.gray200 : Colors.white,
+        color: _isPressed ? OColor.gray200 : OColor.white,
         borderRadius: BorderRadius.all(Radius.circular(OCornerRadius.l)),
         border: Border.all(color: OColor.gray200, width: 1),
       ),
@@ -81,31 +81,37 @@ class _OHomeCardState extends State<OHomeCard> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               if(widget.activateButton1 == true )
-              MaterialButton(
-                onPressed: widget.buttonAction1,
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(color: OColor.gray300, width: 1),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(OCornerRadius.l),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: OSpacing.s),
+                child: MaterialButton(
+                  onPressed: widget.buttonAction1,
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(color: OColor.gray300, width: 1),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(OCornerRadius.l),
+                    ),
                   ),
-                ),
-                child: OText(
-                  text: 'Label 1',
-                  style: OTextStyle.labelSmall.copyWith(color: OColor.green600),
+                  child: OText(
+                    text: 'Label 1',
+                    style: OTextStyle.labelSmall.copyWith(color: OColor.green600),
+                  ),
                 ),
               ),
               if(widget.activateButton2 == true )
-              MaterialButton(
-                onPressed: widget.buttonAction2,
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(color: OColor.gray300, width: 1),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(OCornerRadius.l),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: OSpacing.s),
+                child: MaterialButton(
+                  onPressed: widget.buttonAction2,
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(color: OColor.gray300, width: 1),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(OCornerRadius.l),
+                    ),
                   ),
-                ),
-                child: OText(
-                  text: 'Label 2',
-                  style: OTextStyle.labelSmall.copyWith(color: OColor.green600),
+                  child: OText(
+                    text: 'Label 2',
+                    style: OTextStyle.labelSmall.copyWith(color: OColor.green600),
+                  ),
                 ),
               ),
             ],

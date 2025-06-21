@@ -45,7 +45,7 @@ class OListGroups extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(OSpacing.xs),
+      padding: EdgeInsets.symmetric(horizontal: OSpacing.s, vertical:OSpacing.xs),
       decoration: BoxDecoration(color: Colors.transparent),
       child: ListView.builder(
         shrinkWrap: true,
