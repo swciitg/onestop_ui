@@ -34,12 +34,15 @@ class OMessMenuCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              OCardHeader(heading: heading, onClickArrow: false),
-              OLabelGroups(labelItems: subLabelText, isSmall: false),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(top:OSpacing.s),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                OCardHeader(heading: heading, onClickArrow: false),
+                OLabelGroups(labelItems: subLabelText, isSmall: false),
+              ],
+            ),
           ),
           OCardBlock(header: blockHeading1, blockItems: blockItems1),
           Row(

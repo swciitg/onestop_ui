@@ -9,7 +9,7 @@ class FoodOutletCard extends StatefulWidget {
   final Function()? onArrowPressed;
   final String? tag;
   final bool isEnabled;
-  final Widget imageProvider;
+  final String imageUrl;
   final String subLabelText1;
   final String subLabelText2;
   final IconData subLabelIcon1;
@@ -17,7 +17,7 @@ class FoodOutletCard extends StatefulWidget {
   const FoodOutletCard({
     super.key,
     this.isEnabled = false,
-    required this.imageProvider,
+    required this.imageUrl,
     required this.heading,
     this.subHeading,
     this.tag,
@@ -49,9 +49,10 @@ class _FoodOutletCardState extends State<FoodOutletCard> {
           GestureDetector(
             behavior: HitTestBehavior.opaque,
             onTapDown:
-                (_) => setState(
-                  () => _isPressed = true,
-                ), //engage behaviour when search bar is tapped
+                (_) =>
+                    widget.isEnabled
+                        ? setState(() => _isPressed = true)
+                        : null, //engage behaviour when search bar is tapped
             onTapUp: (_) {
               setState(() => _isPressed = false);
             },
@@ -67,13 +68,23 @@ class _FoodOutletCardState extends State<FoodOutletCard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(OSpacing.xs),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: OSpacing.xs,
+                      vertical: OSpacing.m,
+                    ),
                     child: Row(
                       children: [
-                        SizedBox(
+                        Container(
                           width: 48,
                           height: 48,
-                          child: widget.imageProvider,
+                          decoration: BoxDecoration(
+                            color: OColor.gray400,
+                            image: DecorationImage(
+                              image: NetworkImage(widget.imageUrl),
+                              fit: BoxFit.cover,
+                              opacity: widget.isEnabled ? 1 : 0.2,
+                            ),
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
@@ -135,7 +146,7 @@ class _FoodOutletCardState extends State<FoodOutletCard> {
             ),
           ),
           Positioned(
-            top: 10,
+            top: 16,
             right: 10,
             child: IconButton(
               icon: Icon(TablerIcons.chevron_right),
