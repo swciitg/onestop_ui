@@ -64,12 +64,19 @@ class ContactTile extends StatelessWidget {
                           BlendMode.multiply,
                         ),
                 child: imageUrl!=null
-                ?Image.network(
+                ? Image.network(
                   imageUrl!,
                   width: 48,
                   height: 48,
                   fit: BoxFit.cover,
-                )
+                  errorBuilder: (context, error, stackTrace) => Center(
+                    child: Icon(
+                    leadingIcon ?? TablerIcons.user_square_rounded,
+                    color: leadingIconColor,
+                    size: 25,
+                    ),
+                  ),
+                  )
                 :Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),

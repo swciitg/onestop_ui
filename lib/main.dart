@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:onestop_ui/index.dart';
 import 'package:onestop_ui/widget_demo/indicators_demo.dart';
+import 'package:onestop_ui/widget_demo/buttons_demo.dart';
+import 'package:onestop_ui/widget_demo/list_demo.dart';
 
 void main() async {
   await GetStorage.init();
@@ -12,6 +14,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     OTheme.setTheme(Brightness.light);
@@ -26,27 +29,32 @@ class MyApp extends StatelessWidget {
           child: Center(
             child: SingleChildScrollView(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
-                  OText(text: 'Hello, World!', style: OTextStyle.bodyLarge),
-                  OText(
-                    text: 'Welcome to OneStop UI',
-                    style: OTextStyle.headingLarge,
-                  ),
-                  OText(
-                    text: 'This is a sample text',
-                    style: OTextStyle.bodyMedium,
-                  ),
-                  OText(
-                    text: 'Enjoy building your app!',
-                    style: OTextStyle.bodySmall,
-                  ),
-                  const SizedBox(height: 20),
-                  TextfieldsDemo(),
-                  IndicatorsDemo(),
-                ],
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    OText(text: 'OneStop UI', style: OTextStyle.displayMedium),
+                    OText(text: 'Hello, World!', style: OTextStyle.bodyLarge),
+                    OText(text: 'Welcome to OneStop UI', style: OTextStyle.headingLarge),
+                    OText(text: 'This is a sample text', style: OTextStyle.bodyMedium),
+                    OText(text: 'Enjoy building your app!', style: OTextStyle.bodySmall),
+                    const SizedBox(height:20),
+                    CardsDemo(),
+                    const SizedBox(height:20),
+                    TextfieldsDemo(),
+                    IndicatorsDemo(),
+                    const SizedBox(height:10),                  
+                    const Divider(color:Color(0xFF148440),),
+                    const SizedBox(height:10),                  
+                    Text("Buttons Part",style: TextStyle(fontSize: 25),),
+                    SizedBox(height: 25,),
+                    ButtonsDemo(),
+                    const SizedBox(height:10),                  
+                    const Divider(color:Color(0xFF148440),),
+                    const SizedBox(height:10),
+                    Text("Buttons Part",style: TextStyle(fontSize: 25),),
+                    SizedBox(height: 25,),
+                    ListDemo()
+                  ]
               ),
             ),
           ),

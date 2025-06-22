@@ -52,81 +52,82 @@ class _OSearchBarState extends State<OSearchBar> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTapDown:
-          (_) => setState(
-            () => _isPressed = true,
-          ), //engage behaviour when search bar is tapped
-      onTapUp: (_) {
-        setState(() => _isPressed = false);
-        if (!_focusNode.hasFocus) {
-          FocusScope.of(context).requestFocus(_focusNode);
-        }
-      }, //disengage behaviour when search bar is released from tap
-      onTapCancel: () => setState(() => _isPressed = false),
-      child: AnimatedContainer(
-        duration: _animationDuration,
-        height: 48,
-        width: 358,
-        decoration: BoxDecoration(
-          border: Border.all(color: OColor.gray200, width: 1),
-          borderRadius: BorderRadius.all(Radius.circular(OCornerRadius.l)),
-          color:
-              widget.enabled
-                  ? _isPressed
-                      ? OColor.gray200
-                      : Colors.transparent
-                  : Colors.transparent,
-        ), // this still renders the animation but the color is transparent in case of disabled button
-        // this can be improved in future
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            SizedBox(
-              width: 300,
-              child: TextField(
-                controller: widget.controller,
-                focusNode: _focusNode,
-                enabled: widget.enabled,
-                onChanged: widget.onChanged,
-                onSubmitted: widget.onSubmitted,
-                style: OTextStyle.labelSmall.copyWith(
-                  color: _isFocused ? OColor.gray800 : OColor.gray600,
+    return Padding(
+      padding: const EdgeInsets.all(OSpacing.xs),
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTapDown:
+            (_) => setState(
+              () => _isPressed = true,
+            ), //engage behaviour when search bar is tapped
+        onTapUp: (_) {
+          setState(() => _isPressed = false);
+          if (!_focusNode.hasFocus) {
+            FocusScope.of(context).requestFocus(_focusNode);
+          }
+        }, //disengage behaviour when search bar is released from tap
+        onTapCancel: () => setState(() => _isPressed = false),
+        child: AnimatedContainer(
+          duration: _animationDuration,
+          decoration: BoxDecoration(
+            border: Border.all(color: OColor.gray200, width: 1),
+            borderRadius: BorderRadius.all(Radius.circular(OCornerRadius.l)),
+            color:
+                widget.enabled
+                    ? _isPressed
+                        ? OColor.gray200
+                        : OColor.white
+                    : OColor.white,
+          ), // this still renders the animation but the color is transparent in case of disabled button
+          // this can be improved in future
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SizedBox(
+                width: 300,
+                child: TextField(
+                  controller: widget.controller,
+                  focusNode: _focusNode,
+                  enabled: widget.enabled,
+                  onChanged: widget.onChanged,
+                  onSubmitted: widget.onSubmitted,
+                  style: OTextStyle.labelSmall.copyWith(
+                    color: _isFocused ? OColor.gray800 : OColor.gray600,
+                  ),
+                  decoration: InputDecoration(
+                    hintText:
+                        widget.content.isEmpty
+                            ? 'Search here...'
+                            : widget.content,
+                    hintStyle:
+                        widget.enabled
+                            ? OTextStyle.labelSmall.copyWith(
+                              color: OColor.gray600,
+                            )
+                            : OTextStyle.labelSmall.copyWith(
+                              color: OColor.gray200,
+                            ),
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 12),
+                  ),
                 ),
-                decoration: InputDecoration(
-                  hintText:
-                      widget.content.isEmpty
-                          ? 'Search here...'
-                          : widget.content,
-                  hintStyle:
+              ),
+              IconButton(
+                onPressed: widget.enabled ? _handleClearOrFocus : null,
+                icon: Icon(
+                  _isFocused ? TablerIcons.x : TablerIcons.search,
+                  size: 24,
+                  color:
                       widget.enabled
-                          ? OTextStyle.labelSmall.copyWith(
-                            color: OColor.gray600,
-                          )
-                          : OTextStyle.labelSmall.copyWith(
-                            color: OColor.gray200,
-                          ),
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.symmetric(horizontal: 12),
+                          ? _isFocused
+                              ? OColor.gray800
+                              : OColor.gray600
+                          : OColor.gray200,
                 ),
+                hoverColor: Colors.transparent,
               ),
-            ),
-            IconButton(
-              onPressed: widget.enabled ? _handleClearOrFocus : null,
-              icon: Icon(
-                _isFocused ? TablerIcons.x : TablerIcons.search,
-                size: 24,
-                color:
-                    widget.enabled
-                        ? _isFocused
-                            ? OColor.gray800
-                            : OColor.gray600
-                        : OColor.gray200,
-              ),
-              hoverColor: Colors.transparent,
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

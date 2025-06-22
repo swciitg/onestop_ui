@@ -9,7 +9,7 @@ class PrimaryButton extends StatefulWidget {
   final TextStyle? labelStyle;
   final TextStyle disabledTextStyle;
   final Color bgColor;
-  ///on pressed color
+  final EdgeInsets? padding;
   final Color opColor;
   final Color diabledBgColor;
   final IconData? leadingIcon;
@@ -30,7 +30,7 @@ class PrimaryButton extends StatefulWidget {
     this.diabledBgColor = const Color(0xFFDCEFE4),
     this.leadingIcon,
     this.tarilingIcon,  
-    this.iconColor= Colors.white,
+    this.iconColor= Colors.white, this.padding,
   });
 
   @override
@@ -66,7 +66,7 @@ class _PrimaryButtonState extends State<PrimaryButton> {
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 100),
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+        padding: widget.padding??const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(16),

@@ -6,13 +6,24 @@ class IconBtn extends StatefulWidget {
   final IconData icon;
   final VoidCallback? onPressed;
   final bool enabled;
+  final EdgeInsets? padding;
+  final Color? iconColor;
+  final Color? disabledIcnColor;
+  final Color? textColor;
+  final Color? disabledTextColor;
+  final Color? splashColor;
 
   const IconBtn({
     super.key,
     required this.label,
     required this.icon,
     required this.onPressed,
-    this.enabled= true
+    this.enabled = true,
+    this.padding,
+    this.iconColor,
+    this.disabledIcnColor,
+    this.textColor,
+    this.disabledTextColor, this.splashColor,
   });
 
   @override
@@ -20,23 +31,20 @@ class IconBtn extends StatefulWidget {
 }
 
 class _IconBtnState extends State<IconBtn> {
-
   bool _isPressed = false;
-  
-  
 
   @override
   Widget build(BuildContext context) {
-
     final isDisabled = widget.onPressed == null || !widget.enabled;
 
-    final Color iconColor = isDisabled?OColor.gray400:OColor.green600;
+    final Color iconColor = isDisabled ? widget.disabledIcnColor?? OColor.gray400 : widget.iconColor?? OColor.green600;
 
     final Color backgroundColor =
         isDisabled
             ? Colors.transparent
-            : _isPressed? OColor.gray100: Colors.transparent;
-
+            : _isPressed
+            ? widget.splashColor?? OColor.gray100
+            : Colors.transparent;
 
     return GestureDetector(
       onTapDown: (_) {
@@ -59,16 +67,16 @@ class _IconBtnState extends State<IconBtn> {
           color: backgroundColor,
           borderRadius: BorderRadius.circular(4),
         ),
-        padding: EdgeInsets.all(8),
+        padding: widget.padding ?? EdgeInsets.all(8),
         child: Column(
           children: [
-            Icon(widget.icon, size: 32, color:iconColor),
+            Icon(widget.icon, size: 32, color: iconColor),
             SizedBox(height: 8),
             Text(
               widget.label,
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: isDisabled?OColor.gray400: OColor.gray800,
+                color: isDisabled ? widget.disabledTextColor?? OColor.gray400 : widget.textColor?? OColor.gray800,
                 fontSize: 14,
                 fontFamily: 'Geist',
                 fontWeight: FontWeight.w500,

@@ -1,0 +1,84 @@
+* [33m05baade[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev[m[33m, [m[1;32mbackup-dev-ganesh[m[33m)[m igonre commit msg
+* [33m149ffd1[m ignore this
+*   [33md36c88f[m[33m ([m[1;31morigin/dev[m[33m)[m Merge pull request #10 from swciitg/cards
+[32m|[m[33m\[m  
+[32m|[m *   [33m551ac9c[m Merge branch 'dev' into cards
+[32m|[m [34m|[m[32m\[m  
+[32m|[m [34m|[m[32m/[m  
+[32m|[m[32m/[m[34m|[m   
+* [34m|[m   [33ma79c1f7[m Merge pull request #8 from swciitg/main
+[36m|[m[1;31m\[m [34m\[m  
+[36m|[m * [34m|[m [33m1e8b392[m Update README.md
+* [1;31m|[m [34m|[m   [33m81ec061[m Merge pull request #6 from maiHydrogen/dev
+[1;32m|[m[1;33m\[m [1;31m\[m [34m\[m  
+[1;32m|[m * [1;31m|[m [34m|[m [33m6c5288b[m refactor: moved widgets to textfields_demo.dart
+[1;32m|[m[1;32m/[m [1;31m/[m [34m/[m  
+* [1;31m|[m [34m|[m   [33m0228ed8[m[33m ([m[1;31morigin/buttons[m[33m)[m Merge branch 'list-tiles' into dev
+[1;34m|[m[1;35m\[m [1;31m\[m [34m\[m  
+[1;34m|[m * [1;31m|[m [34m|[m [33mc1ba322[m[33m ([m[1;31morigin/list-tiles[m[33m)[m minor update
+[1;34m|[m * [1;31m|[m [34m|[m [33m34c35c0[m[33m ([m[1;32mlist-tiles[m[33m)[m first_wala_commit
+* [1;35m|[m [1;31m|[m [34m|[m   [33m32cda3f[m Merge branch 'indicators' into dev
+[1;36m|[m[31m\[m [1;35m\[m [1;31m\[m [34m\[m  
+[1;36m|[m * [1;35m|[m [1;31m|[m [34m|[m [33m142ebb0[m[33m ([m[1;31morigin/indicators[m[33m)[m added everything, just progress indicator needs some help
+[1;36m|[m * [1;35m|[m [1;31m|[m [34m|[m [33mdf9707d[m added banners, status,avatar,  progress indicator - (need some help)
+[1;36m|[m * [1;35m|[m [1;31m|[m [34m|[m [33m27186a9[m Merge remote-tracking branch 'origin/dev' into indicators
+[1;36m|[m [32m|[m[1;35m\[m[1;35m|[m [1;31m|[m [34m|[m 
+[1;36m|[m * [1;35m|[m [1;31m|[m [34m|[m [33mb0db777[m badge done, tag done
+* [33m|[m [1;35m|[m [1;31m|[m [34m|[m   [33meac79f8[m Merge branch 'textfield' into dev
+[34m|[m[35m\[m [33m\[m [1;35m\[m [1;31m\[m [34m\[m  
+[34m|[m * [33m\[m [1;35m\[m [1;31m\[m [34m\[m   [33m82d4fc2[m[33m ([m[1;31morigin/textfield[m[33m)[m Merge pull request #3 from maiHydrogen/textfield
+[34m|[m [36m|[m[1;31m\[m [33m\[m [1;35m\[m [1;31m\[m [34m\[m  
+* [36m|[m [1;31m|[m [33m|[m [1;35m|[m [1;31m|[m [34m|[m [33m82f3eff[m[33m ([m[1;32mbuttons[m[33m)[m initial
+[1;35m|[m [36m|[m[1;35m_[m[1;31m|[m[1;35m_[m[33m|[m[1;35m/[m [1;31m/[m [34m/[m  
+[1;35m|[m[1;35m/[m[36m|[m [1;31m|[m [33m|[m [1;31m|[m [34m|[m   
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m *   [33mdf70f02[m Merge pull request #9 from maiHydrogen/cards
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m [1;32m|[m[1;33m\[m  
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m [1;32m|[m * [33md6315f8[m fix:added param to buttons in OHomeCard
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m [1;32m|[m * [33m59c8b43[m feat: added OHomeCard small
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m [1;32m|[m *   [33m7040135[m Merge branch 'cards' of origin into cards
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m [1;32m|[m [1;34m|[m[1;32m\[m  
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m [1;32m|[m [1;34m|[m[1;32m/[m  
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m [1;32m|[m[1;32m/[m[1;34m|[m   
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m * [1;34m|[m   [33mcabfc55[m[33m ([m[1;31morigin/cards[m[33m)[m Merge pull request #5 from maiHydrogen/cards
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m [1;36m|[m[31m\[m [1;34m\[m  
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m * [31m|[m [1;34m|[m [33mf01e602[m Merge pull request #4 from maiHydrogen/cards
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m[1;31m/[m[33m|[m [31m|[m [1;34m|[m 
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m [33m|[m [31m|[m * [33mab69936[m feat: added small home card
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m [33m|[m [31m|[m[31m/[m  
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m [33m|[m * [33mce7556b[m fix:corrected bodytext color
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m [33m|[m * [33m1011303[m fix:added support for dynamic data loading
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m [33m|[m[33m/[m  
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m * [33m9b16c19[m chore: completed card components
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m * [33m26ee72d[m feat: added card blocks and lists
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m * [33mbb3f2a3[m feat: added OCardHeader
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m * [33me940b9e[m feat: added card labels in cardcomponents
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m [1;31m|[m * [33m441ce8c[m chore: corrected labelXSmall
+[1;35m|[m [36m|[m [1;31m|[m [33m|[m[1;31m_[m[1;31m|[m[1;31m/[m  
+[1;35m|[m [36m|[m [1;31m|[m[1;31m/[m[33m|[m [1;31m|[m   
+[1;35m|[m [36m|[m * [33m|[m [1;31m|[m   [33m3f161a4[m Merge branch 'textfield' of origin into textfield
+[1;35m|[m [36m|[m [34m|[m[36m\[m [33m\[m [1;31m\[m  
+[1;35m|[m [36m|[m [34m|[m[36m/[m [33m/[m [1;31m/[m  
+[1;35m|[m [36m|[m[36m/[m[34m|[m [33m|[m [1;31m|[m   
+[1;35m|[m * [34m|[m [33m|[m [1;31m|[m [33m007d4a6[m Merge pull request #2 from maiHydrogen/textfield
+[1;35m|[m[1;35m/[m[1;31m|[m [34m|[m [33m|[m [1;31m|[m 
+[1;35m|[m * [34m|[m [33m|[m [1;31m|[m [33m4bfebbf[m removed edits in styles.dart
+[1;35m|[m [1;31m|[m * [33m|[m [1;31m|[m [33mc52c892[m chore: added some comments
+[1;35m|[m [1;31m|[m * [33m|[m [1;31m|[m [33m4bb34d0[m chore:added Tabler icons
+[1;35m|[m [1;31m|[m * [33m|[m [1;31m|[m [33mf417bab[m feat:added OSearchBar
+[1;35m|[m [1;31m|[m * [33m|[m [1;31m|[m [33mbc3c775[m refactor: moved files from widget to components
+[1;35m|[m [1;31m|[m[1;31m/[m [33m/[m [1;31m/[m  
+[1;35m|[m * [33m|[m [1;31m|[m [33m10f6c20[m chore:modified alignment & style of icons & texts
+[1;35m|[m * [33m|[m [1;31m|[m [33m5592d3e[m feat: Added the custom OTextfield
+[1;35m|[m[1;35m/[m [33m/[m [1;31m/[m  
+* [33m/[m [1;31m/[m [33m83575c7[m Themed colors and constants.
+[33m|[m[33m/[m [1;31m/[m  
+* [1;31m|[m [33m9757513[m text styles
+[1;31m|[m [1;31m|[m * [33m416d580[m[33m ([m[1;35mrefs/stash[m[33m)[m WIP on buttons: 0fc6a6d base colors
+[1;31m|[m [1;31m|[m[1;31m/[m[1;33m|[m 
+[1;31m|[m[1;31m/[m[1;31m|[m [1;33m|[m 
+[1;31m|[m [1;31m|[m * [33me05c58c[m index on buttons: 0fc6a6d base colors
+[1;31m|[m [1;31m|[m[1;31m/[m  
+[1;31m|[m[1;31m/[m[1;31m|[m   
+* [1;31m|[m [33m0fc6a6d[m[33m ([m[1;32mmain[m[33m)[m base colors
+[1;31m|[m[1;31m/[m  
+* [33m8c6ff78[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m first commit

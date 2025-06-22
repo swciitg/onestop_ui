@@ -88,7 +88,7 @@ class StepProgressIndicator extends StatelessWidget {
                 child: Text(
                   stepNames[index],
                   textAlign: TextAlign.center,
-                  style: OTextStyle.lableXSmall,
+                  style: OTextStyle.labelXSmall,
                 ),
               );
             }),
