@@ -23,18 +23,18 @@ class _OColor {
       lightTheme
           ? Color(0xFFE5F1FF)
           : Colors.red; //I NEED HELP!, im not sure of the color
-  Color get blue100 => lightTheme ? Color(0xFFEDDFFF) : Color(0xFF012151);
-  Color get blue200 => lightTheme ? Color(0xFF8AAFFF) : Color(0xFF80B2FF);
+  Color get blue100 => lightTheme ? Color(0xFFD6E6FF) : Color(0xFF012151);
+  Color get blue200 => lightTheme ? Color(0xFFBDD7FF) : Color(0xFF80B2FF);
   Color get blue300 => lightTheme ? Color(0xFF4D9AFE) : Color(0xFF66A3FF);
   Color get blue400 => lightTheme ? Color(0xFF247BFF) : Color(0xFF4D93FF);
   Color get blue500 => lightTheme ? Color(0xFF005FF0) : Color(0xFF3887FF);
   Color get blue600 => lightTheme ? Color(0xFF004BBD) : Color(0xFF1A75FF);
   Color get blue700 => lightTheme ? Color(0xFF00378A) : Color(0xFF0065FF);
-  Color get blue800 => lightTheme ? Color(0xFF002237) : Color(0xFF005BE5);
+  Color get blue800 => lightTheme ? Color(0xFF002257) : Color(0xFF005BE5);
 
   // Gray colors (Neutrals)
   Color get gray100 => lightTheme ? Color(0xFFF4F5F5) : Color(0xFF161822);
-  Color get gray200 => lightTheme ? Color(0xFFE9E9EA) : Color(0xFF14161F);
+  Color get gray200 => lightTheme ? Color(0xFFE9E9EA) : Color(0xFF32364D);
   Color get gray300 => lightTheme ? Color(0xFFD5D5D7) : Color(0xFF3F404A);
   Color get gray400 => lightTheme ? Color(0xFFBABABF) : Color(0xFF4C4D59);
   Color get gray500 => lightTheme ? Color(0xFF98999F) : Color(0xFF696A74);

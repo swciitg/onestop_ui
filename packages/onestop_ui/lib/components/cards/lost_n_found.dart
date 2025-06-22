@@ -15,7 +15,7 @@ class OLostFoundCard extends StatefulWidget {
   final String? userImageURl;
   final String? userName;
   final Function()? delete;
-  final Function()?edit;
+  final Function()? edit;
   final Function()? message;
   final Function()? phone;
 
@@ -59,8 +59,9 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
           GestureDetector(
             behavior: HitTestBehavior.opaque,
             onTapDown:
-                (_) =>
-                    setState(() => _isPressed = true) ,//engage behaviour when search bar is tapped
+                (_) => setState(
+                  () => _isPressed = true,
+                ), //engage behaviour when search bar is tapped
             onTapUp: (_) {
               setState(() => _isPressed = false);
             },
@@ -117,17 +118,13 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
                                 child: Icon(
                                   TablerIcons.clock_question,
                                   size: 16,
-                                  color:
-                                          OColor.gray600,
+                                  color: OColor.gray600,
                                 ),
                               ),
                               OText(
                                 text: widget.time,
                                 style: OTextStyle.labelXSmall.copyWith(
-                                  color:
-
-                                           OColor.gray600
-
+                                  color: OColor.gray600,
                                 ),
                               ),
                             ],
@@ -141,17 +138,13 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
                                 child: Icon(
                                   TablerIcons.map_pin_question,
                                   size: 16,
-                                  color:
-
-                                          OColor.gray600
-
+                                  color: OColor.gray600,
                                 ),
                               ),
                               OText(
                                 text: widget.location,
                                 style: OTextStyle.labelXSmall.copyWith(
-                                  color:
-                                     OColor.gray600
+                                  color: OColor.gray600,
                                 ),
                               ),
                             ],
@@ -231,8 +224,7 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
                         child: OText(
                           text: widget.userName,
                           style: OTextStyle.labelSmall.copyWith(
-                            color:
-                                OColor.gray800
+                            color: OColor.gray800,
                           ),
                         ),
                       ),
@@ -246,8 +238,7 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
                         icon: Icon(
                           TablerIcons.phone,
                           size: 24,
-                          color:
-                              OColor.green600
+                          color: OColor.green600,
                         ),
                       ),
                       IconButton(
@@ -255,8 +246,7 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
                         icon: Icon(
                           TablerIcons.message,
                           size: 24,
-                          color:
-                              OColor.green600
+                          color: OColor.green600,
                         ),
                       ),
                     ],
@@ -269,33 +259,27 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
                         icon: Icon(
                           TablerIcons.edit,
                           size: 16,
-                          color:
-                              OColor.green600
-
+                          color: OColor.green600,
                         ),
                         label: OText(
                           text: "Edit",
                           style: OTextStyle.labelSmall.copyWith(
-                            color:
-                                OColor.green600
-
+                            color: OColor.green600,
                           ),
                         ),
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.25),
                       TextButton.icon(
-                        onPressed: widget.delete ,
+                        onPressed: widget.delete,
                         icon: Icon(
                           TablerIcons.trash,
                           size: 16,
-                          color:
-                          OColor.red500
+                          color: OColor.red500,
                         ),
                         label: OText(
                           text: "Delete",
                           style: OTextStyle.labelSmall.copyWith(
-                            color:
-                                OColor.red500
+                            color: OColor.red500,
                           ),
                         ),
                       ),
@@ -308,11 +292,8 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
             top: 6,
             right: 6,
             child: IconButton(
-              icon: Icon(
-                TablerIcons.chevron_right,
-                color: OColor.gray600,
-              ),
-              onPressed:  widget.onArrowPressed ,
+              icon: Icon(TablerIcons.chevron_right, color: OColor.gray600),
+              onPressed: widget.onArrowPressed,
               iconSize: 24,
             ),
           ),

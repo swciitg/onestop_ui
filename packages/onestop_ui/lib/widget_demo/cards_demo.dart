@@ -10,6 +10,58 @@ class CardsDemo extends StatelessWidget {
     return SizedBox(
       child: Column(
         children: [
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              OProductListingCard(
+                price: "40",
+                tag: "BRAND NEW",
+                productName: "Product Name",
+                edit: () {},
+                delete: () {},
+                isEditingEnabled: true,
+                imageUrl: // image of item listed for sell
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+              ),
+              OProductListingCard(
+                price: "40",
+                tag: "BRAND NEW",
+                productName: "Product Name",
+                edit: () {},
+                delete: () {},
+                isEditingEnabled: true,
+                imageUrl: // image of item listed for sell
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+              ),
+            ],
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              OProductListingCard(
+                price: "40",
+                tag: "BRAND NEW",
+                productName: "Product Name",
+                edit: () {},
+                delete: () {},
+                isEditingEnabled: false,
+                imageUrl: // image of item listed for sell
+                    "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+              ),
+              OProductListingCard(
+                price: "40",
+                tag: "BRAND NEW",
+                productName: "Product Name",
+                edit: () {},
+                delete: () {},
+                isEditingEnabled: false,
+                imageUrl: // image of item listed for sell
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+              ),
+            ],
+          ),
           OLostFoundCard(
             isFound: true, // this toggle b/w card mode for lost or found item
             isEditingEnabled:
