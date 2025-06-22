@@ -62,7 +62,7 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(OSpacing.xs),
-      child: Stack(
+      child: Stack(alignment: Alignment.bottomCenter,
         children: [
           GestureDetector(
             behavior: HitTestBehavior.opaque,
@@ -278,115 +278,112 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
                     indent: OSpacing.xs,
                     endIndent: OSpacing.xs,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: OSpacing.xs,
-                    ),
-                    child: Row(
-                      mainAxisAlignment:
-                          widget.isUserAvailable
-                              ? MainAxisAlignment.spaceBetween
-                              : MainAxisAlignment.center,
-                      children: [
-                        if (widget.isUserAvailable == true)
-                          Row(
-                            children: [
-                              Container(
-                                width: 24,
-                                height: 24,
-                                decoration: BoxDecoration(
-                                  color: OColor.gray400,
-                                  image: DecorationImage(
-                                    image: NetworkImage(widget.imageURl!),
-                                    fit: BoxFit.cover,
-                                    opacity: widget.isEnabled ? 1 : 0.2,
-                                  ),
-                                  borderRadius: BorderRadius.circular(
-                                    OCornerRadius.xl,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: OSpacing.xs,
-                                ),
-                                child: OText(
-                                  text: widget.userName,
-                                  style: OTextStyle.labelSmall.copyWith(
-                                    color:
-                                        widget.isEnabled
-                                            ? OColor.gray800
-                                            : OColor.gray600,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        Row(
-                          children: [
-                            TextButton.icon(
-                              onPressed:
-                                  widget.isEnabled
-                                      ? () {
-                                        setState(() => _isPressed = false);
-                                        widget.pressedButton1;
-                                      }
-                                      : null,
-                              icon: Icon(
-                                widget.buttonIcon1,
-                                size: 16,
-                                color:
-                                    widget.isEnabled
-                                        ? OColor.green600
-                                        : OColor.gray400,
-                              ),
-                              label: OText(
-                                text: widget.buttonLabel1,
-                                style: OTextStyle.labelSmall.copyWith(
-                                  color:
-                                      widget.isEnabled
-                                          ? OColor.green600
-                                          : OColor.gray400,
-                                ),
-                              ),
-                            ),
-                            if (widget.isUserAvailable != true)
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.25,
-                              ),
-                            TextButton.icon(
-                              onPressed:
-                                  widget.isEnabled
-                                      ? () {
-                                        setState(() => _isPressed = false);
-                                        widget.pressedButton2;
-                                      }
-                                      : null,
-                              icon: Icon(
-                                widget.buttonIcon2,
-                                size: 16,
-                                color:
-                                    widget.isEnabled
-                                        ? OColor.green600
-                                        : OColor.gray400,
-                              ),
-                              label: OText(
-                                text: widget.buttonLabel2,
-                                style: OTextStyle.labelSmall.copyWith(
-                                  color:
-                                      widget.isEnabled
-                                          ? OColor.green600
-                                          : OColor.gray400,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+                  const SizedBox(height: OSpacing.xl +15)
                 ],
               ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: OSpacing.s,
+              vertical: OSpacing.xs
+            ),
+            child: Row(
+              mainAxisAlignment:
+              widget.isUserAvailable
+                  ? MainAxisAlignment.spaceBetween
+                  : MainAxisAlignment.center,
+              children: [
+                if (widget.isUserAvailable == true)
+                  Row(
+                    children: [
+                      Container(
+                        width: 24,
+                        height: 24,
+                        decoration: BoxDecoration(
+                          color: OColor.gray400,
+                          image: DecorationImage(
+                            image: NetworkImage(widget.imageURl!),
+                            fit: BoxFit.cover,
+                            opacity: widget.isEnabled ? 1 : 0.2,
+                          ),
+                          borderRadius: BorderRadius.circular(
+                            OCornerRadius.xl,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: OSpacing.xs,
+                        ),
+                        child: OText(
+                          text: widget.userName,
+                          style: OTextStyle.labelSmall.copyWith(
+                            color:
+                            widget.isEnabled
+                                ? OColor.gray800
+                                : OColor.gray600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                Row(
+                  children: [
+                    TextButton.icon(
+                      onPressed:
+                      widget.isEnabled
+                          ? widget.pressedButton1
+                          : null,
+                      icon: Icon(
+                        widget.buttonIcon1,
+                        size: 16,
+                        color:
+                        widget.isEnabled
+                            ? OColor.green600
+                            : OColor.gray400,
+                      ),
+                      label: OText(
+                        text: widget.buttonLabel1,
+                        style: OTextStyle.labelSmall.copyWith(
+                          color:
+                          widget.isEnabled
+                              ? OColor.green600
+                              : OColor.gray400,
+                        ),
+                      ),
+                    ),
+                    if (widget.isUserAvailable != true)
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.25,
+                      ),
+                    TextButton.icon(
+                      onPressed:
+                      widget.isEnabled
+                          ?
+                        widget.pressedButton2
+                          : null,
+                      icon: Icon(
+                        widget.buttonIcon2,
+                        size: 16,
+                        color:
+                        widget.isEnabled
+                            ? OColor.green600
+                            : OColor.gray400,
+                      ),
+                      label: OText(
+                        text: widget.buttonLabel2,
+                        style: OTextStyle.labelSmall.copyWith(
+                          color:
+                          widget.isEnabled
+                              ? OColor.green600
+                              : OColor.gray400,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ),
           Positioned(
