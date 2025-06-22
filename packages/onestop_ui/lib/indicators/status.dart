@@ -2,33 +2,55 @@ import 'package:flutter/material.dart';
 import 'package:onestop_ui/utils/colors.dart';
 import 'package:onestop_ui/utils/styles.dart';
 
-class Status_Indicator extends StatelessWidget {
-  String type;
-  String label;
+enum StatusType { warning, positive, negative }
 
-  Status_Indicator({required this.type, required this.label, super.key});
+class OStatus extends StatelessWidget {
+  final StatusType type;
+  final String label;
+  final IconData lead;
+
+  const OStatus({
+    super.key,
+    required this.type,
+    required this.label,
+    required this.lead,
+  });
+
+  Color get backgroundColor => switch (type) {
+    StatusType.warning => OColor.yellow100,
+    StatusType.positive => OColor.green100,
+    StatusType.negative => OColor.red100,
+  };
+
+  Color get foregroundColor => switch (type) {
+    StatusType.warning => OColor.yellow800,
+    StatusType.positive => OColor.green700,
+    StatusType.negative => OColor.red600,
+  };
 
   @override
-  Color? color_bg, color_fg;
   Widget build(BuildContext context) {
-    String type_ = type.toLowerCase();
-    if (type_ == 'warning') color_bg = OColor.yellow100;
-    color_fg = OColor.yellow800;
-    if (type_ == 'positive') color_bg = OColor.green100;
-    color_fg = OColor.green700;
-    if (type_ == 'negative') color_bg = OColor.red100;
-    color_fg = OColor.red600;
-
     return Container(
       height: 24,
-      margin: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+      margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
       decoration: BoxDecoration(
-        color: color_bg,
+        color: backgroundColor,
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Text(
-        label,
-        style: OTextStyle.labelXSmall.copyWith(color: color_fg),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const SizedBox(width: 8),
+          Icon(lead, size: 16, color: foregroundColor),
+          const SizedBox(width: 4),
+          Center(
+            child: Text(
+              label,
+              style: OTextStyle.lableXSmall.copyWith(color: foregroundColor),
+            ),
+          ),
+          const SizedBox(width: 8),
+        ],
       ),
     );
   }

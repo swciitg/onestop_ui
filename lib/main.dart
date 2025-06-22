@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:onestop_ui/index.dart';
+import 'package:onestop_ui/widget_demo/indicators_demo.dart';
 import 'package:onestop_ui/widget_demo/buttons_demo.dart';
 import 'package:onestop_ui/widget_demo/list_demo.dart';
 
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
                     CardsDemo(),
                     const SizedBox(height:20),
                     TextfieldsDemo(),
+                    IndicatorsDemo(),
                     const SizedBox(height:10),                  
                     const Divider(color:Color(0xFF148440),),
                     const SizedBox(height:10),                  

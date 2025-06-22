@@ -1,48 +1,57 @@
 import 'package:flutter/material.dart';
 import 'package:onestop_ui/index.dart';
 
-class banner extends StatelessWidget {
-  String type;
-  String headline;
-  String paragraph;
-  Widget my_button;
-  String icontype;
+enum BannerType { warning, negative, positive, accent }
 
-  banner({
+class OBanner extends StatelessWidget {
+  final BannerType type;
+  final String headline;
+  final String paragraph;
+  final Widget myButton;
+
+  const OBanner({
     required this.type,
-    required this.my_button,
-    required this.icontype,
+    required this.myButton,
+
     required this.headline,
     required this.paragraph,
-
     super.key,
   });
 
+  IconData _getIcon() {
+    switch (type) {
+      case BannerType.warning:
+      case BannerType.negative:
+      case BannerType.accent:
+        return Icons.warning_amber_rounded;
+      case BannerType.positive:
+        return Icons.done_rounded;
+    }
+  }
+
+  Color _getBackgroundColor() {
+    switch (type) {
+      case BannerType.warning:
+        return OColor.yellow100;
+      case BannerType.negative:
+        return OColor.red200;
+      case BannerType.positive:
+        return OColor.green100;
+      case BannerType.accent:
+        return OColor.blue100;
+    }
+  }
+
   @override
-  IconData? lead;
-  Color? color_bg;
-
   Widget build(BuildContext context) {
-    String type_ = type.toLowerCase();
-    if (type_ == 'warning' || type_ == 'negative' || type_ == 'accent')
-      lead = Icons.warning_amber_rounded;
-    if (type_ == 'positive') lead = Icons.done_rounded;
-    if (type_ == 'negative') color_bg = OColor.red200;
-    if (type_ == 'warning') color_bg = OColor.yellow100;
-    if (type_ == 'positive') color_bg = OColor.green100;
-    if (type_ == 'accent') color_bg = OColor.blue100;
-
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16),
       child: Container(
-        padding: EdgeInsets.all(16),
-
-        //height: 76,
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: color_bg,
+          color: _getBackgroundColor(),
           borderRadius: BorderRadius.circular(8),
         ),
-
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -52,37 +61,32 @@ class banner extends StatelessWidget {
                   height: 32,
                   width: 32,
                   child: Center(
-                    child: Center(
-                      child: Icon(lead, size: 32, color: OColor.gray800),
-                    ),
+                    child: Icon(_getIcon(), size: 32, color: OColor.gray800),
                   ),
                 ),
-                //trailing:  trail,
-                SizedBox(width: 16),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        headline,
-                        style: OTextStyle.headingSmall.copyWith(
-                          fontSize: 16,
-                          color: OColor.gray800,
-                        ),
+                const SizedBox(width: 16),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      headline,
+                      style: OTextStyle.headingSmall.copyWith(
+                        fontSize: 16,
+                        color: OColor.gray800,
                       ),
-                      Text(
-                        paragraph,
-                        style: OTextStyle.bodyMedium.copyWith(
-                          fontSize: 16,
-                          color: OColor.gray800,
-                        ),
+                    ),
+                    Text(
+                      paragraph,
+                      style: OTextStyle.bodyMedium.copyWith(
+                        fontSize: 16,
+                        color: OColor.gray800,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),
-            Align(alignment: Alignment.topCenter, child: my_button),
+            Align(alignment: Alignment.topCenter, child: myButton),
           ],
         ),
       ),

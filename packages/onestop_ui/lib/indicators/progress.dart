@@ -19,7 +19,6 @@ class StepProgressIndicator extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
-          // Stack that only aligns line and circles
           SizedBox(
             height: 24,
             child: Stack(
@@ -80,7 +79,7 @@ class StepProgressIndicator extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          // Step names row (separately aligned)
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: List.generate(numberOfSteps, (index) {
