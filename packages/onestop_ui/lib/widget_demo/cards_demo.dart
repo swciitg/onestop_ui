@@ -12,8 +12,6 @@ class CardsDemo extends StatelessWidget {
         children: [
           OLostFoundCard(
             isFound: true, // this toggle b/w card mode for lost or found item
-            isEnabled:
-                true, // this toggle b/w card mode for enabled and disabled states
             isEditingEnabled:
                 false, // this toggle b/w the modes where user can edit or not there posted ads
             heading: "Card header",
@@ -36,7 +34,6 @@ class CardsDemo extends StatelessWidget {
           ),
           OLostFoundCard(
             isFound: false,
-            isEnabled: true,
             isEditingEnabled: false,
             heading: "Card header",
             userName: "john Doe",
@@ -55,27 +52,7 @@ class CardsDemo extends StatelessWidget {
           ),
           OLostFoundCard(
             isFound: true,
-            isEnabled: true,
             isEditingEnabled: true,
-            heading: "Card header",
-            userName: "john Doe",
-            submittedAt: 'Security Desk',
-            userImageURl:
-                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
-            location: "Location",
-            time: "Time",
-            imageURl:
-                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
-            onArrowPressed: () {},
-            delete: () {},
-            edit: () {},
-            message: () {},
-            phone: () {},
-          ),
-          OLostFoundCard(
-            isFound: true,
-            isEnabled: false,
-            isEditingEnabled: false,
             heading: "Card header",
             userName: "john Doe",
             submittedAt: 'Security Desk',

@@ -5,7 +5,6 @@ import '../../index.dart';
 
 class OLostFoundCard extends StatefulWidget {
   final String heading;
-  final bool isEnabled;
   final bool isFound;
   final Function()? onArrowPressed;
   final String time;
@@ -22,7 +21,6 @@ class OLostFoundCard extends StatefulWidget {
 
   const OLostFoundCard({
     super.key,
-    this.isEnabled = true,
     this.isEditingEnabled = false,
     this.onArrowPressed,
     this.isFound = true,
@@ -62,9 +60,7 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
             behavior: HitTestBehavior.opaque,
             onTapDown:
                 (_) =>
-                    widget.isEnabled
-                        ? setState(() => _isPressed = true)
-                        : null, //engage behaviour when search bar is tapped
+                    setState(() => _isPressed = true) ,//engage behaviour when search bar is tapped
             onTapUp: (_) {
               setState(() => _isPressed = false);
             },
@@ -93,7 +89,6 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
                             image: DecorationImage(
                               image: NetworkImage(widget.imageURl),
                               fit: BoxFit.cover,
-                              opacity: widget.isEnabled ? 1 : 0.2,
                             ),
                           ),
                         ),
@@ -123,18 +118,16 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
                                   TablerIcons.clock_question,
                                   size: 16,
                                   color:
-                                      widget.isEnabled
-                                          ? OColor.gray600
-                                          : OColor.gray400,
+                                          OColor.gray600,
                                 ),
                               ),
                               OText(
                                 text: widget.time,
                                 style: OTextStyle.labelXSmall.copyWith(
                                   color:
-                                      widget.isEnabled
-                                          ? OColor.gray600
-                                          : OColor.gray400,
+
+                                           OColor.gray600
+
                                 ),
                               ),
                             ],
@@ -149,18 +142,16 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
                                   TablerIcons.map_pin_question,
                                   size: 16,
                                   color:
-                                      widget.isEnabled
-                                          ? OColor.gray600
-                                          : OColor.gray400,
+
+                                          OColor.gray600
+
                                 ),
                               ),
                               OText(
                                 text: widget.location,
                                 style: OTextStyle.labelXSmall.copyWith(
                                   color:
-                                      widget.isEnabled
-                                          ? OColor.gray600
-                                          : OColor.gray400,
+                                     OColor.gray600
                                 ),
                               ),
                             ],
@@ -229,7 +220,6 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
                           image: DecorationImage(
                             image: NetworkImage(widget.userImageURl!),
                             fit: BoxFit.cover,
-                            opacity: widget.isEnabled ? 1 : 0.2,
                           ),
                           borderRadius: BorderRadius.circular(OCornerRadius.xl),
                         ),
@@ -242,9 +232,7 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
                           text: widget.userName,
                           style: OTextStyle.labelSmall.copyWith(
                             color:
-                                widget.isEnabled
-                                    ? OColor.gray800
-                                    : OColor.gray600,
+                                OColor.gray800
                           ),
                         ),
                       ),
@@ -254,25 +242,21 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
                   Row(
                     children: [
                       IconButton(
-                        onPressed: widget.isEnabled ? widget.phone : null,
+                        onPressed: widget.phone,
                         icon: Icon(
                           TablerIcons.phone,
                           size: 24,
                           color:
-                              widget.isEnabled
-                                  ? OColor.green600
-                                  : OColor.gray400,
+                              OColor.green600
                         ),
                       ),
                       IconButton(
-                        onPressed: widget.isEnabled ? widget.message : null,
+                        onPressed: widget.message,
                         icon: Icon(
                           TablerIcons.message,
                           size: 24,
                           color:
-                              widget.isEnabled
-                                  ? OColor.green600
-                                  : OColor.gray400,
+                              OColor.green600
                         ),
                       ),
                     ],
@@ -281,41 +265,37 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
                   Row(
                     children: [
                       TextButton.icon(
-                        onPressed: widget.isEnabled ? widget.edit : null,
+                        onPressed: widget.edit,
                         icon: Icon(
                           TablerIcons.edit,
                           size: 16,
                           color:
-                              widget.isEnabled
-                                  ? OColor.green600
-                                  : OColor.gray400,
+                              OColor.green600
+
                         ),
                         label: OText(
                           text: "Edit",
                           style: OTextStyle.labelSmall.copyWith(
                             color:
-                                widget.isEnabled
-                                    ? OColor.green600
-                                    : OColor.gray400,
+                                OColor.green600
+
                           ),
                         ),
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width * 0.25),
                       TextButton.icon(
-                        onPressed: widget.isEnabled ? widget.delete : null,
+                        onPressed: widget.delete ,
                         icon: Icon(
                           TablerIcons.trash,
                           size: 16,
                           color:
-                              widget.isEnabled ? OColor.red500 : OColor.gray400,
+                          OColor.red500
                         ),
                         label: OText(
                           text: "Delete",
                           style: OTextStyle.labelSmall.copyWith(
                             color:
-                                widget.isEnabled
-                                    ? OColor.red500
-                                    : OColor.gray400,
+                                OColor.red500
                           ),
                         ),
                       ),
@@ -330,9 +310,9 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
             child: IconButton(
               icon: Icon(
                 TablerIcons.chevron_right,
-                color: widget.isEnabled ? OColor.gray600 : OColor.gray300,
+                color: OColor.gray600,
               ),
-              onPressed: widget.isEnabled ? widget.onArrowPressed : null,
+              onPressed:  widget.onArrowPressed ,
               iconSize: 24,
             ),
           ),
