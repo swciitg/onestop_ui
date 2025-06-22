@@ -18,6 +18,7 @@ class TertiaryButton extends StatefulWidget {
   final String? subLabel;
   final TextStyle? subLabelStyle;
   final EdgeInsets? padding;
+  final Color? textColor;
 
   const TertiaryButton({
     super.key,
@@ -39,7 +40,8 @@ class TertiaryButton extends StatefulWidget {
     this.tarilingIcon,
     this.iconColor,
     this.subLabel, 
-    this.subLabelStyle, this.padding,
+    this.subLabelStyle, this.padding, this.textColor,
+
   });
 
   @override
@@ -51,7 +53,7 @@ class _TertiaryButtonState extends State<TertiaryButton> {
 
   @override
   Widget build(BuildContext context) {
-    final Color textColor = _isPressed ? OColor.green700 : OColor.green600;
+    final Color textColor = _isPressed ? widget.textColor ?? OColor.green700 : OColor.green600;
 
     final TextStyle labelStyle =
         widget.labelStyle ??

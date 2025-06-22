@@ -123,22 +123,25 @@ class _ButtonsDemoState extends State<ButtonsDemo> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            
-        TertiaryButton(label: 'Label', onPressed: () {  },
+            TertiaryButton(
+              label: 'Label',
+              onPressed: () {},
               leadingIcon: TablerIcons.arrow_rotary_first_left,
               tarilingIcon: TablerIcons.arrow_rotary_first_left,
-        ),
-        
-        TertiaryButton(label: 'Label', onPressed: () {  },
-        enabled: false,
+            ),
+
+            TertiaryButton(
+              label: 'Label',
+              onPressed: () {},
+              enabled: false,
               leadingIcon: TablerIcons.arrow_rotary_first_left,
               tarilingIcon: TablerIcons.arrow_rotary_first_left,
-        ),
+            ),
           ],
         ),
 
         SizedBox(height: 20),
-        
+
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [

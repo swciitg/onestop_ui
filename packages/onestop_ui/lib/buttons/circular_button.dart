@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:onestop_ui/utils/colors.dart';
-enum CircularButtonSize {small,large}
+
+enum CircularButtonSize { small, large }
 
 class CircularButton extends StatefulWidget {
   // final String label;
@@ -9,16 +10,22 @@ class CircularButton extends StatefulWidget {
   final bool enabled;
   final CircularButtonSize size;
   final Color? bgColor;
+  final Color? iconColor;
+  final Color? disabledIcnColor;
+  final Color? splashColor;
   final EdgeInsets? padding;
 
   const CircularButton({
     super.key,
-    // required this.label,
     required this.icon,
     required this.onPressed,
-    this.enabled= true, 
-    this.size= CircularButtonSize.large,
-    this.bgColor, this.padding// =  OColor.gray100,
+    this.enabled = true,
+    this.size = CircularButtonSize.large,
+    this.bgColor,
+    this.padding,
+    this.iconColor,
+    this.disabledIcnColor,
+    this.splashColor,
   });
 
   @override
@@ -26,25 +33,24 @@ class CircularButton extends StatefulWidget {
 }
 
 class _CircularButtonState extends State<CircularButton> {
-
   bool _isPressed = false;
-  
-  
 
   @override
   Widget build(BuildContext context) {
-
     final bool isSmall = widget.size == CircularButtonSize.small;
 
     final isDisabled = widget.onPressed == null || !widget.enabled;
 
-    final Color iconColor = isDisabled?OColor.gray400:OColor.green600;
-
     Color backgroundColor =
         isDisabled
-            ? widget.bgColor != null ? widget.bgColor!:OColor.gray100
-            : _isPressed? OColor.gray200: widget.bgColor != null ? widget.bgColor!:OColor.gray100;
-
+            ? widget.bgColor != null
+                ? widget.bgColor!
+                : OColor.gray100
+            : _isPressed
+            ? widget.splashColor ?? OColor.gray200
+            : widget.bgColor != null
+            ? widget.bgColor!
+            : OColor.gray100;
 
     return GestureDetector(
       onTapDown: (_) {
@@ -65,8 +71,8 @@ class _CircularButtonState extends State<CircularButton> {
           color: backgroundColor,
           borderRadius: BorderRadius.circular(50),
         ),
-        padding: widget.padding??EdgeInsets.all(8),
-        child: Icon(widget.icon, size: isSmall?24:32, color:iconColor),
+        padding: widget.padding ?? EdgeInsets.all(8),
+        child: Icon(widget.icon, size: isSmall ? 24 : 32, color: isDisabled ?widget.disabledIcnColor?? OColor.gray400 : widget.iconColor?? OColor.green600),
       ),
     );
   }
