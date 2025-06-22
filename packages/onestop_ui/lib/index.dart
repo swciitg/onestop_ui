@@ -24,6 +24,9 @@ export 'components/cardcomponents/cardblock.dart';
 export 'components/cards/homecard.dart';
 export 'components/cards/messcard.dart';
 export 'components/cards/food_outlet_card.dart';
+export 'components/cards/cab_sharing.dart';
+export 'components/cards/events_card.dart';
+export 'components/cards/lost_n_found.dart';
 export 'widget_demo/cards_demo.dart';
 
 export 'buttons/button_exports.dart';

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
-import 'package:onestop_ui/components/cards/cab_sharing.dart';
-import 'package:onestop_ui/components/cards/events_card.dart';
 import 'package:onestop_ui/index.dart';
 
 class CardsDemo extends StatelessWidget {
@@ -12,14 +10,101 @@ class CardsDemo extends StatelessWidget {
     return SizedBox(
       child: Column(
         children: [
+          OLostFoundCard(
+            isFound: true, // this toggle b/w card mode for lost or found item
+            isEnabled:
+                true, // this toggle b/w card mode for enabled and disabled states
+            isEditingEnabled:
+                false, // this toggle b/w the modes where user can edit or not there posted ads
+            heading: "Card header",
+            userName: "john Doe",
+            submittedAt:
+                'Security Desk', // this string is for location where found item was submitted
+            userImageURl: // image of user who put the ad
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            location: "Location", // location where item was lost or found
+            time: "Time", // time of item lost or found
+            imageURl: // image of item lost or found
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            onArrowPressed:
+                () {}, // triggers the chevron button at top right corner
+            delete: () {}, // triggers the delete button when editing mode is on
+            edit: () {}, // triggers the edit button when editing mode is on
+            message:
+                () {}, // triggers the message button when editing mode is off
+            phone: () {}, // triggers the phone button when editing mode is off
+          ),
+          OLostFoundCard(
+            isFound: false,
+            isEnabled: true,
+            isEditingEnabled: false,
+            heading: "Card header",
+            userName: "john Doe",
+            submittedAt: 'Security Desk',
+            userImageURl:
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            location: "Location",
+            time: "Time",
+            imageURl:
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            onArrowPressed: () {},
+            delete: () {},
+            edit: () {},
+            message: () {},
+            phone: () {},
+          ),
+          OLostFoundCard(
+            isFound: true,
+            isEnabled: true,
+            isEditingEnabled: true,
+            heading: "Card header",
+            userName: "john Doe",
+            submittedAt: 'Security Desk',
+            userImageURl:
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            location: "Location",
+            time: "Time",
+            imageURl:
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            onArrowPressed: () {},
+            delete: () {},
+            edit: () {},
+            message: () {},
+            phone: () {},
+          ),
+          OLostFoundCard(
+            isFound: true,
+            isEnabled: false,
+            isEditingEnabled: false,
+            heading: "Card header",
+            userName: "john Doe",
+            submittedAt: 'Security Desk',
+            userImageURl:
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            location: "Location",
+            time: "Time",
+            imageURl:
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            onArrowPressed: () {},
+            delete: () {},
+            edit: () {},
+            message: () {},
+            phone: () {},
+          ),
           OEventCard(
-            isEnabled: true, // toggle between enabled and disabled states of card
-            onArrowPressed: () {}, // triggers the chevron button at top right corner
-            buttonIcon: TablerIcons.arrow_rotary_first_left, // Icon for the main button at bottom
+            isEnabled:
+                true, // toggle between enabled and disabled states of card
+            onArrowPressed:
+                () {}, // triggers the chevron button at top right corner
+            buttonIcon:
+                TablerIcons
+                    .arrow_rotary_first_left, // Icon for the main button at bottom
             buttonLabel: "Label", // Label for the main button at bottom
             pressedButton: () {}, // Function for the main button at bottom
             label: "LABEL", // name for the label/status of card
-            labelIcon: TablerIcons.arrow_rotary_first_left, //icon for the label/status of card
+            labelIcon:
+                TablerIcons
+                    .arrow_rotary_first_left, //icon for the label/status of card
             heading: 'Card Header',
             subLabel1: "Sub Label Text",
             subLabel2: "Sub Label Text",
