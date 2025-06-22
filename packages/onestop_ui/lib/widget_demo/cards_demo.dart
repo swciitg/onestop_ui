@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
-import 'package:onestop_ui/components/cards/cabSharing.dart';
+import 'package:onestop_ui/components/cards/cab_sharing.dart';
+import 'package:onestop_ui/components/cards/events_card.dart';
 import 'package:onestop_ui/index.dart';
 
 class CardsDemo extends StatelessWidget {
@@ -11,10 +12,40 @@ class CardsDemo extends StatelessWidget {
     return SizedBox(
       child: Column(
         children: [
+          OEventCard(
+            isEnabled: true, // toggle between enabled and disabled states of card
+            onArrowPressed: () {}, // triggers the chevron button at top right corner
+            buttonIcon: TablerIcons.arrow_rotary_first_left, // Icon for the main button at bottom
+            buttonLabel: "Label", // Label for the main button at bottom
+            pressedButton: () {}, // Function for the main button at bottom
+            label: "LABEL", // name for the label/status of card
+            labelIcon: TablerIcons.arrow_rotary_first_left, //icon for the label/status of card
+            heading: 'Card Header',
+            subLabel1: "Sub Label Text",
+            subLabel2: "Sub Label Text",
+            subLabelIcon1: TablerIcons.arrow_rotary_first_left,
+            subLabelIcon2: TablerIcons.arrow_rotary_first_left,
+          ),
+          OEventCard(
+            isEnabled: false,
+            onArrowPressed: () {},
+            buttonIcon: TablerIcons.arrow_rotary_first_left,
+            buttonLabel: "Label",
+            pressedButton: () {},
+            label: "LABEL",
+            labelIcon: TablerIcons.arrow_rotary_first_left,
+            heading: 'Card Header',
+            subLabel1: "Sub Label Text",
+            subLabel2: "Sub Label Text",
+            subLabelIcon1: TablerIcons.arrow_rotary_first_left,
+            subLabelIcon2: TablerIcons.arrow_rotary_first_left,
+          ),
           OCabSharingCard(
-            isUserAvailable: true, // this toggle b/w card mode with and without user Avatar
+            isUserAvailable:
+                true, // this toggle b/w card mode with and without user Avatar
             isEnabled: true, //toggles the enabled state of card
-            byTrain: false, // toggles b/w flight and train:- false means flight and true means train
+            byTrain:
+                false, // toggles b/w flight and train:- false means flight and true means train
             origin: "IITG",
             destination: "Home",
             status: "Status", // status for card
@@ -23,9 +54,10 @@ class CardsDemo extends StatelessWidget {
             time: "Time",
             subHeading: "Sub heading Text", // Body for card
             imageURl: // url for user image via NetworkImage widget
-            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
             userName: "John Doe",
-            onArrowPressed: () {}, // triggers the chevron button on top right corner
+            onArrowPressed:
+                () {}, // triggers the chevron button on top right corner
             buttonIcon1: TablerIcons.user_plus,
             buttonIcon2: TablerIcons.user_plus,
             pressedButton1: () {},
@@ -45,7 +77,7 @@ class CardsDemo extends StatelessWidget {
             time: "Time",
             subHeading: "Sub heading Text",
             imageURl:
-            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
             userName: "John Doe",
             onArrowPressed: () {},
             buttonIcon1: TablerIcons.user_plus,
@@ -67,7 +99,7 @@ class CardsDemo extends StatelessWidget {
             time: "Time",
             subHeading: "Sub heading Text",
             imageURl:
-            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
             userName: "John Doe",
             onArrowPressed: () {},
             buttonIcon1: TablerIcons.user_plus,
@@ -89,7 +121,7 @@ class CardsDemo extends StatelessWidget {
             time: "Time",
             subHeading: "Sub heading Text",
             imageURl:
-            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
             userName: "John Doe",
             onArrowPressed: () {},
             buttonIcon1: TablerIcons.user_plus,
@@ -103,7 +135,8 @@ class CardsDemo extends StatelessWidget {
             heading: "Card Header",
             imageUrl: // Image of food outlet via NetworkImage widget
                 "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
-            onArrowPressed: () {},// triggers the chevron button on top right corner
+            onArrowPressed:
+                () {}, // triggers the chevron button on top right corner
             isEnabled: true,
             subHeading: "Sub Heading",
             tag: "TAG", // tag for food outlet
@@ -129,7 +162,7 @@ class CardsDemo extends StatelessWidget {
             padding: const EdgeInsets.all(OSpacing.xs),
             child: OMessMenuCard(
               heading: 'Card Header',
-              subLabelText: ['Sub Label Text'],// this will be corrected soon
+              subLabelText: ['Sub Label Text'], // this will be corrected soon
               blockHeading1: 'Block Header 1',
               blockHeading2: 'Block Header 2',
               blockHeading3: 'Block Header 3',

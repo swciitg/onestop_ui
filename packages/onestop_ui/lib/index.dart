@@ -23,7 +23,7 @@ export 'components/cardcomponents/cardblock.dart';
 //Cards
 export 'components/cards/homecard.dart';
 export 'components/cards/messcard.dart';
-export 'components/cards/foodOutlet_card.dart';
+export 'components/cards/food_outlet_card.dart';
 export 'widget_demo/cards_demo.dart';
 
 export 'buttons/button_exports.dart';

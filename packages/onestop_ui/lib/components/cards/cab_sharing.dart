@@ -174,13 +174,18 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
                           horizontal: OSpacing.xs,
                         ),
                         child: Container(
-                          padding: const EdgeInsets.all(OSpacing.xxs),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: OSpacing.xxs,
+                            horizontal: OSpacing.xs,
+                          ),
                           decoration: BoxDecoration(
                             color:
                                 widget.isEnabled
                                     ? OColor.yellow100
                                     : OColor.gray200,
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(
+                              OCornerRadius.xl,
+                            ),
                           ),
                           child: Row(
                             children: [
@@ -292,7 +297,7 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
                                 decoration: BoxDecoration(
                                   color: OColor.gray400,
                                   image: DecorationImage(
-                                    image: NetworkImage(widget.imageURl!,),
+                                    image: NetworkImage(widget.imageURl!),
                                     fit: BoxFit.cover,
                                     opacity: widget.isEnabled ? 1 : 0.2,
                                   ),
@@ -388,10 +393,12 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
             top: 10,
             right: 10,
             child: IconButton(
-              icon: Icon(TablerIcons.chevron_right),
+              icon: Icon(
+                TablerIcons.chevron_right,
+                color: widget.isEnabled ? OColor.gray600 : OColor.gray300,
+              ),
               onPressed: widget.isEnabled ? widget.onArrowPressed : null,
               iconSize: 24,
-              disabledColor: OColor.gray400,
             ),
           ),
         ],
