@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:onestop_ui/utils/colors.dart';
 
-class my_Badge extends StatelessWidget {
-  String type;
+enum BadgeType { normalHint, warning }
 
-  my_Badge({required this.type, super.key});
+class OBadge extends StatelessWidget {
+  final BadgeType type;
+
+  const OBadge({required this.type, super.key});
+
+  Color _getBadgeColor() {
+    switch (type) {
+      case BadgeType.normalHint:
+        return OColor.blue500;
+      case BadgeType.warning:
+        return OColor.yellow500;
+    }
+  }
 
   @override
-  Color? color;
   Widget build(BuildContext context) {
-    String type_ = type.toLowerCase();
-    if (type_ == 'normal hint') color = OColor.blue500;
-    if (type_ == 'warning') color = OColor.yellow500;
+    final color = _getBadgeColor();
+
     return Container(
       height: 12,
       width: 12,

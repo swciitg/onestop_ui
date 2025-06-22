@@ -1,62 +1,69 @@
 import 'package:flutter/material.dart';
 import 'package:onestop_ui/index.dart';
+import 'package:onestop_ui/utils/colors.dart';
 
-class Tag extends StatefulWidget {
-  final String type;
-  final IconData lead;
-  final IconData trail;
+enum TagType { accentColor, neutral }
+
+class OTag extends StatelessWidget {
+  final TagType type;
+  final IconData? lead;
+  final IconData? trail;
   final String label;
-  const Tag({
-    required this.type,
-    required this.lead,
-    required this.label,
-    required this.trail,
+
+  const OTag({
     super.key,
+    required this.type,
+    this.lead,
+    this.trail,
+    required this.label,
   });
 
-  @override
-  State<Tag> createState() => _TagState();
-}
+  Color get backgroundColor {
+    switch (type) {
+      case TagType.accentColor:
+        return OColor.blue50;
+      case TagType.neutral:
+        return OColor.gray100;
+    }
+  }
 
-class _TagState extends State<Tag> {
-  Color? colorFg;
-  Color? colorBg;
+  Color get foregroundColor {
+    switch (type) {
+      case TagType.accentColor:
+        return OColor.blue500;
+      case TagType.neutral:
+        return OColor.gray600;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    String type_ = widget.type.toLowerCase();
-    if (type_ == "accent color") {
-      colorBg = OColor.blue50;
-      colorFg = OColor.blue500;
-    }
-    if (type_ == "neutral") {
-      colorBg = OColor.gray100;
-      colorFg = OColor.gray600;
-    }
     return Container(
       height: 24,
-      margin: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+      margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
       decoration: BoxDecoration(
-        color: colorBg,
+        color: backgroundColor,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SizedBox(width: 8),
-          Icon(widget.lead, size: 16, color: colorFg),
-          SizedBox(width: 4),
-          SizedBox(
-            child: Center(
-              child: Text(
-                widget.label,
-                style: OTextStyle.lableXSmall.copyWith(color: colorFg),
-              ),
+          const SizedBox(width: 8),
+          if (lead != null) ...[
+            Icon(lead, size: 16, color: foregroundColor),
+            const SizedBox(width: 4),
+          ],
+          Center(
+            child: Text(
+              label,
+              style: OTextStyle.lableXSmall.copyWith(color: foregroundColor),
             ),
           ),
-          SizedBox(width: 4),
-          Icon(widget.trail, size: 16, color: colorFg),
-          SizedBox(width: 8),
+          if (trail != null) ...[
+            const SizedBox(width: 4),
+            Icon(trail, size: 16, color: foregroundColor),
+          ],
+          const SizedBox(width: 8),
         ],
       ),
     );
