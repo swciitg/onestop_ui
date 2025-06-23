@@ -149,10 +149,12 @@ class _FoodOutletCardState extends State<FoodOutletCard> {
             top: 16,
             right: 10,
             child: IconButton(
-              icon: Icon(TablerIcons.chevron_right),
+              icon: Icon(
+                TablerIcons.chevron_right,
+                color: widget.isEnabled ? OColor.gray600 : OColor.gray300,
+              ),
               onPressed: widget.isEnabled ? widget.onArrowPressed : null,
               iconSize: 24,
-              disabledColor: OColor.gray300,
             ),
           ),
         ],
