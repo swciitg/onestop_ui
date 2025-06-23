@@ -119,8 +119,8 @@ class _FoodOutletCardState extends State<FoodOutletCard> {
                     ),
                   ),
                   if (widget.tag != null)
-                    Tag(
-                      type: widget.isEnabled ? 'accent color' : 'Neutral',
+                    OTag(
+                      type: widget.isEnabled?TagType.accentColor:TagType.neutral,
                       lead: TablerIcons.arrow_rotary_first_left,
                       label: widget.tag!,
                       trail: TablerIcons.arrow_rotary_first_left,
