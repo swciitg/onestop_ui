@@ -264,6 +264,7 @@ class _OLostFoundCardState extends State<OLostFoundCard> {
                         label: OText(
                           text: "Edit",
                           style: OTextStyle.labelSmall.copyWith(
+
                             color: OColor.green600,
                           ),
                         ),
