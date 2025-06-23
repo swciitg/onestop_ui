@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
-import 'package:onestop_ui/constants/corner_radius.dart';
-
 import '../../index.dart';
 
 class OProductListingCard extends StatefulWidget {
@@ -12,7 +10,6 @@ class OProductListingCard extends StatefulWidget {
   final String? tag;
   final String price;
   final String productName;
-
 
   const OProductListingCard({
     super.key,
@@ -36,18 +33,20 @@ class _OProductListingCardState extends State<OProductListingCard> {
   void initState() {
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(OSpacing.xs),
       child: Stack(
+        alignment: Alignment.bottomCenter,
         children: [
           GestureDetector(
             behavior: HitTestBehavior.opaque,
             onTapDown:
                 (_) => setState(
                   () => _isPressed = true,
-            ), //engage behaviour when search bar is tapped
+                ), //engage behaviour when search bar is tapped
             onTapUp: (_) {
               setState(() => _isPressed = false);
             },
@@ -109,53 +108,60 @@ class _OProductListingCardState extends State<OProductListingCard> {
                     ),
                   ),
                   if (widget.isEditingEnabled == true)
-                    Padding(
-                      padding: const EdgeInsets.only(top: OSpacing.s),
-                      child: Divider(
-                        color: OColor.gray400,
-                        height: 2,
-                        thickness: 1,
-                        indent: OSpacing.xs,
-                        endIndent: OSpacing.xs,
-                      ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: OSpacing.xxs),
+                    child: Divider(
+                      color: OColor.gray400,
+                      height: 2,
+                      thickness: 1,
+                      indent: OSpacing.xs,
+                      endIndent: OSpacing.xs,
                     ),
+                  ),
                   if (widget.isEditingEnabled == true)
-                    Row(
-                      children: [
-                        TextButton.icon(
-                          onPressed: widget.edit,
-                          icon: Icon(
-                            TablerIcons.edit,
-                            size: 16,
-                            color: OColor.green600,
-                          ),
-                          label: OText(
-                            text: "Edit",
-                            style: OTextStyle.labelSmall.copyWith(
-                              color: OColor.green600,
-                            ),
-                          ),
-                        ),
-                        TextButton.icon(
-                          onPressed: widget.delete,
-                          icon: Icon(
-                            TablerIcons.trash,
-                            size: 16,
-                            color: OColor.red500,
-                          ),
-                          label: OText(
-                            text: "Delete",
-                            style: OTextStyle.labelSmall.copyWith(
-                              color: OColor.red500,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                    SizedBox(
+                      height: OSpacing.xl +12,
+                    )
                 ],
               ),
             ),
           ),
+          if (widget.isEditingEnabled == true)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal:OSpacing.xxs),
+              child: Row(
+                children: [
+                  TextButton.icon(
+                    onPressed: widget.edit,
+                    icon: Icon(
+                      TablerIcons.edit,
+                      size: 16,
+                      color: OColor.green600,
+                    ),
+                    label: OText(
+                      text: "Edit",
+                      style: OTextStyle.labelSmall.copyWith(
+                        color: OColor.green600,
+                      ),
+                    ),
+                  ),
+                  TextButton.icon(
+                    onPressed: widget.delete,
+                    icon: Icon(
+                      TablerIcons.trash,
+                      size: 16,
+                      color: OColor.red500,
+                    ),
+                    label: OText(
+                      text: "Delete",
+                      style: OTextStyle.labelSmall.copyWith(
+                        color: OColor.red500,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           Positioned(
             top: 131,
             left: 10,
@@ -175,6 +181,7 @@ class _OProductListingCardState extends State<OProductListingCard> {
       ),
     );
   }
+
   @override
   void dispose() {
     super.dispose();
