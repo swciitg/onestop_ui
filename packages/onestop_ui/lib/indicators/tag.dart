@@ -56,7 +56,7 @@ class OTag extends StatelessWidget {
           Center(
             child: Text(
               label,
-              style: OTextStyle.lableXSmall.copyWith(color: foregroundColor),
+              style: OTextStyle.labelXSmall.copyWith(color: foregroundColor),
             ),
           ),
           if (trail != null) ...[
