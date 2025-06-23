@@ -35,7 +35,7 @@ class OMessMenuCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(top:OSpacing.s),
+            padding: const EdgeInsets.only(top: OSpacing.s),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -44,12 +44,46 @@ class OMessMenuCard extends StatelessWidget {
               ],
             ),
           ),
-          OCardBlock(header: blockHeading1, blockItems: blockItems1),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: OSpacing.xs,
+              vertical: OSpacing.xxs,
+            ),
+            child: OCardBlock(header: blockHeading1, blockItems: blockItems1),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(child: OCardBlock(header: blockHeading2, blockItems: blockItems2 , color: OColor.gray100,)),
-              Expanded(child: OCardBlock(header: blockHeading3, blockItems: blockItems3,color: OColor.gray100)),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: OSpacing.xs,
+                    right: OSpacing.xs,
+                    top: OSpacing.xxs,
+                    bottom: OSpacing.s,
+                  ),
+                  child: OCardBlock(
+                    header: blockHeading2,
+                    blockItems: blockItems2,
+                    color: OColor.gray100,
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: OSpacing.xs,
+                    right: OSpacing.xs,
+                    top: OSpacing.xxs,
+                    bottom: OSpacing.s,
+                  ),
+                  child: OCardBlock(
+                    header: blockHeading3,
+                    blockItems: blockItems3,
+                    color: OColor.gray100,
+                  ),
+                ),
+              ),
             ],
           ),
         ],

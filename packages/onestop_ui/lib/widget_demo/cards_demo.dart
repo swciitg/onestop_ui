@@ -10,19 +10,42 @@ class CardsDemo extends StatelessWidget {
     return SizedBox(
       child: Column(
         children: [
+          OHomeCardLarge(
+            dataMap: {
+              // this is the map of data which has to be mapped into the blocks of main home card
+              'breakfast': ['Eggs', 'Toast', 'Coffee', 'Cereal'],
+              'lunch': ['Sandwich', 'Salad', 'Soup', 'Pizza'],
+              'dinner': ['Pasta', 'Chicken', 'Rice', 'Vegetables'],
+              'snacks': ['Chips', 'Cookies', 'Fruits', 'Nuts'],
+              'beverages': ['Water', 'Juice', 'Soda', 'Tea'],
+            },
+            blockHeight:
+                140, // adjust the height  of the block containing item list
+            blockWidth:
+                150, // adjust the width of the block containing item list
+            heading: "Card Header",
+            icon: TablerIcons.arrow_rotary_first_left,
+            mainText: "Main Card Information",
+            cardSubText: "Card Sub Text",
+            subheading: "Sub Heading",
+            onArrowPressed:
+                () {}, // triggers the right chevron button at the top right corner of the card,
+          ),
           OProductRequestCard(
             itemName: "Item Name",
             price: 'Price',
             priceLabel: 'Price Label',
             imageURl: // Image of item posted in the ad
-            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
-            isEditingEnabled: false, // this toggle b/w the modes where user can edit or not there posted ads
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            isEditingEnabled:
+                false, // this toggle b/w the modes where user can edit or not there posted ads
             delete: () {}, // triggers the delete button when editing mode is on
             edit: () {}, // triggers the edit button when editing mode is on
-            message: () {}, // triggers the message button when editing mode is off
+            message:
+                () {}, // triggers the message button when editing mode is off
             phone: () {}, // triggers the phone button when editing mode is off
             userImageURl: // Image of user who posted the ad
-            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
             userName: "John Doe",
             onArrowPressed: () {},
           ),
@@ -31,14 +54,16 @@ class CardsDemo extends StatelessWidget {
             price: 'Price',
             priceLabel: 'Price Label',
             imageURl: // Image of item posted in the ad
-            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
-            isEditingEnabled: true, // this toggle b/w the modes where user can edit or not there posted ads
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            isEditingEnabled:
+                true, // this toggle b/w the modes where user can edit or not there posted ads
             delete: () {}, // triggers the delete button when editing mode is on
             edit: () {}, // triggers the edit button when editing mode is on
-            message: () {}, // triggers the message button when editing mode is off
+            message:
+                () {}, // triggers the message button when editing mode is off
             phone: () {}, // triggers the phone button when editing mode is off
             userImageURl: // Image of user who posted the ad
-            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
             userName: "John Doe",
             onArrowPressed: () {},
           ),
@@ -46,10 +71,12 @@ class CardsDemo extends StatelessWidget {
             itemName: "Item Name",
             price: 'Price',
             priceLabel: 'Price Label',
-            isEditingEnabled: true, // this toggle b/w the modes where user can edit or not there posted ads
+            isEditingEnabled:
+                true, // this toggle b/w the modes where user can edit or not there posted ads
             delete: () {}, // triggers the delete button when editing mode is on
             edit: () {}, // triggers the edit button when editing mode is on
-            message: () {}, // triggers the message button when editing mode is off
+            message:
+                () {}, // triggers the message button when editing mode is off
             phone: () {}, // triggers the phone button when editing mode is off
             userImageURl: // Image of user who posted the ad
                 "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
@@ -64,11 +91,13 @@ class CardsDemo extends StatelessWidget {
                 price: "40",
                 tag: "BRAND NEW",
                 productName: "Product Name",
-                delete: () {}, // triggers the delete button when editing mode is on
+                delete:
+                    () {}, // triggers the delete button when editing mode is on
                 edit: () {}, // triggers the edit button when editing mode is on
-                isEditingEnabled: true, // this toggle b/w the modes where user can edit or not there posted ads
+                isEditingEnabled:
+                    true, // this toggle b/w the modes where user can edit or not there posted ads
                 imageUrl: // image of item listed for sell
-                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+                    "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
               ),
               OProductListingCard(
                 price: "40",
