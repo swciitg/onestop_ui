@@ -44,7 +44,8 @@ class CardsDemo extends StatelessWidget {
             message:
                 () {}, // triggers the message button when editing mode is off
             phone: () {}, // triggers the phone button when editing mode is off
-            userImageURl: // Image of user who posted the ad
+             userImageURl: // Image of user who posted the ad
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
             userName: "John Doe",
             onArrowPressed: () {},
           ),
