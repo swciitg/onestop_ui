@@ -10,11 +10,109 @@ class CardsDemo extends StatelessWidget {
     return SizedBox(
       child: Column(
         children: [
+          OProductRequestCard(
+            itemName: "Item Name",
+            price: 'Price',
+            priceLabel: 'Price Label',
+            imageURl: // Image of item posted in the ad
+            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            isEditingEnabled: false, // this toggle b/w the modes where user can edit or not there posted ads
+            delete: () {}, // triggers the delete button when editing mode is on
+            edit: () {}, // triggers the edit button when editing mode is on
+            message: () {}, // triggers the message button when editing mode is off
+            phone: () {}, // triggers the phone button when editing mode is off
+            userImageURl: // Image of user who posted the ad
+            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            userName: "John Doe",
+            onArrowPressed: () {},
+          ),
+          OProductRequestCard(
+            itemName: "Item Name",
+            price: 'Price',
+            priceLabel: 'Price Label',
+            imageURl: // Image of item posted in the ad
+            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            isEditingEnabled: true, // this toggle b/w the modes where user can edit or not there posted ads
+            delete: () {}, // triggers the delete button when editing mode is on
+            edit: () {}, // triggers the edit button when editing mode is on
+            message: () {}, // triggers the message button when editing mode is off
+            phone: () {}, // triggers the phone button when editing mode is off
+            userImageURl: // Image of user who posted the ad
+            "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            userName: "John Doe",
+            onArrowPressed: () {},
+          ),
+          OProductRequestCard(
+            itemName: "Item Name",
+            price: 'Price',
+            priceLabel: 'Price Label',
+            isEditingEnabled: true, // this toggle b/w the modes where user can edit or not there posted ads
+            delete: () {}, // triggers the delete button when editing mode is on
+            edit: () {}, // triggers the edit button when editing mode is on
+            message: () {}, // triggers the message button when editing mode is off
+            phone: () {}, // triggers the phone button when editing mode is off
+            userImageURl: // Image of user who posted the ad
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+            userName: "John Doe",
+            onArrowPressed: () {},
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              OProductListingCard(
+                price: "40",
+                tag: "BRAND NEW",
+                productName: "Product Name",
+                delete: () {}, // triggers the delete button when editing mode is on
+                edit: () {}, // triggers the edit button when editing mode is on
+                isEditingEnabled: true, // this toggle b/w the modes where user can edit or not there posted ads
+                imageUrl: // image of item listed for sell
+                "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+              ),
+              OProductListingCard(
+                price: "40",
+                tag: "BRAND NEW",
+                productName: "Product Name",
+                edit: () {},
+                delete: () {},
+                isEditingEnabled: true,
+                imageUrl: // image of item listed for sell
+                    "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+              ),
+            ],
+          ),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              OProductListingCard(
+                price: "40",
+                tag: "BRAND NEW",
+                productName: "Product Name",
+                edit: () {},
+                delete: () {},
+                isEditingEnabled: false,
+                imageUrl: // image of item listed for sell
+                    "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+              ),
+              OProductListingCard(
+                price: "40",
+                tag: "BRAND NEW",
+                productName: "Product Name",
+                edit: () {},
+                delete: () {},
+                isEditingEnabled: false,
+                imageUrl: // image of item listed for sell
+                    "https://variety.com/wp-content/uploads/2019/10/shutterstock_editorial_10435445et.jpg?w=1000&h=667&crop=1",
+              ),
+            ],
+          ),
           OLostFoundCard(
             isFound: true, // this toggle b/w card mode for lost or found item
             isEditingEnabled:
                 false, // this toggle b/w the modes where user can edit or not there posted ads
-            heading: "Card header",
+            heading: "Card header", // Lost Item Name
             userName: "john Doe",
             submittedAt:
                 'Security Desk', // this string is for location where found item was submitted

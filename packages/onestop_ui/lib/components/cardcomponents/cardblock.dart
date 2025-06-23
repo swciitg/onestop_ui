@@ -43,7 +43,7 @@ class OCardBlock extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Text(
                       blockItems[index],
-                      style: const TextStyle(fontSize: 16.0),
+                      style: OTextStyle.bodySmall.copyWith(color: OColor.gray700),
                     );
                   },
                 ),
