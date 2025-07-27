@@ -48,7 +48,7 @@ class RadioButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final RadioButtonColors _colo = RadioButtonColors(
+    final RadioButtonColors colors = RadioButtonColors(
       onBorderColor: onBorderColor ?? OColor.gray500,
       offBorderColor: offBorderColor ?? OColor.gray200,
       disabledBorderColor: disabledBorderColor ?? Colors.grey.shade200,
@@ -63,14 +63,14 @@ class RadioButton extends StatelessWidget {
     Color fillColor;
 
     if (!isEnabled) {
-      borderColor = _colo.disabledBorderColor!;
-      fillColor = _colo.disabledThumbColor!;
+      borderColor = colors.disabledBorderColor!;
+      fillColor = colors.disabledThumbColor!;
     } else if (isSelected) {
-      borderColor = _colo.onBorderColor!;
-      fillColor = _colo.onThumbColor!;
+      borderColor = colors.onBorderColor!;
+      fillColor = colors.onThumbColor!;
     } else {
-      borderColor = _colo.offBorderColor!;
-      fillColor = _colo.offThumbColor!;
+      borderColor = colors.offBorderColor!;
+      fillColor = colors.offThumbColor!;
     }
 
     return GestureDetector(

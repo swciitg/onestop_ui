@@ -17,7 +17,7 @@ export 'widget_demo/textfields_demo.dart';
 //card components
 export 'components/cardcomponents/label.dart';
 export 'components/cardcomponents/header.dart';
-export 'components/cardcomponents/card_List.dart';
+export 'components/cardcomponents/card_list.dart';
 export 'components/cardcomponents/cardblock.dart';
 
 //Cards

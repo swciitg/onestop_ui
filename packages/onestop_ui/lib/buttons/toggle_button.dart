@@ -63,7 +63,7 @@ class ToggleButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ToggleButtonColors _colo = ToggleButtonColors(
+    final ToggleButtonColors colors = ToggleButtonColors(
       onBgColor: onBgColor ?? OColor.green600,
       offBgColor: offBgColor ?? OColor.gray200,
       disabledBgColor: disabledBgColor ?? Colors.grey.shade300,
@@ -88,10 +88,10 @@ class ToggleButton extends StatelessWidget {
             decoration: BoxDecoration(
               color:
                   !isEnabled
-                      ? _colo.disabledBgColor
+                      ? colors.disabledBgColor
                       : value
-                      ? _colo.onBgColor
-                      : _colo.offBgColor,
+                      ? colors.onBgColor
+                      : colors.offBgColor,
               borderRadius: BorderRadius.circular(8),
             ),
             child: AnimatedAlign(
@@ -103,10 +103,10 @@ class ToggleButton extends StatelessWidget {
                 decoration: BoxDecoration(
                   color:
                       !isEnabled
-                          ? _colo.disabledThumbColor
+                          ? colors.disabledThumbColor
                           : value
-                          ? _colo.onThumbColor
-                          : _colo.offThumbColor,
+                          ? colors.onThumbColor
+                          : colors.offThumbColor,
                   borderRadius: BorderRadius.circular(6),
                 ),
               ),

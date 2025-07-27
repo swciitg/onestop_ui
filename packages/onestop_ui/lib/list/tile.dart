@@ -15,7 +15,7 @@ class Tile extends StatelessWidget {
     required this.description,
     required this.leadingIcon,
     required this.onPressed,
-    this.pressedColor, 
+    this.pressedColor,
     this.trailingIcon,
   });
 
@@ -28,7 +28,7 @@ class Tile extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         child: InkWell(
           borderRadius: BorderRadius.circular(16),
-          splashColor: pressedColor?.withOpacity(0.3) ?? OColor.gray200,
+          splashColor: pressedColor?.withValues(alpha: 0.3) ?? OColor.gray200,
           highlightColor: pressedColor ?? OColor.gray200,
           onTap: onPressed,
           child: Container(
@@ -76,10 +76,10 @@ class Tile extends StatelessWidget {
                       ],
                     ),
                   ),
-                  if(trailingIcon!=null)...[
-                  const SizedBox(width: 8),
-                  Icon(Icons.arrow_outward, color: OColor.gray600),
-                  ]
+                  if (trailingIcon != null) ...[
+                    const SizedBox(width: 8),
+                    Icon(Icons.arrow_outward, color: OColor.gray600),
+                  ],
                 ],
               ),
             ),

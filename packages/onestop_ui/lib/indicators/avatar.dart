@@ -23,7 +23,7 @@ class OAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     final double avatarSize = getSizeValue();
 
-    return Container(
+    return SizedBox(
       height: avatarSize,
       width: avatarSize,
       child: CircleAvatar(
