@@ -6,22 +6,26 @@ class OText extends StatelessWidget {
   final bool selectable;
   final TextAlign? textAlign;
   final TextOverflow? overflow;
-  const OText({super.key, 
+  final int? maxLines;
+  const OText({
+    super.key,
     this.text,
     this.style,
     this.selectable = false,
     this.textAlign,
     this.overflow,
+    this.maxLines,
   });
 
   @override
   Widget build(BuildContext context) {
-    if(selectable){
+    if (selectable) {
       return SelectableText(
         text ?? '',
         style: style,
         textAlign: textAlign,
         showCursor: true,
+        maxLines: maxLines,
       );
     }
     return Text(
@@ -29,6 +33,7 @@ class OText extends StatelessWidget {
       style: style,
       textAlign: textAlign,
       overflow: overflow,
+      maxLines: maxLines,
     );
   }
 }

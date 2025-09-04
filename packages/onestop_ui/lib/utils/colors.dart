@@ -1,10 +1,10 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:onestop_ui/utils/theme.dart';
+import 'package:onestop_ui/store/theme_store.dart';
 
 class _OColor {
-  bool get lightTheme => OTheme.currentTheme == Brightness.light;
+  bool get lightTheme => ThemeStore.instance.currentTheme == Brightness.light;
   //BW color
   Color get white => lightTheme ? Color(0xFFFFFFFF) : Color(0xFF1E202D);
   Color get black => lightTheme ? Color(0xFF000000) : Color(0xFFFDFDFC);
@@ -20,9 +20,7 @@ class _OColor {
 
   // Blue colors (Accent)
   Color get blue50 =>
-      lightTheme
-          ? Color(0xFFE5F1FF)
-          : Colors.red; //I NEED HELP!, im not sure of the color
+      lightTheme ? Color(0xFFE5F1FF) : Colors.red; //I NEED HELP!, im not sure of the color
   Color get blue100 => lightTheme ? Color(0xFFD6E6FF) : Color(0xFF012151);
   Color get blue200 => lightTheme ? Color(0xFFBDD7FF) : Color(0xFF80B2FF);
   Color get blue300 => lightTheme ? Color(0xFF4D9AFE) : Color(0xFF66A3FF);

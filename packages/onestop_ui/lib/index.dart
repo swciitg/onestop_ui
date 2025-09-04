@@ -2,7 +2,6 @@
 
 export 'utils/colors.dart';
 export 'utils/styles.dart';
-export 'utils/theme.dart';
 
 export 'constants/spacing.dart';
 export 'constants/icon_stroke.dart';
@@ -41,3 +40,4 @@ export 'indicators/tag.dart';
 
 //list tiles
 export 'list/list_export.dart';
+export 'store/theme_store.dart';
