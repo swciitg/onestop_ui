@@ -296,36 +296,39 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
                       : MainAxisAlignment.center,
               children: [
                 if (widget.isUserAvailable == true)
-                  Row(
-                    children: [
-                      Container(
-                        width: 24,
-                        height: 24,
-                        decoration: BoxDecoration(
-                          color: OColor.gray400,
-                          image: DecorationImage(
-                            image: NetworkImage(widget.imageURl!),
-                            fit: BoxFit.cover,
-                            opacity: widget.isEnabled ? 1 : 0.2,
-                          ),
-                          borderRadius: BorderRadius.circular(OCornerRadius.xl),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: OSpacing.xs,
-                        ),
-                        child: OText(
-                          text: widget.userName,
-                          style: OTextStyle.labelSmall.copyWith(
-                            color:
-                                widget.isEnabled
-                                    ? OColor.gray800
-                                    : OColor.gray600,
+                  Expanded(
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 24,
+                          height: 24,
+                          decoration: BoxDecoration(
+                            color: OColor.gray400,
+                            image: DecorationImage(
+                              image: NetworkImage(widget.imageURl!),
+                              fit: BoxFit.cover,
+                              opacity: widget.isEnabled ? 1 : 0.2,
+                            ),
+                            borderRadius: BorderRadius.circular(OCornerRadius.xl),
                           ),
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: OSpacing.xs,
+                          ),
+                          child: OText(
+                            overflow: TextOverflow.ellipsis,
+                            text: widget.userName,
+                            style: OTextStyle.labelSmall.copyWith(
+                              color:
+                                  widget.isEnabled
+                                      ? OColor.gray800
+                                      : OColor.gray600,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 Row(
                   mainAxisAlignment:
