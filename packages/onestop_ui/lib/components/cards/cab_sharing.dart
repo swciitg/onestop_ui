@@ -62,7 +62,8 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(OSpacing.xs),
-      child: Stack(alignment: Alignment.bottomCenter,
+      child: Stack(
+        alignment: Alignment.bottomCenter,
         children: [
           GestureDetector(
             behavior: HitTestBehavior.opaque,
@@ -278,7 +279,7 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
                     indent: OSpacing.xs,
                     endIndent: OSpacing.xs,
                   ),
-                  const SizedBox(height: OSpacing.xl +15)
+                  const SizedBox(height: OSpacing.xl + 15),
                 ],
               ),
             ),
@@ -286,13 +287,13 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: OSpacing.s,
-              vertical: OSpacing.xs
+              vertical: OSpacing.xs,
             ),
             child: Row(
               mainAxisAlignment:
-              widget.isUserAvailable
-                  ? MainAxisAlignment.spaceBetween
-                  : MainAxisAlignment.center,
+                  widget.isUserAvailable
+                      ? MainAxisAlignment.spaceBetween
+                      : MainAxisAlignment.center,
               children: [
                 if (widget.isUserAvailable == true)
                   Row(
@@ -307,9 +308,7 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
                             fit: BoxFit.cover,
                             opacity: widget.isEnabled ? 1 : 0.2,
                           ),
-                          borderRadius: BorderRadius.circular(
-                            OCornerRadius.xl,
-                          ),
+                          borderRadius: BorderRadius.circular(OCornerRadius.xl),
                         ),
                       ),
                       Padding(
@@ -320,64 +319,64 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
                           text: widget.userName,
                           style: OTextStyle.labelSmall.copyWith(
                             color:
-                            widget.isEnabled
-                                ? OColor.gray800
-                                : OColor.gray600,
+                                widget.isEnabled
+                                    ? OColor.gray800
+                                    : OColor.gray600,
                           ),
                         ),
                       ),
                     ],
                   ),
                 Row(
+                  mainAxisAlignment:
+                      (widget.buttonLabel1 == null &&
+                              widget.buttonIcon1 == null)
+                          ? MainAxisAlignment.center
+                          : MainAxisAlignment.start,
                   children: [
-                    TextButton.icon(
-                      onPressed:
-                      widget.isEnabled
-                          ? widget.pressedButton1
-                          : null,
-                      icon: Icon(
-                        widget.buttonIcon1,
-                        size: 16,
-                        color:
-                        widget.isEnabled
-                            ? OColor.green600
-                            : OColor.gray400,
-                      ),
-                      label: OText(
-                        text: widget.buttonLabel1,
-                        style: OTextStyle.labelSmall.copyWith(
+                    if (widget.buttonLabel1 != null ||
+                        widget.buttonIcon1 != null)
+                      TextButton.icon(
+                        onPressed:
+                            widget.isEnabled ? widget.pressedButton1 : null,
+                        icon: Icon(
+                          widget.buttonIcon1,
+                          size: 16,
                           color:
-                          widget.isEnabled
-                              ? OColor.green600
-                              : OColor.gray400,
+                              widget.isEnabled
+                                  ? OColor.green600
+                                  : OColor.gray400,
+                        ),
+                        label: OText(
+                          text: widget.buttonLabel1,
+                          style: OTextStyle.labelSmall.copyWith(
+                            color:
+                                widget.isEnabled
+                                    ? OColor.green600
+                                    : OColor.gray400,
+                          ),
                         ),
                       ),
-                    ),
-                    if (widget.isUserAvailable != true)
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.25,
-                      ),
+                    if (widget.isUserAvailable != true &&
+                        (widget.buttonLabel1 != null ||
+                            widget.buttonIcon1 != null))
+                      SizedBox(width: MediaQuery.of(context).size.width * 0.25),
                     TextButton.icon(
                       onPressed:
-                      widget.isEnabled
-                          ?
-                        widget.pressedButton2
-                          : null,
+                          widget.isEnabled ? widget.pressedButton2 : null,
                       icon: Icon(
                         widget.buttonIcon2,
                         size: 16,
                         color:
-                        widget.isEnabled
-                            ? OColor.green600
-                            : OColor.gray400,
+                            widget.isEnabled ? OColor.green600 : OColor.gray400,
                       ),
                       label: OText(
                         text: widget.buttonLabel2,
                         style: OTextStyle.labelSmall.copyWith(
                           color:
-                          widget.isEnabled
-                              ? OColor.green600
-                              : OColor.gray400,
+                              widget.isEnabled
+                                  ? OColor.green600
+                                  : OColor.gray400,
                         ),
                       ),
                     ),
