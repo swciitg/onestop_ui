@@ -31,12 +31,12 @@ class _OColor {
   Color get blue800 => lightTheme ? Color(0xFF002257) : Color(0xFF005BE5);
 
   // Gray colors (Neutrals)
-  Color get gray100 => lightTheme ? Color(0xFFF4F5F5) : Color(0xFF161822);
-  Color get gray200 => lightTheme ? Color(0xFFE9E9EA) : Color(0xFF32364D);
-  Color get gray300 => lightTheme ? Color(0xFFD5D5D7) : Color(0xFF3F404A);
-  Color get gray400 => lightTheme ? Color(0xFFBABABF) : Color(0xFF4C4D59);
-  Color get gray500 => lightTheme ? Color(0xFF98999F) : Color(0xFF696A74);
-  Color get gray600 => lightTheme ? Color(0xFF6E6F77) : Color(0xFF98999F);
+  Color get gray100 => lightTheme ? Color(0xFFF4F5F5) : Color(0xFF1C1C1C);
+  Color get gray200 => lightTheme ? Color(0xFFE9E9EA) : Color(0xFF323232);
+  Color get gray300 => lightTheme ? Color(0xFFD5D5D7) : Color(0xFF454545);
+  Color get gray400 => lightTheme ? Color(0xFFBABABF) : Color(0xFF535353);
+  Color get gray500 => lightTheme ? Color(0xFF98999F) : Color(0xFF6F6F6F);
+  Color get gray600 => lightTheme ? Color(0xFF6E6F77) : Color(0xFF9B9B9B);
   Color get gray700 => lightTheme ? Color(0xFF4C4D59) : Color(0xFFB2B3B8);
   Color get gray800 => lightTheme ? Color(0xFF34343D) : Color(0xFFCDCDD1);
 
