@@ -20,7 +20,7 @@ class OTag extends StatelessWidget {
   Color get backgroundColor {
     switch (type) {
       case TagType.accentColor:
-        return OColor.blue50;
+        return OColor.blue100;
       case TagType.neutral:
         return OColor.gray100;
     }
