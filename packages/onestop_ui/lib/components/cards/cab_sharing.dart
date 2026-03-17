@@ -31,7 +31,7 @@ Color _locationColor(String location, bool isEnabled) {
       l.contains('kamakhya')) {
     return const Color(0xFF14B8A6);
   }
-  return const Color(0xFF6B7280); // gray500 for other
+  return const Color.fromARGB(255, 238, 40, 86); // gray500 for other
 }
 
 class OCabSharingCard extends StatefulWidget {
