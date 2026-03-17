@@ -42,115 +42,112 @@ class _FoodOutletCardState extends State<FoodOutletCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(OSpacing.xxs),
-      child: Stack(
-        children: [
-          GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTapDown:
-                (_) =>
-                    widget.isEnabled
-                        ? setState(() => _isPressed = true)
-                        : null, //engage behaviour when search bar is tapped
-            onTapUp: (_) {
-              setState(() => _isPressed = false);
-            },
-            child: Container(
-              padding: const EdgeInsets.all(OSpacing.s),
-              decoration: BoxDecoration(
-                color: _isPressed ? OColor.gray200 : OColor.white,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(OCornerRadius.l),
-                ),
-                border: Border.all(color: OColor.gray200, width: 1),
+    return Stack(
+      children: [
+        GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTapDown:
+              (_) =>
+                  widget.isEnabled
+                      ? setState(() => _isPressed = true)
+                      : null, //engage behaviour when search bar is tapped
+          onTapUp: (_) {
+            setState(() => _isPressed = false);
+          },
+          child: Container(
+            padding: const EdgeInsets.all(OSpacing.s),
+            decoration: BoxDecoration(
+              color: _isPressed ? OColor.gray200 : OColor.white,
+              borderRadius: BorderRadius.all(
+                Radius.circular(OCornerRadius.l),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Container(
-                        width: 48,
-                        height: 48,
-                        decoration: BoxDecoration(
-                          color: OColor.gray400,
-                          image: DecorationImage(
-                            image: NetworkImage(widget.imageUrl),
-                            fit: BoxFit.cover,
-                            opacity: widget.isEnabled ? 1 : 0.2,
-                          ),
+              border: Border.all(color: OColor.gray200, width: 1),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Container(
+                      width: 48,
+                      height: 48,
+                      decoration: BoxDecoration(
+                        color: OColor.gray400,
+                        image: DecorationImage(
+                          image: NetworkImage(widget.imageUrl),
+                          fit: BoxFit.cover,
+                          opacity: widget.isEnabled ? 1 : 0.2,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: OSpacing.s,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            OText(
-                              text: widget.heading,
-                              style: OTextStyle.labelMedium.copyWith(
-                                color:
-                                    widget.isEnabled
-                                        ? OColor.gray800
-                                        : OColor.gray600,
-                              ),
-                            ),
-                            const SizedBox(height: OSpacing.xxs),
-                            OText(
-                              text: widget.subHeading,
-                              style: OTextStyle.bodySmall.copyWith(
-                                color:
-                                    widget.isEnabled
-                                        ? OColor.gray800
-                                        : OColor.gray300,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: OSpacing.m,),
-                  if (widget.tag != null)
-                    OTag(
-                      type: widget.isEnabled?TagType.accentColor:TagType.neutral,
-                      lead: TablerIcons.arrow_rotary_first_left,
-                      label: widget.tag!,
-                      trail: TablerIcons.arrow_rotary_first_left,
                     ),
-                  const SizedBox(height: OSpacing.m,),
-                  OCardLabels(
-                    label: widget.subLabelText1,
-                    icon: widget.subLabelIcon1,
-                    color: widget.isEnabled ? OColor.gray600 : OColor.gray300,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: OSpacing.s,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          OText(
+                            text: widget.heading,
+                            style: OTextStyle.labelMedium.copyWith(
+                              color:
+                                  widget.isEnabled
+                                      ? OColor.gray800
+                                      : OColor.gray600,
+                            ),
+                          ),
+                          const SizedBox(height: OSpacing.xxs),
+                          OText(
+                            text: widget.subHeading,
+                            style: OTextStyle.bodySmall.copyWith(
+                              color:
+                                  widget.isEnabled
+                                      ? OColor.gray800
+                                      : OColor.gray300,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: OSpacing.m,),
+                if (widget.tag != null)
+                  OTag(
+                    type: widget.isEnabled?TagType.accentColor:TagType.neutral,
+                    lead: TablerIcons.arrow_rotary_first_left,
+                    label: widget.tag!,
+                    trail: TablerIcons.arrow_rotary_first_left,
                   ),
-                  const SizedBox(height: OSpacing.xxs,),
-                  OCardLabels(
-                    label: widget.subLabelText2,
-                    icon: widget.subLabelIcon2,
-                    color: widget.isEnabled ? OColor.gray600 : OColor.gray300,
-                  ),
-                ],
-              ),
+                const SizedBox(height: OSpacing.m,),
+                OCardLabels(
+                  label: widget.subLabelText1,
+                  icon: widget.subLabelIcon1,
+                  color: widget.isEnabled ? OColor.gray600 : OColor.gray300,
+                ),
+                const SizedBox(height: OSpacing.xxs,),
+                OCardLabels(
+                  label: widget.subLabelText2,
+                  icon: widget.subLabelIcon2,
+                  color: widget.isEnabled ? OColor.gray600 : OColor.gray300,
+                ),
+              ],
             ),
           ),
-          Positioned(
-            top: 12,
-            right: 0,
-            child: IconButton(
-              icon: Icon(
-                TablerIcons.chevron_right,
-                color: widget.isEnabled ? OColor.gray600 : OColor.gray300,
-              ),
-              onPressed: widget.isEnabled ? widget.onArrowPressed : null,
-              iconSize: 24,
+        ),
+        Positioned(
+          top: 12,
+          right: 0,
+          child: IconButton(
+            icon: Icon(
+              TablerIcons.chevron_right,
+              color: widget.isEnabled ? OColor.gray600 : OColor.gray300,
             ),
+            onPressed: widget.isEnabled ? widget.onArrowPressed : null,
+            iconSize: 24,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
