@@ -97,15 +97,8 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
         alignment: Alignment.bottomCenter,
         children: [
           GestureDetector(
+            onTap: widget.onArrowPressed,
             behavior: HitTestBehavior.opaque,
-            onTapDown:
-                (_) =>
-                    widget.isEnabled
-                        ? setState(() => _isPressed = true)
-                        : null, //engage behaviour when search bar is tapped
-            onTapUp: (_) {
-              setState(() => _isPressed = false);
-            },
             child: Container(
               padding: EdgeInsets.all(OSpacing.xs),
               decoration: BoxDecoration(
