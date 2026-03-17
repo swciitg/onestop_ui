@@ -268,16 +268,18 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
                                   : OColor.gray400,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(OSpacing.xxs),
-                        child: OText(
-                          text: widget.date,
-                          style: OTextStyle.labelXSmall.copyWith(
-                            overflow: TextOverflow.ellipsis,
-                            color:
-                                widget.isEnabled
-                                    ? OColor.gray600
-                                    : OColor.gray400,
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(OSpacing.xxs),
+                          child: OText(
+                            text: widget.date,
+                            style: OTextStyle.labelXSmall.copyWith(
+                              overflow: TextOverflow.ellipsis,
+                              color:
+                                  widget.isEnabled
+                                      ? OColor.gray600
+                                      : OColor.gray400,
+                            ),
                           ),
                         ),
                       ),
