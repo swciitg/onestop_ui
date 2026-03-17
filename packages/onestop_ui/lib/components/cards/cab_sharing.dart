@@ -98,7 +98,7 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
         children: [
           GestureDetector(
             onTap: widget.onArrowPressed,
-            behavior: HitTestBehavior.opaque,
+            //behavior: HitTestBehavior.opaque,
             child: Container(
               padding: EdgeInsets.all(OSpacing.xs),
               decoration: BoxDecoration(
