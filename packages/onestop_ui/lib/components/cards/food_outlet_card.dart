@@ -24,7 +24,7 @@ class FoodOutletCard extends StatefulWidget {
     this.onArrowPressed,
     this.subLabelText1 = 'NA',
     this.subLabelText2 = 'NA',
-    this.subLabelIcon1 = TablerIcons.location,
+    this.subLabelIcon1 = TablerIcons.location_pin,
     this.subLabelIcon2 = TablerIcons.clock,
   });
 
