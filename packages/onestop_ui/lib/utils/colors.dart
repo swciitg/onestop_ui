@@ -9,12 +9,12 @@ class _OColor {
   Color get white => lightTheme ? Color(0xFFFFFFFF) : Color(0xFF262626);
   Color get black => lightTheme ? Color(0xFF000000) : Color(0xFFFDFDFC);
   // Green colors
-  Color get green100 => lightTheme ? Color(0xFFDCEFE4) : Color(0xFF1B2921);
+  Color get green100 => lightTheme ? Color(0xFFDCEFE4) : Color(0xFF2D4035);
   Color get green200 => lightTheme ? Color(0xFFC9E3D4) : Color(0xFF7AEBA7);
   Color get green300 => lightTheme ? Color(0xFF52E08B) : Color(0xFF52E08B);
   Color get green400 => lightTheme ? Color(0xFF2FD06F) : Color(0xFF27D06F);
   Color get green500 => lightTheme ? Color(0xFF1AB056) : Color(0xFF14BD56);
-  Color get green600 => lightTheme ? Color(0xFF148440) : Color(0xFF1AB056);
+  Color get green600 => lightTheme ? Color(0xFF148440) : Color(0xFF2DB463);
   Color get green700 => lightTheme ? Color(0xFF085E2A) : Color(0xFF085E2A);
   Color get green800 => lightTheme ? Color(0xFF003314) : Color(0xFF003314);
 
