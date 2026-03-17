@@ -273,6 +273,7 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
                         child: OText(
                           text: widget.date,
                           style: OTextStyle.labelXSmall.copyWith(
+                            overflow: TextOverflow.ellipsis,
                             color:
                                 widget.isEnabled
                                     ? OColor.gray600
