@@ -3,6 +3,37 @@ import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 
 import '../../index.dart';
 
+/// Determines the icon to show for a location label
+IconData _locationIcon(String location) {
+  final l = location.toLowerCase();
+  if (l.contains('campus') || l.contains('iit') || l.contains('college')) {
+    return TablerIcons.school;
+  }
+  if (l.contains('airport')) return TablerIcons.plane_tilt;
+  if (l.contains('railway') ||
+      l.contains('station') ||
+      l.contains('kamakhya')) {
+    return TablerIcons.train;
+  }
+  return TablerIcons.map_pin;
+}
+
+/// Determines the background color for a location icon
+Color _locationColor(String location, bool isEnabled) {
+  if (!isEnabled) return const Color(0xFF9CA3AF); // gray600
+  final l = location.toLowerCase();
+  if (l.contains('campus') || l.contains('iit') || l.contains('college')) {
+    return const Color(0xFF4D51EF);
+  }
+  if (l.contains('airport')) return const Color(0xFF0D99D8);
+  if (l.contains('railway') ||
+      l.contains('station') ||
+      l.contains('kamakhya')) {
+    return const Color(0xFF14B8A6);
+  }
+  return const Color(0xFF6B7280); // gray500 for other
+}
+
 class OCabSharingCard extends StatefulWidget {
   final String origin;
   final String destination;
@@ -97,13 +128,13 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         CircleAvatar(
-                          backgroundColor:
-                              widget.isEnabled
-                                  ? Color(0xFF4D51EF)
-                                  : OColor.gray600,
+                          backgroundColor: _locationColor(
+                            widget.origin,
+                            widget.isEnabled,
+                          ),
                           radius: 12,
                           child: Icon(
-                            TablerIcons.school,
+                            _locationIcon(widget.origin),
                             color:
                                 widget.isEnabled
                                     ? OColor.white
@@ -131,17 +162,13 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
                           size: 24,
                         ),
                         CircleAvatar(
-                          backgroundColor:
-                              widget.isEnabled
-                                  ? widget.byTrain
-                                      ? Color(0xFF14B8A6)
-                                      : Color(0xFF0D99D8)
-                                  : OColor.gray600,
+                          backgroundColor: _locationColor(
+                            widget.destination,
+                            widget.isEnabled,
+                          ),
                           radius: 12,
                           child: Icon(
-                            widget.byTrain
-                                ? TablerIcons.train
-                                : TablerIcons.plane_tilt,
+                            _locationIcon(widget.destination),
                             color:
                                 widget.isEnabled
                                     ? OColor.white
