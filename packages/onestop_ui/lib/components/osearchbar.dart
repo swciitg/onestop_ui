@@ -5,6 +5,7 @@ import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 class OSearchBar extends StatefulWidget {
   final String content;
   final bool enabled;
+  // final String hint
   final TextEditingController controller;
   final void Function(String)? onChanged;
   final void Function(String)? onSubmitted;
@@ -81,10 +82,12 @@ class _OSearchBarState extends State<OSearchBar> {
           ), // this still renders the animation but the color is transparent in case of disabled button
           // this can be improved in future
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment:
+                MainAxisAlignment
+                    .spaceBetween, // Better spacing for search bars
             children: [
-              SizedBox(
-                width: 300,
+              Expanded(
+                // Replaced SizedBox with Expanded
                 child: TextField(
                   controller: widget.controller,
                   focusNode: _focusNode,
@@ -108,7 +111,7 @@ class _OSearchBarState extends State<OSearchBar> {
                               color: OColor.gray200,
                             ),
                     border: InputBorder.none,
-                    contentPadding: EdgeInsets.symmetric(horizontal: 12),
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 12),
                   ),
                 ),
               ),
