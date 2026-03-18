@@ -51,6 +51,8 @@ class OCabSharingCard extends StatefulWidget {
   final bool isUserAvailable;
   final bool isEnabled;
   final bool byTrain;
+  final Color? statusBgColor;
+  final Color? statusFgColor;
   final Function()? onArrowPressed;
   final Function()? pressedButton1;
   final Function()? pressedButton2;
@@ -63,6 +65,8 @@ class OCabSharingCard extends StatefulWidget {
     this.isEnabled = true,
     this.byTrain = false,
     this.isUserAvailable = true,
+    this.statusBgColor,
+    this.statusFgColor,
     this.onArrowPressed,
     this.pressedButton1,
     this.pressedButton2,
@@ -202,7 +206,7 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
                           decoration: BoxDecoration(
                             color:
                                 widget.isEnabled
-                                    ? OColor.yellow100
+                                    ? (widget.statusBgColor ?? OColor.yellow100)
                                     : OColor.gray200,
                             borderRadius: BorderRadius.circular(
                               OCornerRadius.xl,
@@ -215,7 +219,7 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
                                 size: 16,
                                 color:
                                     widget.isEnabled
-                                        ? OColor.yellow800
+                                        ? (widget.statusFgColor ?? OColor.yellow800)
                                         : OColor.gray600,
                               ),
                               OText(
@@ -223,7 +227,7 @@ class _OCabSharingCardState extends State<OCabSharingCard> {
                                 style: OTextStyle.labelXSmall.copyWith(
                                   color:
                                       widget.isEnabled
-                                          ? OColor.yellow800
+                                          ? (widget.statusFgColor ?? OColor.yellow800)
                                           : OColor.gray600,
                                 ),
                               ),
