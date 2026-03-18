@@ -66,7 +66,7 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
           seedColor: OColor.green600,
           brightness: themeStore.currentTheme,
         ),
-        scaffoldBackgroundColor: themeStore.backgroundColor,
+        scaffoldBackgroundColor: OColor.white,
       ),
       home: Scaffold(
         bottomNavigationBar: ONavBar(
@@ -81,7 +81,7 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
             });
           },
         ),
-        backgroundColor: themeStore.backgroundColor,
+        backgroundColor: OColor.white,
         body: SafeArea(
           child: IndexedStack(
             index: _navBarController.currentIndex,

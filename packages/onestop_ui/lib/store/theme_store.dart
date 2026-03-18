@@ -60,15 +60,6 @@ class ThemeStore extends ChangeNotifier {
     }
   }
 
-  // Theme-aware colors that automatically update
-  Color get backgroundColor => isDarkMode ? const Color(0xFF1C1C1E) : OColor.white;
-  Color get cardColor => isDarkMode ? const Color(0xFF2C2C2E) : OColor.white;
-  Color get surfaceColor => isDarkMode ? const Color(0xFF2C2C2E) : OColor.gray100;
-  Color get textColor => isDarkMode ? OColor.white : OColor.gray800;
-  Color get subtitleColor => isDarkMode ? const Color(0xFF8E8E93) : OColor.gray600;
-  Color get borderColor => isDarkMode ? const Color(0xFF3A3A3C) : OColor.gray200;
-  Color get iconColor => isDarkMode ? OColor.white : OColor.gray800;
-
   ThemeData get lightThemeData => ThemeData(
     brightness: Brightness.light,
     scaffoldBackgroundColor: OColor.gray100,
