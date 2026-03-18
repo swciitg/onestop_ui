@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class OTextStyle {
-  static const String fontFamily = 'Giest';
+  static const String fontFamily = 'Geist';
 
   static const displayLarge = TextStyle(
     fontFamily: fontFamily,
