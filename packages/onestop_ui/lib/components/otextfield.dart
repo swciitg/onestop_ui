@@ -13,6 +13,9 @@ class OTextField extends StatefulWidget {
   final bool enabled;
   final int maxLength;
   final bool isParagraph;
+  final String? Function(String?)? validator;
+  final VoidCallback? onTap;
+  final bool readOnly;
 
   const OTextField({
     super.key,
@@ -27,6 +30,9 @@ class OTextField extends StatefulWidget {
     this.enabled = true,
     this.maxLength = 200,
     this.isParagraph = false,
+    this.validator,
+    this.onTap,
+    this.readOnly = false,
   });
 
   @override
@@ -112,7 +118,10 @@ class _OTextFieldState extends State<OTextField> {
                 ),
                 color: OColor.white,
               ),
-              child: TextField(
+              child: TextFormField(
+                validator: widget.validator,
+                onTap: widget.onTap,
+                readOnly: widget.readOnly,
                 controller: widget.controller,
                 focusNode: _focusNode,
                 keyboardType:
@@ -129,7 +138,7 @@ class _OTextFieldState extends State<OTextField> {
                     widget.onChanged!(value);
                   }
                 },
-                onSubmitted: widget.onSubmitted,
+                onFieldSubmitted: widget.onSubmitted,
                 decoration: InputDecoration(
                   hintText:
                       widget.content.isEmpty
