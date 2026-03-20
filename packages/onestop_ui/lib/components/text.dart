@@ -7,6 +7,7 @@ class OText extends StatelessWidget {
   final TextAlign? textAlign;
   final TextOverflow? overflow;
   final int? maxLines;
+  final bool? softWrap;
   const OText({
     super.key,
     this.text,
@@ -15,6 +16,7 @@ class OText extends StatelessWidget {
     this.textAlign,
     this.overflow,
     this.maxLines,
+    this.softWrap,
   });
 
   @override
@@ -34,6 +36,7 @@ class OText extends StatelessWidget {
       textAlign: textAlign,
       overflow: overflow,
       maxLines: maxLines,
+      softWrap: softWrap,
     );
   }
 }
