@@ -72,6 +72,9 @@ class _FoodOutletCardState extends State<FoodOutletCard> {
                       width: 48,
                       height: 48,
                       decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(OCornerRadius.m),
+                        ),
                         color: OColor.gray400,
                         image: DecorationImage(
                           image: NetworkImage(widget.imageUrl),
